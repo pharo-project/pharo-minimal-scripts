@@ -9,8 +9,8 @@ Is very easy, you just have to do something like this (assuming you have a real 
 
     wget -O - http://get.pharo.org | bash
     
-    ./pharo "Pharo.image" unloadNB.st
-    ./pharo "Pharo.image" prepareShrink.st
-    ./pharo "Pharo.image" shrink.st > output.txt
-    ./pharo "Pharo.image" info.st
+    ./pharo Pharo.image unloadNB.st
+    ./pharo Pharo.image prepareShrink.st
+    ./pharo Pharo.image shrink.st > output.txt
+    ./pharo Pharo.image info.st
 

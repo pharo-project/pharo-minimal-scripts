@@ -24,26 +24,25 @@ FileStream stdout nextPutAll: 'Shrinking...'; lf.!
     
 
     kernelPackages := #('AST-Core' 'Announcements-Core' 'Announcements-Core' 'Collections-Abstract' 
-      'Collections-Arithmetic' 'Collections-Arrayed' 'Collections-Atomic' 'Collections-Native' 
+      'Collections-Arithmetic' 'Collections-Atomic' 'Collections-Native' 
       'Collections-Sequenceable' 'Collections-Stack' 'Collections-Streams' 'Collections-Strings' 
-      'Collections-Support' 'Collections-Text' 'Collections-Traits' 'Collections-Unordered' 
+      'Collections-Support' 'Collections-Unordered' 
       'Collections-Weak' 'Compiler' 'Compression' 'Files' 'Graphics-Display Objects' 
       'Graphics-Primitives' 'Graphics-Transformations' 'Kernel' 'Multilingual-Encodings' 
       'Multilingual-Languages' 'Multilingual-TextConversion' 'System-Changes' 'System-CommandLine' 'System-CommandLineHandler' 
       'System-Clipboard' 'System-FileRegistry' 'System-Finalization' 'System-Localization' 
       'System-Object Events' 'System-Platforms' 'System-Support' 'Text-Core' 'Traits' 'UIManager' 
-      'Transcript' 'FileSystem-AnsiStreams' 'FileSystem-Core' 'FileSystem-Disk' 'FileSystem-Memory' 
-      'CodeImport' 'Regex-Core' 'SystemProgress' 'System-Announcements' 'Ring-Core-Kernel' 
-      'Ring-Core-Containers' 'System-PragmaCollector' 'OpalCompiler-Core' 'ClassOrganizer-Core' 
-      'Slot' 'NonInteractiveTranscript' 'System-Hashing' 'UserManager-Core' 'StartupPreferences' 'ConfigurationCommandLineHandler-Core' 'PragmaCollector' 'Jobs' 'System-VMEvents' 'Reflectivity' ).
+      'Transcript' 'FileSystem-Core' 'FileSystem-Disk' 'FileSystem-Memory' 
+      'CodeImport' 'Regex-Core' 'System-Announcements' 'Ring-Core-Kernel' 
+      'Ring-Core-Containers' 'OpalCompiler-Core' 
+      'Slot' 'NonInteractiveTranscript' 'System-Hashing' 'UserManager-Core' 'StartupPreferences' 'ConfigurationCommandLineHandler-Core' 'PragmaCollector' 'Jobs' 'System-VMEvents' 'Reflectivity').
 
     networkPackages := #('Zinc-Resource-Meta-Core' 'Zinc-Character-Encoding-Core' 'Network-Kernel' 
-      'Network-MIME' 'Network-UUID' 'Network-Url' 'Network-URI' 'Network-Protocols' 'Network-RFC822' 'Zinc-HTTP' 
-      'Zinc-Patch-HTTPSocket' 'Settings-Network').
+      'Network-MIME' 'Network-UUID' 'Network-Url'  'Network-Protocols' 'Zinc-HTTP' ).
 
-    goferPackages := #('PackageInfo' 'System-FileRegistry' 'RPackage-Core' 'RPackage-SystemIntegration' 
-      'Monticello' 'MonticelloConfigurations' 'Settings-Monticello' 'Ring-Monticello' 'Gofer-Core' 
-      'MonticelloFileTree-Core').
+    goferPackages := #('System-FileRegistry' 'RPackage-Core' 'RPackage-SystemIntegration' 
+      'Monticello' 'MonticelloConfigurations' 'Ring-Monticello' 'Gofer-Core' 
+      'MonticelloFileTree-Core' 'MonticelloFileTree-FileSystem-Utilities' 'System-FilePackage').
 
     tests := #('AST-Interpreter-Test' 'AST-Tests-Core' 'Announcements-Tests-Core' 'AsmJit-Tests' 
       'ClassOrganizer-Tests' 'ConfigurationCommandLineHandler-Tests' 'FileSystem-Tests-Core' 
@@ -57,10 +56,12 @@ FileStream stdout nextPutAll: 'Shrinking...'; lf.!
       'Ring-Tests-Monticello' 'SUnit-Tests' 'SUnit-UITesting' 'Spec-Tests' 'Text-Tests' 
       'UpdateStreamer-Tests' 'Zinc-Character-Encoding-Tests' 'Zinc-Resource-Meta-Tests' 'Zinc-Tests' 
       'Zodiac-Tests' 'FuelTests' 'KernelTests' 'MorphicTests' 'NetworkTests' 'ShoutTests' 'SlotTests' 
-      'Tests').
+      'Tests' 'BalloonTests' 'CollectionsTests' 'CompressionTests' #'Debugger-Tests' 'EmbeddedFreeType-Tests' 'FontInfrastructure-Tests' 'FreeTypeTests' 'Graphics-Fonts-Tests' 'Monticello-Tests' 'NECompletion-Tests' 'Nautilus-Tests' 'Reflectivity-Tests' 'ReleaseTests' #'ScriptLoader-Tests' 'Slot-Tests' 'SmartSuggestions-Tests' 'System-CachingTests' 'System-History-Tests' 'System-Localization-Tests' 'Text-Edition-Tests' 'Tool-FileList-Tests' 'ToolsTest' 'UserManager-Tests' 'Versionner-Tests-Core-Commands' 'Versionner-Tests-Core-DependenciesModel' 'Versionner-Tests-Resources').
 
     metacelloPackages := #('Metacello-Core' 'Metacello-Base' 'Metacello-MC' 
       'Metacello-PharoCommonPlatform'  'Metacello-Platform' 'Metacello-Platform.pharo30' 'Metacello-ToolBox').
+      
+    packagesWithConfiguration := #('Athens-Balloon' 'Athens-Cairo' 'Athens-CairoPools' 'Athens-Core' 'Athens-Examples' 'Athens-Morphic' 'Athens-Text' 'ConfigurationOfAthens' 'ConfigurationOfGlamourCore' 'ConfigurationOfGTInspectorCore' 'ConfigurationOfGToolkitCore' 'ConfigurationOfGTPlaygroundCore' 'ConfigurationOfGTSpotter' 'ConfigurationOfOSWindow' 'ConfigurationOfRubric' 'ConfigurationOfShoreLineReporter' 'ConfigurationOfTxText' 'ConfigurationOfVersionner' 'ConfigurationOfZincHTTPComponents' 'Glamour-Announcements' 'Glamour-Browsers' 'Glamour-Core' 'Glamour-Examples' 'Glamour-Helpers' 'Glamour-Morphic-Brick' 'Glamour-Morphic-Brick-Tests' 'Glamour-Morphic-Pager' 'Glamour-Morphic-Renderer' 'Glamour-Morphic-Theme' 'Glamour-Morphic-Widgets' 'Glamour-Presentations' 'Glamour-Rubric-Presentations' 'Glamour-Tests-Core' 'Glamour-Tests-Morphic' 'Glamour-Tests-Resources' 'Glamour-Tests-Rubric' 'GT-Inspector' 'GT-InspectorExtensions-Core' 'GT-Playground' 'GT-Spotter' 'GT-Spotter-EventRecorder' 'GT-SpotterExtensions-Core' 'GT-Tests-Inspector' 'GT-Tests-Playground' 'GT-Tests-Spotter' 'OSWindow-SDL2' 'OSWindow-VM' 'Rubric' 'ShoreLine-Report-Core' 'ShoreLine-Report-Settings' 'ShoreLine-Report-UI' 'TxText-AthensTests' 'TxText-Model' 'TxText-Styler' 'TxTextTests-Model' 'Versionner-Core-Commands' 'Versionner-Core-Model' 'Versionner-Spec-Browser' 'Versionner-Tests-Core-Model' 'Zinc-HTTP' 'Zinc-Character-Encoding-Core' 'Zinc-Character-Encoding-Tests' 'Zinc-Resource-Meta-Core' 'Zinc-Resource-Meta-Tests' 'Zinc-Tests' 'Zinc-Zodiac' 'Zodiac-Core' 'Zodiac-Tests').      
 
     keep := kernelPackages, networkPackages, goferPackages, metacelloPackages.
 

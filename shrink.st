@@ -31,7 +31,7 @@ FileStream stdout nextPutAll: 'Shrinking...'; lf.!
       'Graphics-Primitives' 'Graphics-Transformations' 'Kernel' 'Multilingual-Encodings' 
       'Multilingual-Languages' 'Multilingual-TextConversion' 'System-Changes' 'System-CommandLine' 'System-CommandLineHandler' 
       'System-Clipboard' 'System-FileRegistry' 'System-Finalization' 'System-Localization' 
-      'System-Object Events' 'System-Platforms' 'System-Support' 'Text-Core' 'Traits' 'UIManager' 
+      'System-Object Events' 'System-Platforms' 'System-Support' 'System-Sources' 'Text-Core' 'Traits' 'UIManager' 
       'Transcript' 'FileSystem-Core' 'FileSystem-Disk' 'FileSystem-Memory' 
       'CodeImport' 'Regex-Core' 'System-Announcements' 'Ring-Core-Kernel' 
       'Ring-Core-Containers' 'OpalCompiler-Core' 

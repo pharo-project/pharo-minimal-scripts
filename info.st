@@ -1,9 +1,8 @@
 
 [
 
-| info lines dict unimplemented sends unsent o kernelPackages networkPackages goferPackages pkgs |
-
-
+| info lines dict unimplemented sends unsent o kernelPackages networkPackages 
+goferPackages pkgs allImplementedMessagesWithout allSentMessagesWithout |
 
 SmalltalkImage current fixObsoleteReferences.
 Smalltalk garbageCollect.
@@ -45,12 +44,14 @@ info cr.
 
 info nextPutAll: 'Obsolete:'; cr.
 info nextPutAll: SystemNavigation default obsoleteClasses asString; cr; cr.
-"
+
 info nextPutAll: 'Unimplemented calls size:'; space.
 info nextPutAll: SystemNavigation default allUnimplementedCalls size asString.
 info cr; cr.
 info nextPutAll: 'Unimplemented calls:'; cr; cr.
-unimplemented := SystemNavigation default allUnimplementedCalls asSortedCollection.
+
+unimplemented := SystemNavigation default allUnimplementedCalls value asSortedCollection.
+
 sends := OrderedCollection new.
 unimplemented do: [:call |
   | pos |
@@ -62,18 +63,11 @@ info cr.
 sends asSortedCollection do: [:call |
   info nextPutAll: call asString; cr.].
   
-unsent := SystemNavigation default allUnsentMessages.
-
-info cr; nextPutAll: 'Unsent messages size: '; nextPutAll: unsent size asString; cr; cr.
-info cr; nextPutAll: 'Unsent messages:'; cr.
-unsent asSortedCollection do: [:message | info nextPutAll: message; cr. ].
-"
 info cr; nextPutAll: 'finished...'.
 
 info close.
 
 SmalltalkImage current snapshot: false andQuit: true.
-
 
 ] ifError: [:e |
 	| rep |

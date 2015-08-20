@@ -180,7 +180,6 @@ FileStream stdout nextPutAll: 'Shrinking...'; lf.!
 
     " clean object memory, maybe can be simpler"
     3 timesRepeat: [ Smalltalk garbageCollect ].
-    FileServices removeObsolete.
     Smalltalk globals flushClassNameCache.
     3 timesRepeat: [ 
         Smalltalk garbageCollect.

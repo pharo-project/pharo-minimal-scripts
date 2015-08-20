@@ -33,7 +33,7 @@ FileStream stdout nextPutAll: 'Shrinking...'; lf.!
       'System-Clipboard' 'System-FileRegistry' 'System-Finalization' 'System-Localization' 
       'System-Object Events' 'System-Platforms' 'System-Support' 'System-Sources' 'Text-Core' 'Traits' 'UIManager' 
       'Transcript' 'FileSystem-Core' 'FileSystem-Disk' 'FileSystem-Memory' 
-      'CodeImport' 'Regex-Core' 'System-Announcements' 'Ring-Core-Kernel' 
+      'CodeImport' 'Regex-Core' 'System-Announcements' 'Ring-Core-Kernel' 'CodeExport'
       'Ring-Core-Containers' 'OpalCompiler-Core' 
       'Slot' 'NonInteractiveTranscript' 'System-Hashing' 'UserManager-Core' 'StartupPreferences' 'ConfigurationCommandLineHandler-Core' 'PragmaCollector' 'Jobs' 'System-VMEvents' 'Reflectivity').
 

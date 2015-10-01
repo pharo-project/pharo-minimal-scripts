@@ -29,7 +29,7 @@ FileStream stdout nextPutAll: 'Shrinking...'; lf.!
       'Collections-Support' 'Collections-Unordered' 
       'Collections-Weak' 'Compiler' 'Compression' 'Files' 'Graphics-Display Objects' 
       'Graphics-Primitives' 'Graphics-Transformations' 'Kernel' 'Multilingual-Encodings' 
-      'Multilingual-Languages' 'Multilingual-TextConversion' 'System-Changes' 'System-CommandLine' 'System-CommandLineHandler' 
+      'Multilingual-Languages' 'Multilingual-TextConversion' 'System-Changes' 'System-BasicCommandLineHandler' 'System-CommandLine' 'System-CommandLineHandler' 
       'System-Clipboard' 'System-FileRegistry' 'System-Finalization' 'System-Localization' 
       'System-Object Events' 'System-Platforms' 'System-Support' 'System-Model' 'System-Sources' 'Text-Core' 'Traits' 'UIManager' 
       'Transcript' 'FileSystem-Core' 'FileSystem-Disk' 'FileSystem-Memory' 

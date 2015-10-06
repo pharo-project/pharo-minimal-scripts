@@ -43,7 +43,7 @@ FileStream stdout nextPutAll: 'Shrinking...'; lf.!
     goferPackages := #('System-FileRegistry' 'RPackage-Core' 'RPackage-SystemIntegration' 
       'Monticello' 'MonticelloConfigurations' 'Ring-Monticello' 'Gofer-Core' 
       'MonticelloFileTree-Core' 'MonticelloFileTree-FileSystem-Utilities' 'System-FilePackage'
-      'MonticelloRemoteRepositories' 'MonticelloMocks').
+      'MonticelloRemoteRepositories' 'MonticelloMocks' 'RingChunkImporter').
 
     tests := #('AST-Interpreter-Test' 'AST-Tests-Core' 'Announcements-Tests-Core' 'AsmJit-Tests' 
       'ClassOrganizer-Tests' 'ConfigurationCommandLineHandler-Tests' 'FileSystem-Tests-Core' 

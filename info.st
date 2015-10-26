@@ -53,7 +53,7 @@ info nextPutAll: 'Unimplemented calls size:'; space.
 info nextPutAll: SystemNavigation default allUnimplementedCalls size asString.
 
 " let the CI job fail if the amount of unimplemented calls is growing "
-self assert: (SystemNavigation default allUnimplementedCalls size <= 82).
+self assert: (SystemNavigation default allUnimplementedCalls size <= 74).
 
 info cr; cr.
 info nextPutAll: 'Unimplemented calls:'; cr; cr.

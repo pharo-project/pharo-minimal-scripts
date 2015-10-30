@@ -45,15 +45,8 @@ info cr.
 info nextPutAll: 'Obsolete:'; cr.
 info nextPutAll: SystemNavigation default obsoleteClasses asString; cr; cr.
 
-" let the CI job fail if the amount of obsolete classes is not zero "
-self assert: (SystemNavigation default obsoleteClasses size = 0).
-
-
 info nextPutAll: 'Unimplemented calls size:'; space.
 info nextPutAll: SystemNavigation default allUnimplementedCalls size asString.
-
-" let the CI job fail if the amount of unimplemented calls is growing "
-self assert: (SystemNavigation default allUnimplementedCalls size <= 72).
 
 info cr; cr.
 info nextPutAll: 'Unimplemented calls:'; cr; cr.
@@ -75,6 +68,12 @@ sends asSortedCollection do: [:call |
 info cr; nextPutAll: 'finished...'.
 
 info close.
+
+" let the CI job fail if the amount of unimplemented calls is growing "
+self assert: (SystemNavigation default allUnimplementedCalls size <= 72).
+
+" let the CI job fail if the amount of obsolete classes is not zero "
+self assert: (SystemNavigation default obsoleteClasses size = 0).
 
 SmalltalkImage current snapshot: false andQuit: true.
 

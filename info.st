@@ -70,7 +70,7 @@ info cr; nextPutAll: 'finished...'.
 info close.
 
 " let the CI job fail if the amount of unimplemented calls is growing "
-self assert: (SystemNavigation default allUnimplementedCalls size <= 72).
+self assert: (SystemNavigation default allUnimplementedCalls size <= 69).
 
 " let the CI job fail if the amount of obsolete classes is not zero "
 self assert: (SystemNavigation default obsoleteClasses size = 0).

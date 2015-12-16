@@ -23,7 +23,7 @@ FileStream stdout nextPutAll: 'Shrinking...'; lf.!
     Delay restartTimerEventLoop.
     
 
-    kernelPackages := #('AST-Core' 'Announcements-Core' 'Announcements-Core' 'Collections-Abstract' 
+    kernelPackages := #('AST-Core' 'Alien' 'Announcements-Core' 'Announcements-Core' 'Collections-Abstract' 
       'Collections-Arithmetic' 'Collections-Atomic' 'Collections-Native' 
       'Collections-Sequenceable' 'Collections-Stack' 'Collections-Streams' 'Collections-Strings' 
       'Collections-Support' 'Collections-Unordered' 

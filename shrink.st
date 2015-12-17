@@ -22,6 +22,10 @@ FileStream stdout nextPutAll: 'Shrinking...'; lf.!
         process terminate ].
     Delay restartTimerEventLoop.
     
+    (Smalltalk at: #GTExampleOrganizer) stop.
+    (Smalltalk at: #GTExampleOrganizer) compile: 'methodRemoved: anAnnouncement'.
+    (Smalltalk at: #GLMBrick) removeFromSystem.
+    
 
     kernelPackages := #('AST-Core' 'Alien' 'Announcements-Core' 'Announcements-Core' 'Collections-Abstract' 
       'Collections-Arithmetic' 'Collections-Atomic' 'Collections-Native' 

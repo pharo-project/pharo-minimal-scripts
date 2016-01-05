@@ -27,7 +27,7 @@ FileStream stdout nextPutAll: 'Shrinking...'; lf.!
     (Smalltalk at: #GLMBrick) removeFromSystem.
     
 
-    kernelPackages := #('AST-Core' 'Announcements-Core' 'Announcements-Core' 'Collections-Abstract' 
+    kernelPackages := #('AST-Core' 'AST-FFI-Pharo50Compatibility' 'Announcements-Core' 'Announcements-Core' 'Collections-Abstract' 
       'Collections-Arithmetic' 'Collections-Atomic' 'Collections-Native' 
       'Collections-Sequenceable' 'Collections-Stack' 'Collections-Streams' 'Collections-Strings' 
       'Collections-Support' 'Collections-Unordered' 

@@ -4,7 +4,7 @@ FileStream stdout nextPutAll: 'Shrinking...'; lf.!
 [
   | kernelPackages networkPackages goferPackages metacelloPackages tests keep o 
     ordered notResolved foundDeps deps depsList resolveBlock hasResolved 
-    delete cyclic notResolvedNames sortedByDeps |
+    delete cyclic notResolvedNames sortedByDeps unloadFirst |
 
   [ 
     World submorphs do: #delete.
@@ -68,6 +68,8 @@ FileStream stdout nextPutAll: 'Shrinking...'; lf.!
       
     packagesWithConfiguration := #('Athens-Balloon' 'Athens-Cairo' 'Athens-CairoPools' 'Athens-Core' 'Athens-Examples' 'Athens-Morphic' 'Athens-Text' 'ConfigurationOfAthens' 'ConfigurationOfGlamourCore' 'ConfigurationOfGTInspectorCore' 'ConfigurationOfGToolkitCore' 'ConfigurationOfGTPlaygroundCore' 'ConfigurationOfGTSpotter' 'ConfigurationOfOSWindow' 'ConfigurationOfRubric' 'ConfigurationOfShoreLineReporter' 'ConfigurationOfTxText' 'ConfigurationOfVersionner' 'ConfigurationOfZincHTTPComponents' 'Glamour-Announcements' 'Glamour-Browsers' 'Glamour-Core' 'Glamour-Examples' 'Glamour-Helpers' 'Glamour-Morphic-Brick' 'Glamour-Morphic-Brick-Tests' 'Glamour-Morphic-Pager' 'Glamour-Morphic-Renderer' 'Glamour-Morphic-Theme' 'Glamour-Morphic-Widgets' 'Glamour-Presentations' 'Glamour-Rubric-Presentations' 'Glamour-Tests-Core' 'Glamour-Tests-Morphic' 'Glamour-Tests-Resources' 'Glamour-Tests-Rubric' 'GT-Inspector' 'GT-InspectorExtensions-Core' 'GT-Playground' 'GT-Spotter' 'GT-Spotter-EventRecorder' 'GT-SpotterExtensions-Core' 'GT-Tests-Inspector' 'GT-Tests-Playground' 'GT-Tests-Spotter' 'OSWindow-SDL2' 'OSWindow-VM' 'Rubric' 'ShoreLine-Report-Core' 'ShoreLine-Report-Settings' 'ShoreLine-Report-UI' 'TxText-AthensTests' 'TxText-Model' 'TxText-Styler' 'TxTextTests-Model' 'Versionner-Core-Commands' 'Versionner-Core-Model' 'Versionner-Spec-Browser' 'Versionner-Tests-Core-Model' 'Zinc-HTTP' 'Zinc-Character-Encoding-Core' 'Zinc-Character-Encoding-Tests' 'Zinc-Resource-Meta-Core' 'Zinc-Resource-Meta-Tests' 'Zinc-Tests' 'Zinc-Zodiac' 'Zodiac-Core' 'Zodiac-Tests').      
 
+    unloadFirst := #('QualityAssistantRecording' 'QualityAssistant').      
+
     keep := kernelPackages, networkPackages, goferPackages, metacelloPackages.
 
     " clean "
@@ -97,6 +99,14 @@ FileStream stdout nextPutAll: 'Shrinking...'; lf.!
         wc := MCWorkingCopy forPackage: (MCPackage named: packageName).
         FileStream stdout nextPutAll: index asString , '/' , tests size asString , ' - unloading ' , wc packageName; lf.
         wc unload ].
+
+    unloadFirst
+      withIndexDo: [ :packageName :index | 
+        | wc |
+        wc := MCWorkingCopy forPackage: (MCPackage named: packageName).
+        FileStream stdout nextPutAll: index asString , '/' , tests size asString , ' - unloading ' , wc packageName; lf.
+        wc unload ].
+
 
     " count unloading order and select packages with cyclic dependencies "
     cyclic := OrderedCollection new.

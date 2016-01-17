@@ -73,6 +73,9 @@ FileStream stdout nextPutAll: 'Shrinking...'; lf.!
     keep := kernelPackages, networkPackages, goferPackages, metacelloPackages.
 
     " clean "
+    
+    MetacelloProjectRegistration resetRegistry.
+    
     KMRepository reset.
     KMPragmaKeymapBuilder release.
     RecentMessageList stopNotifications.

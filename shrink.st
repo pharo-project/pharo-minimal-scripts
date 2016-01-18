@@ -35,7 +35,7 @@ FileStream stdout nextPutAll: 'Shrinking...'; lf.!
       'Graphics-Primitives' 'Graphics-Transformations' 'Kernel' 'Random-Core' 'Multilingual-Encodings' 
       'Multilingual-Languages' 'Multilingual-TextConversion' 'System-Changes' 'System-BasicCommandLineHandler' 'System-CommandLine' 'System-CommandLineHandler' 
       'System-Clipboard' 'System-FileRegistry' 'System-Finalization' 'System-Localization' 
-      'System-Object Events' 'System-Platforms' 'System-Support' 'System-Model' 'System-Sources' 'Text-Core' 'Traits' 'UIManager' 
+      'System-Object Events' 'System-Platforms' 'System-SessionManager' 'System-Support' 'System-Model' 'System-Sources' 'Text-Core' 'Traits' 'UIManager' 
       'Transcript' 'FileSystem-Core' 'FileSystem-Disk' 'FileSystem-Memory' 
       'CodeImport' 'CodeImportCommandLineHandlers' 'Regex-Core' 'System-Announcements' 'Ring-Core-Kernel' 'CodeExport'
       'Ring-Core-Containers' 'OpalCompiler-Core' 
@@ -58,7 +58,7 @@ FileStream stdout nextPutAll: 'Shrinking...'; lf.!
       'Multilingual-Tests' 'NativeBoost-Tests' 'OpalCompiler-Tests' 'ProfStef-Tests' 'RPackage-Tests' 
       'Refactoring-Tests-Changes' 'Refactoring-Tests-Core' 'Refactoring-Tests-Critics' 
       'Refactoring-Tests-Environment' 'Regex-Tests-Core' 'Ring-Tests-Containers' 'Ring-Tests-Kernel' 
-      'Ring-Tests-Monticello' 'SUnit-Tests' 'SUnit-UITesting' 'Spec-Tests' 'Text-Tests' 
+      'Ring-Tests-Monticello' 'System-SessionManager-Tests' 'SUnit-Tests' 'SUnit-UITesting' 'Spec-Tests' 'Text-Tests' 
       'UpdateStreamer-Tests' 'Zinc-Character-Encoding-Tests' 'Zinc-Resource-Meta-Tests' 'Zinc-Tests' 
       'Zodiac-Tests' 'FuelTests' 'KernelTests' 'MorphicTests' 'NetworkTests' 'ShoutTests' 'SlotTests' 
       'Tests' 'BalloonTests' 'CollectionsTests' 'CompressionTests' #'Debugger-Tests' 'EmbeddedFreeType-Tests' 'FontInfrastructure-Tests' 'FreeTypeTests' 'Graphics-Fonts-Tests' 'Monticello-Tests' 'NECompletion-Tests' 'Nautilus-Tests' 'Reflectivity-Tests' 'ReleaseTests' #'ScriptLoader-Tests' 'Slot-Tests' 'SmartSuggestions-Tests' 'System-CachingTests' 'System-History-Tests' 'System-Localization-Tests' 'Text-Edition-Tests' 'Tool-FileList-Tests' 'ToolsTest' 'UserManager-Tests' 'Versionner-Tests-Core-Commands' 'Versionner-Tests-Core-DependenciesModel' 'Versionner-Tests-Resources').

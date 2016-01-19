@@ -11,7 +11,8 @@ WeakArray removeWeakDependent: (Smalltalk classNamed: #Callback).
 
 remove := #('Athens-Cairo' 'NativeBoost-Tests'  'NativeBoost-Examples' 'NativeBoost-Unix' 'NativeBoost-Win32' 
 'NativeBoost-Mac'   'NativeBoost-Core' 'NativeBoost-Pools' 'AsmJit-Tests' 'AsmJit-StackManagement' 
-'AsmJit-Operands' 'AsmJit-x86'  'AsmJit-Extension' 'AsmJit-Instructions' 'AsmJit-Core' 'Alien').
+'AsmJit-Operands' 'AsmJit-x86'  'AsmJit-Extension' 'AsmJit-Instructions' 'AsmJit-Core' 'Alien' 'FFI-Kernel' 'FFI-MacOS'
+'FFI-Pools' 'FFI-Tests' 'FFI-Unix' 'FFI-Win32').
 
 remove do: [ :packageName |
     (MCWorkingCopy forPackage: (MCPackage named: packageName)) unload. ].

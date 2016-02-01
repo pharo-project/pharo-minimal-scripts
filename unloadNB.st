@@ -2,9 +2,10 @@
 
 "save and restart image here"
 
-Smalltalk removeFromStartUpList: (Smalltalk classNamed: #GTSpotterEventRecorderSettings).
-Smalltalk removeFromStartUpList: (Smalltalk classNamed: #FFICallbackThunk).
-Smalltalk removeFromStartUpList: (Smalltalk classNamed: #Alien).
+SessionManager default unregisterClassNamed: #GTSpotterEventRecorderSettings.
+SessionManager default unregisterClassNamed: #FFICallbackThunk.
+SessionManager default unregisterClassNamed: #Alien.
+
 (Smalltalk classNamed: #AlienWeakTable) allInstancesDo: [:table |
   WeakArray removeWeakDependent: table ].
 WeakArray removeWeakDependent: (Smalltalk classNamed: #Callback).

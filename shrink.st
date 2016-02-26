@@ -16,6 +16,7 @@ FileStream stdout nextPutAll: 'Shrinking...'; lf.!
         {(InputEventFetcher default instVarNamed: #fetcherProcess).
         (Processor activeProcess).
         (WeakArray runningFinalizationProcess).
+        (Smalltalk lowSpaceWatcherProcess).
         (Processor backgroundProcess)} includes: process ])
       do: [ :process | 
         process suspend.

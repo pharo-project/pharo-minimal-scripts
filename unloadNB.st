@@ -1,3 +1,13 @@
+'From Pharo5.0 of 16 April 2015 [Latest update: #50613] on 26 February 2016 at 2:34:57.325766 pm'!
+
+!UIManager class methodsFor: 'initialization' stamp: 'PavelKrivanek 2/26/2016 14:32'!
+forCurrentSystemConfiguration
+	^ (self allSubclasses
+			detect: [ :any | 
+				any isValidForCurrentSystemConfiguration
+					and: [ any subclasses noneSatisfy: #isValidForCurrentSystemConfiguration ] ]
+			ifNone: [ NonInteractiveUIManager ]) new! !
+			
 | remove |
 
 "save and restart image here"

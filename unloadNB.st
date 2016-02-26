@@ -20,12 +20,6 @@ remove do: [ :packageName |
 
 Smalltalk recreateSpecialObjectsArray.
 
-(Smalltalk classNamed: #AJx86GPRegister) removeFromSystem. 
-(Smalltalk classNamed: #NativeBoostMac32) removeFromSystem.
-(Smalltalk classNamed: #AJMMRegister) removeFromSystem.
-(Smalltalk classNamed: #AJx87Register) removeFromSystem.
-(Smalltalk classNamed: #AJxMMRegister) removeFromSystem.
-(Smalltalk classNamed: #AJx64RipRegister) removeFromSystem.
 Context initializePrimitiveSimulators.
 
 SmalltalkImage current fixObsoleteReferences.

@@ -23,7 +23,15 @@
 	Smalltalk garbageCollect.
 	Smalltalk cleanOutUndeclared. 
 	Smalltalk fixObsoleteReferences.
-	"Smalltalk cleanUp: true except: #() confirming: false."	
+	"Smalltalk cleanUp: true except: #() confirming: false."
+	
+  Smalltalk addToStartUpList: Cursor.
+  Smalltalk addToShutDownList: Form.
+
+  InputEventSensor startUp.
+  InputEventSensor installEventSensorFramework.
+	
+	
 	Author reset.
 
 

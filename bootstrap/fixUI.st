@@ -30,6 +30,9 @@
 
   InputEventSensor startUp.
   InputEventSensor installEventSensorFramework.
+  
+  Smalltalk tools register: Workspace as: #monticelloBrowser.
+  Smalltalk tools register: Workspace as: #workspace.
 	
 	
 	Author reset.

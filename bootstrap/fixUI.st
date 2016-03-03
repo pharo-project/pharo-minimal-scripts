@@ -23,7 +23,7 @@
 	Smalltalk garbageCollect.
 	Smalltalk cleanOutUndeclared. 
 	Smalltalk fixObsoleteReferences.
-	Smalltalk cleanUp: true except: #() confirming: false.	
+	"Smalltalk cleanUp: true except: #() confirming: false."	
 	Author reset.
 
 

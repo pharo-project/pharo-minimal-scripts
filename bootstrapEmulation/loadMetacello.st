@@ -15,7 +15,7 @@ loader := MCVersionLoader new.
 repository directory files sorted
 	do: [ :each | | mcVersion |
 		mcVersion := each basenameWithoutExtension.
-			addVersion: (repository versionFrom: mcVersion);
+		loader addVersion: (repository versionFrom: mcVersion);
 			].
 loader load. 			
 	

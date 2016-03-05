@@ -10,14 +10,15 @@ repository := MCDirectoryRepository new
 	directory: './miniPackages' asFileReference;
 	yourself.
 		
-loader := MCVersionLoader new.	
-"get the list of packages from the configuration"
 repository directory files sorted
 	do: [ :each | | mcVersion |
+	loader := MCVersionLoader new.	
 		mcVersion := each basenameWithoutExtension.
 		loader addVersion: (repository versionFrom: mcVersion).
+		loader load. 
 			].
-loader load. 			
+Stdio stdout nextPutAll: 'load again...'; lf; flush.
+					
 	
 MCMethodDefinition initializersEnabled: true.
 

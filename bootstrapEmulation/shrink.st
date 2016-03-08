@@ -206,6 +206,18 @@ FileStream stdout nextPutAll: 'Shrinking...'; lf.!
     Job jobAnnouncer initialize.
     EncodedCharSet initialize.
     LanguageEnvironment resetKnownEnvironments.
+    
+    
+    (Smalltalk at: #Display) becomeForward: nil.
+    Smalltalk removeKey: #Display.
+
+    MCWorkingCopy allInstances do: [:wc | wc repositoryGroup: nil].
+
+    Smalltalk removeKey: #Sensor.
+    MCRepositoryGroup instVarNamed: #default put: nil.
+    
+    ((Array allInstances select: [ :i | i size = 1024 ])
+ 	    detect: [ :a | a second = SmallInteger  ])  at: 54 put: nil.
 
     " clean object memory, maybe can be simpler"
     3 timesRepeat: [ Smalltalk garbageCollect ].

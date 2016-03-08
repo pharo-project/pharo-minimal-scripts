@@ -207,7 +207,7 @@ FileStream stdout nextPutAll: 'Shrinking...'; lf.!
     EncodedCharSet initialize.
     LanguageEnvironment resetKnownEnvironments.
     
-    RPackageOrganizer resetDefault.
+    "RPackageOrganizer resetDefault."
     
     (Smalltalk at: #Display) becomeForward: nil.
     Smalltalk removeKey: #Display.

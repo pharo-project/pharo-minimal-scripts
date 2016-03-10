@@ -83,7 +83,7 @@ zodiacPackages do: [ :packageName |
   targetRepository storeVersion: (zodiacRepository versionWithInfo: (MCPackage named: packageName) workingCopy ancestry ancestors first)].
 
 mcPackages do: [ :packageName |
-  targetRepository storeVersion: (mcRepository versionWithInfo: (MCPackage named: packageName) workingCopy ancestry ancestors first)].
+  targetRepository storeVersion: ("mcRepository" pharoRepository versionWithInfo: (MCPackage named: packageName) workingCopy ancestry ancestors first)].
 
 metacelloPackages do: [ :packageName |
   targetRepository storeVersion: (metacelloRepository versionWithInfo: (MCPackage named: packageName) workingCopy ancestry ancestors first)].

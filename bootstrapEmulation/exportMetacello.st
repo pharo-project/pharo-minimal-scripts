@@ -27,6 +27,10 @@ packageNames := #(
  
  'Metacello-MC'
  'Metacello-Platform'
+ 'Metacello-Core' 
+ 'Metacello-Base'
+ 'Metacello-PharoCommonPlatform'
+ 'Metacello-ToolBox' 
 ).
  
 mcPackages := #(
@@ -34,10 +38,7 @@ mcPackages := #(
 ).
 
 metacelloPackages := #(
- 'Metacello-Core' 
- 'Metacello-Base'
- 'Metacello-PharoCommonPlatform'
- 'Metacello-ToolBox'
+
 ).
 
 zincPackages := #(

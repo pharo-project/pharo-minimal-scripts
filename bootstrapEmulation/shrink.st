@@ -217,8 +217,8 @@ FileStream stdout nextPutAll: 'Shrinking...'; lf.!
     Smalltalk removeKey: #Sensor.
     MCRepositoryGroup instVarNamed: #default put: nil.
     
-    ((Array allInstances select: [ :i | i size = 1024 ])
- 	    detect: [ :a | a second = SmallInteger  ])  at: 54 put: nil.
+    "((Array allInstances select: [ :i | i size = 1024 ])
+ 	    detect: [ :a | a second = SmallInteger  ])  at: 54 put: nil."
 
     " clean object memory, maybe can be simpler"
     3 timesRepeat: [ Smalltalk garbageCollect ].

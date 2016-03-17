@@ -75,7 +75,7 @@ MetacelloPlatform initialize.
 MetacelloPharoPlatform initialize.
 MetacelloPharo30Platform initialize.
 
-"Smalltalk image recompile."
+Smalltalk image recompile.
 
 Stdio stdout nextPutAll: (ZnClient new get: 'http://zn.stfx.eu/zn/numbers.txt').
 

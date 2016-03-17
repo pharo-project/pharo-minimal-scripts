@@ -1,7 +1,7 @@
 
 
 	Author fullName: 'MrCleaner'.
-	ImageCleaner new cleanUpMethods.
+	"ImageCleaner new cleanUpMethods.
 	
 	FreeTypeFontProvider current initialize.
 	EmbeddedFreeTypeFontInstaller initialize.
@@ -19,11 +19,11 @@
 					sortCategories ]
 						value: class organization;
 						value: class class organization ].
-	Smalltalk organization sortCategories.
+	Smalltalk organization sortCategories."
 	Smalltalk garbageCollect.
 	Smalltalk cleanOutUndeclared. 
 	Smalltalk fixObsoleteReferences.
-	Smalltalk cleanUp: true except: #() confirming: false.	
+	"Smalltalk cleanUp: true except: #() confirming: false.	"
 	Author reset.
 
 

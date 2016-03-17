@@ -2,6 +2,8 @@
 | repository display loader |
 
 
+
+
 MCMethodDefinition initializersEnabled: false.
     
 DangerousClassNotifier disable.
@@ -9,15 +11,21 @@ DangerousClassNotifier disable.
 repository := MCDirectoryRepository new
 	directory: './miniPackages' asFileReference;
 	yourself.
-		
+
+	
+loader := MCVersionMerger new.
 repository directory files sorted
 	do: [ :each | | mcVersion |
-	loader := MCVersionLoader new.	
+	
 		mcVersion := each basenameWithoutExtension.
+	Stdio stdout nextPutAll: mcVersion asString; lf; flush.
 		loader addVersion: (repository versionFrom: mcVersion).
-		loader load. 
+				
 			].
-Stdio stdout nextPutAll: 'load again...'; lf; flush.
+		
+[loader merge] on: MCMergeResolutionRequest do: [:request | request autoMerge ].
+
+
 					
 	
 MCMethodDefinition initializersEnabled: true.
@@ -67,7 +75,7 @@ MetacelloPlatform initialize.
 MetacelloPharoPlatform initialize.
 MetacelloPharo30Platform initialize.
 
-Smalltalk image recompile.
+"Smalltalk image recompile."
 
 Stdio stdout nextPutAll: (ZnClient new get: 'http://zn.stfx.eu/zn/numbers.txt').
 

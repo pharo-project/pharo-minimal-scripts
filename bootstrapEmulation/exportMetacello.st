@@ -89,4 +89,3 @@ mcPackages do: [ :packageName |
 metacelloPackages do: [ :packageName |
   targetRepository storeVersion: (metacelloRepository versionWithInfo: (MCPackage named: packageName) workingCopy ancestry ancestors first)].
   
-Smalltalk exitSuccess.

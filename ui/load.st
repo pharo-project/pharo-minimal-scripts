@@ -77,7 +77,7 @@ MCMethodDefinition initializersEnabled: false.
     gofer load.
   ].
 
-  (Smalltalk at: #ConfigurationOfUI) load.
+  ((Smalltalk at: #ConfigurationOfUI) project version: #stable) load.
 ] on:  ProvideAnswerNotification do: [:e | e resume: ''].
 ] on:  MCMergeOrLoadWarning do: [:w | w resume: true].
 

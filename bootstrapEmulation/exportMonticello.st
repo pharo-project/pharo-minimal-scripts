@@ -22,4 +22,3 @@ MCWorkingCopy initialize.
 Smalltalk snapshot:true andQuit: true'.
 ].
 
-Smalltalk exitSuccess.

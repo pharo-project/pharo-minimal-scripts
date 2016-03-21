@@ -1,28 +1,5 @@
 
 
-#("'Athens-Core' 
-
-'GT-Inspector'
-'GT-Playground'"
-
-'Glamour-Morphic-Brick'
-'Glamour-morphic-widgets'
-"'Renraku'
-'Rubric-Editing-Core'
-'Spec-Tools-VersionBrowser'
-'System-settings-browser'
-'Tool-Catalog'
-
-'FreeType-addition'
-'FreeType-override'
-'Necompletion-extensions'"
-
-) do: [:aString | 
-  Stdio stdout << 'Remove ghost package:' << aString << String lf.
-  (MCWorkingCopy allManagers detect: [ :package | package packageName = aString ]) unload.].
-
-!
-
 'From Pharo3.0 of 18 March 2013 [Latest update: #30438] on 1 October 2013 at 5:18:05 pm'!
 
 

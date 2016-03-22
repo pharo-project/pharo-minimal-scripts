@@ -1,3 +1,16 @@
+'From Pharo5.0 of 16 April 2015 [Latest update: #50656] on 22 March 2016 at 4:21:12.227087 pm'!
+
+!RPackageOrganizer methodsFor: 'private registration' stamp: 'MarcusDenker 7/16/2014 17:25'!
+basicUnregisterPackage: aPackage
+	"Unregister the specified package from the list of registered packages. Raise the announcement RPackageUnregistered. This is a low level action. It does not unregister the back pointer from classes to packages or any other information managed by the organizer"
+	
+	packages
+		removeKey: aPackage name asSymbol
+		ifAbsent: [ self reportExtraRemovalOf: aPackage ].
+	"unregister also mc package"
+	aPackage mcPackage 
+		ifNotNil: [ :mcPackage | mcPackage workingCopy unregister ].! !
+
 'From Pharo5.0 of 16 April 2015 [Latest update: #50656] on 22 March 2016 at 4:13:45.663469 pm'!
 
 !MockSourceEditor methodsFor: 'as yet unclassified' stamp: 'PavelKrivanek 3/22/2016 15:34'!

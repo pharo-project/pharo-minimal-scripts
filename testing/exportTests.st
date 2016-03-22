@@ -22,7 +22,8 @@ testImportAMethodWithLangTag
 FileStream forceNewFileNamed: 'Tests.st' do: [ :stream |
 	writer := MCStWriter on: stream.
 	writer writeInitializers: false.
-	#('RPackage-Tests' 'Collections-Tests' 'Kernel-Tests' 'AST-Tests-Core' 'Announcements-Tests-Core' 'Compression-Tests' 'FileSystem-Tests-Core' 
+	#('FileSystem-Memory' 
+	'RPackage-Tests' 'Collections-Tests' 'Kernel-Tests' 'AST-Tests-Core' 'Announcements-Tests-Core' 'Compression-Tests' 'FileSystem-Tests-Core' 
 	'FileSystem-Tests-Disk' 'Files-Tests' 'JobsTests'  'Multilingual-Tests' 'NodeNavigation-Test' 'OpalCompiler-Tests'  'Random-Tests' 'ReleaseTests'
 	'Ring-Tests-Kernel'  'Ring-Tests-Containers' 'Tests')  do: [ :packageName |
 		version := MCVersion package: (MCPackage named: packageName).

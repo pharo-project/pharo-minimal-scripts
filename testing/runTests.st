@@ -1,3 +1,19 @@
+'From Pharo5.0 of 16 April 2015 [Latest update: #50656] on 22 March 2016 at 4:53:57.803757 pm'!
+
+!SplitJoinTest methodsFor: 'running' stamp: 'PavelKrivanek 3/22/2016 16:53'!
+testSplitJoinBoundaryCases
+	"Empty splitter, joiner or sequence."
+	self assert: (#() join: (#() split: #())) equals: #().
+	self assert: ('' join: ('' split: '')) equals: ''.
+	self assert: ('' join: (#(''))) equals: ''. "NB: Doesn't work with empty regex"
+
+	"Overlapping splitters, or at end of sequence"
+	self assert: ('an' join: ('an' split: 'banana')) equals: 'banana'.
+	self assert: ('na' join: ('na' split: 'banana')) equals: 'banana'.
+	self assert: ('ana' join: ('ana' split: 'banana')) equals: 'banana'.
+! !
+
+
 'From Pharo5.0 of 16 April 2015 [Latest update: #50656] on 22 March 2016 at 4:38:11.271827 pm'!
 
 !RPackage methodsFor: 'accessing' stamp: 'PavelKrivanek 3/22/2016 16:38'!

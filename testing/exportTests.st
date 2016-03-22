@@ -6,6 +6,7 @@ blacklistedClasses := #(
 	MCServerRegistry
 	EventManagerTest
 	RPackageMonticelloSynchronisationTest
+	LiteralDictionaryTest
 ).
 blacklistedMethods := #(
 testPercentEncodingHiragana

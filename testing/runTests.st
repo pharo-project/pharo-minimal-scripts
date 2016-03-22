@@ -1,3 +1,33 @@
+'From Pharo5.0 of 16 April 2015 [Latest update: #50656] on 22 March 2016 at 4:32:51.570954 pm'!
+
+!RPackageRenameTest methodsFor: 'tests' stamp: 'PavelKrivanek 3/22/2016 16:30'!
+testRenamePackage
+	"Test that we do rename the package as expected."
+	| package  class |
+
+	package := RPackageOrganizer default registerPackageNamed: 'Test1'.
+	class := Object
+		subclass: #TestClass
+		instanceVariableNames: ''
+		classVariableNames: ''
+		poolDictionaries: ''
+		category: 'Test1-TAG'.
+	self assert: (package includesClass: class).
+	self assert: (package classTagNamed: #TAG ifAbsent: [ nil ]) notNil.
+	self assert: ((package classTagNamed: #TAG ifAbsent: [ nil ]) includesClass: class).
+	package renameTo: 'TestRename'.
+	self assert: (package includesClass: class).
+	self assert: (package classTagNamed: #TAG ifAbsent: [ nil ]) notNil.
+	self assert: ((package classTagNamed: #TAG ifAbsent: [ nil ]) includesClass: class).
+	self assert: class category = #'TestRename-TAG'.	
+	self deny: (Smalltalk organization includesCategory: #Test1).
+	
+	"cleaning"
+	self deny: (RPackageOrganizer default includesPackageNamed: #TestRename).
+! !
+
+
+
 'From Pharo5.0 of 16 April 2015 [Latest update: #50656] on 22 March 2016 at 4:21:12.227087 pm'!
 
 !RPackageOrganizer methodsFor: 'private registration' stamp: 'MarcusDenker 7/16/2014 17:25'!

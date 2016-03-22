@@ -8,8 +8,8 @@ basicUnregisterPackage: aPackage
 		removeKey: aPackage name asSymbol
 		ifAbsent: [ self reportExtraRemovalOf: aPackage ].
 	"unregister also mc package"
-	aPackage mcPackage 
-		ifNotNil: [ :mcPackage | mcPackage workingCopy unregister ].! !
+	"aPackage mcPackage 
+		ifNotNil: [ :mcPackage | mcPackage workingCopy unregister ]."! !
 
 'From Pharo5.0 of 16 April 2015 [Latest update: #50656] on 22 March 2016 at 4:13:45.663469 pm'!
 

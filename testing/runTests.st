@@ -1,3 +1,15 @@
+'From Pharo5.0 of 16 April 2015 [Latest update: #50656] on 22 March 2016 at 4:13:45.663469 pm'!
+
+!MockSourceEditor methodsFor: 'as yet unclassified' stamp: 'PavelKrivanek 3/22/2016 15:34'!
+insertAndSelect: aString at: anInteger
+
+	text := (text first: anInteger-1), 
+		(' ' , aString) asString, 
+		(text copyFrom: anInteger to: text size).
+		
+	selectionStart := anInteger.
+	selectionEnd := anInteger + aString size ! !
+
 'From Pharo5.0 of 16 April 2015 [Latest update: #50656] on 22 March 2016 at 1:28:43.72991 pm'!
 
 !ArrayTest methodsFor: 'initialization' stamp: 'PavelKrivanek 3/22/2016 13:28'!

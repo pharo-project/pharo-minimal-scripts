@@ -43,6 +43,42 @@ setUp
 	floatCollectionWithSameBeginingAnEnd := {1.5. 5.5. 1.5 copy}.
 	collection5Elements := { 1. 2. 5. 3. 4.}.! !
 
+'From Pharo5.0 of 16 April 2015 [Latest update: #50656] on 22 March 2016 at 1:46:59.820485 pm'!
+
+!OCCompilerNotifyingTest methodsFor: 'initialize-release' stamp: 'PavelKrivanek 3/22/2016 13:46'!
+setUpForErrorsIn: aTextWithErrorsEnclosedInBackQuote
+  "Extract the expectedErrors, the expectedErrorPositions and set up a TextMorph containing the text without errors.
+  each section separated by % in aTextWithErrorsEnclosedInBackQuote will be evaluated separately.
+  The expected error message should lie in aTextWithErrorsEnclosedInBackQuote at the expected position, and enclosed in back quotes."
+  text := aTextWithErrorsEnclosedInBackQuote.
+  morph := MockSourceEditor new contents: self initializeTextWithoutError asString.! !
+
+'From Pharo5.0 of 16 April 2015 [Latest update: #50656] on 22 March 2016 at 1:50:05.945381 pm'!
+
+!OCNewCompilerWithChangesFunctionalTests methodsFor: 'other-tests' stamp: 'PavelKrivanek 3/22/2016 13:49'!
+testModulePrimitive
+	
+	| aCompiledMethod bytecode index |
+	aCompiledMethod := OpalCompiler new 
+	source: 'copyBitsAgain
+	"Primitive. See BitBlt|copyBits, also a Primitive. Essential. See Object
+	documentation whatIsAPrimitive."
+
+	<primitive: ''primitiveCopyBits'' module: ''BitBltPlugin''>
+	self primitiveFailed';
+	class: MockForCompilation;
+	compile.
+									
+	bytecode := aCompiledMethod symbolic asString substrings: String cr.
+	index := 0.
+	self assert: (bytecode at: (index := index + 1)) = '<primitive: ''primitiveCopyBits'' module: ''BitBltPlugin''>'.
+	self assert: (bytecode at: (index := index + 1)) = '21 <8B 75 00> callPrimitive: 117'.
+	self assert: (bytecode at: (index := index + 1)) = '24 <70> self'.
+	self assert: (bytecode at: (index := index + 1)) = '25 <D1> send: primitiveFailed'.
+	self assert: (bytecode at: (index := index + 1)) = '26 <87> pop'.
+	self assert: (bytecode at: (index := index + 1)) = '27 <78> returnSelf'.	
+
+	! !
 
 
 

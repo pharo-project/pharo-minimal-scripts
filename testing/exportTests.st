@@ -4,6 +4,7 @@ blacklistedClasses := #(
 	ASTTransformExamplePluginActive
 	OCCompilerTest
 	MCServerRegistry
+	EventManagerTest
 ).
 blacklistedMethods := #(
 testPercentEncodingHiragana

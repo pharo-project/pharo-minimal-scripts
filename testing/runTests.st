@@ -105,6 +105,28 @@ otherDictionaryClasses
 		WeakIdentityKeyDictionary. WeakKeyToCollectionDictionary. Dictionary}
 			reject: [:each | each new species == self classToBeTested new species]! !
 
+'From Pharo5.0 of 16 April 2015 [Latest update: #50656] on 22 March 2016 at 4:26:22.964083 pm'!
+
+!RPackageRenameTest methodsFor: 'tests' stamp: 'PavelKrivanek 3/22/2016 16:26'!
+testUnregisterPackage
+	"Test that we do rename the package as expected."
+	| package class |
+
+	package := RPackageOrganizer default registerPackageNamed: 'Test1'.
+	class := Object
+		subclass: #TestClass
+		instanceVariableNames: ''
+		classVariableNames: ''
+		poolDictionaries: ''
+		category: 'Test1-TAG'.
+	self assert: (package includesClass: class).
+	self assert: (package classTagNamed: #TAG ifAbsent: [ nil ]) notNil.
+	self assert: ((package classTagNamed: #TAG ifAbsent: [ nil ]) includesClass: class).
+	
+	package unregister.
+	
+	self deny: (RPackageOrganizer default includesPackageNamed: #Test1).
+	! !
 
 | results | 
 

@@ -70,6 +70,15 @@ testModulePrimitive
 
 	! !
 
+'From Pharo5.0 of 16 April 2015 [Latest update: #50656] on 22 March 2016 at 4:04:49.325342 pm'!
+
+!DictionaryTest methodsFor: 'requirements' stamp: 'monty 10/12/2015 23:58'!
+otherDictionaryClasses
+	"(DictionaryTest withAllSubclasses collect: [:each | each new classToBeTested]) asArray"
+	^ {SmallDictionary. IdentityDictionary. LiteralDictionary. PluggableDictionary.
+		WeakValueDictionary. SystemDictionary. WeakKeyDictionary. SmallIdentityDictionary.
+		WeakIdentityKeyDictionary. WeakKeyToCollectionDictionary. Dictionary}
+			reject: [:each | each new species == self classToBeTested new species]! !
 
 
 | results | 

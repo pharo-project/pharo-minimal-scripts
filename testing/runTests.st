@@ -1,3 +1,9 @@
+'From Pharo5.0 of 16 April 2015 [Latest update: #50656] on 22 March 2016 at 4:58:50.276726 pm'!
+
+!Integer methodsFor: 'bit manipulation' stamp: 'eem 1/16/2008 13:57'!
+| anInteger
+	^self bitOr: anInteger! !
+
 'From Pharo5.0 of 16 April 2015 [Latest update: #50656] on 22 March 2016 at 4:53:57.803757 pm'!
 
 !SplitJoinTest methodsFor: 'running' stamp: 'PavelKrivanek 3/22/2016 16:53'!

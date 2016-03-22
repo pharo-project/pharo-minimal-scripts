@@ -36,7 +36,7 @@ basicRegisterPackage: aPackage
 		at: aPackage name asSymbol 
 		put: aPackage.
 	"register mc package"
-	MCWorkingCopy forPackage: (MCPackage named: aPackage name).
+	"MCWorkingCopy forPackage: (MCPackage named: aPackage name)."
 	
 	^ aPackage! !
 

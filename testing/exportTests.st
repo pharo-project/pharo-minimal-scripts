@@ -5,6 +5,7 @@ blacklistedClasses := #(
 	OCCompilerTest
 	MCServerRegistry
 	EventManagerTest
+	RPackageMonticelloSynchronisationTest
 ).
 blacklistedMethods := #(
 testPercentEncodingHiragana

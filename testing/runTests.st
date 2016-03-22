@@ -43,16 +43,6 @@ setUp
 	floatCollectionWithSameBeginingAnEnd := {1.5. 5.5. 1.5 copy}.
 	collection5Elements := { 1. 2. 5. 3. 4.}.! !
 
-'From Pharo5.0 of 16 April 2015 [Latest update: #50656] on 22 March 2016 at 1:46:59.820485 pm'!
-
-!OCCompilerNotifyingTest methodsFor: 'initialize-release' stamp: 'PavelKrivanek 3/22/2016 13:46'!
-setUpForErrorsIn: aTextWithErrorsEnclosedInBackQuote
-  "Extract the expectedErrors, the expectedErrorPositions and set up a TextMorph containing the text without errors.
-  each section separated by % in aTextWithErrorsEnclosedInBackQuote will be evaluated separately.
-  The expected error message should lie in aTextWithErrorsEnclosedInBackQuote at the expected position, and enclosed in back quotes."
-  text := aTextWithErrorsEnclosedInBackQuote.
-  morph := MockSourceEditor new contents: self initializeTextWithoutError asString.! !
-
 'From Pharo5.0 of 16 April 2015 [Latest update: #50656] on 22 March 2016 at 1:50:05.945381 pm'!
 
 !OCNewCompilerWithChangesFunctionalTests methodsFor: 'other-tests' stamp: 'PavelKrivanek 3/22/2016 13:49'!

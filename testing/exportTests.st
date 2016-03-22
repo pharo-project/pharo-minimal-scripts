@@ -24,6 +24,7 @@ testMultistringFont
 testInBlockArgumentInstanceVariableShadowing
 testExportAMethodWithLangTag
 testImportAMethodWithLangTag
+testSplitStringOnRegex
 ).
 "HTTPEncodingTest"
 

@@ -25,6 +25,7 @@ testInBlockArgumentInstanceVariableShadowing
 testExportAMethodWithLangTag
 testImportAMethodWithLangTag
 testSplitStringOnRegex
+testFindTokens
 ).
 "HTTPEncodingTest"
 

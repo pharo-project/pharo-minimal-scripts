@@ -26,6 +26,7 @@ testExportAMethodWithLangTag
 testImportAMethodWithLangTag
 testSplitStringOnRegex
 testFindTokens
+testFindTokensEscapedBy
 ).
 "HTTPEncodingTest"
 

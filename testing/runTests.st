@@ -1,3 +1,161 @@
+
+'From Pharo5.0 of 16 April 2015 [Latest update: #50697] on 19 April 2016 at 1:12:21.695763 pm'!
+
+!ReleaseTest class methodsFor: 'accessing' stamp: 'SvenVanCaekenberghe 6/23/2013 20:47'!
+knownProcesses
+	"Return a dynamic list of know processes"
+	
+	"(self actualProcesses difference: self knownProcesses) do: [ :each | each suspend; terminate ]."
+	
+	^ {
+		Processor activeProcess.	
+		WeakArray runningFinalizationProcess.
+		Processor backgroundProcess.
+		SmalltalkImage current lowSpaceWatcherProcess.
+		Delay schedulingProcess } asSet! !
+
+
+
+
+'From Pharo5.0 of 16 April 2015 [Latest update: #50697] on 19 April 2016 at 11:58:31.961093 am'!
+
+!PlatformResolver methodsFor: 'private' stamp: 'EstebanLorenzano 3/10/2015 15:27'!
+directoryFromEnvVariableNamed: aString or: aBlock
+	| envValue |
+	envValue := [ Smalltalk os environment at: aString ifAbsent: [ nil ] ]
+		on: Error
+		do: [ ^ RelativePath new asFileReference  ].
+	^ envValue isEmptyOrNil
+		ifTrue: [ aBlock value ]
+		ifFalse: [ self resolveString: envValue ]! !
+
+
+
+
+'From Pharo5.0 of 16 April 2015 [Latest update: #50697] on 19 April 2016 at 11:47:30.627278 am'!
+
+!CompiledMethod methodsFor: '*rpackage-core' stamp: 'NicolaiHess 2/3/2016 08:57'!
+packageFromOrganizer: anRPackageOrganizer
+	| originSelector |
+	"This method returns the package this method belongs to.  
+	It takes into account classes and traits.  
+	If the method is in no package, returns nil by now"
+	self flag: 'TODO: use anRPackageOrganizer, or better delegate to anRPackageOrganizer'.
+	originSelector := self originMethod selector.
+	^self origin packages 
+		detect: [ :each | 
+			(each includesSelector: originSelector ofClassName: self origin theNonMetaClass originalName) 
+			or: [ each includesSelector: originSelector ofMetaclassName: self origin theNonMetaClass originalName]] 
+		ifNone: [ '_UnpackagedPackage' asPackage ]! !
+
+
+RPackageOrganizer default registerPackageNamed: '_UnpackagedPackage'.
+
+
+((CompiledMethod allInstances select: [:m | m package isNil ]) collect: #methodClass as: Set) logCr.
+!
+
+'From Pharo5.0 of 16 April 2015 [Latest update: #50697] on 19 April 2016 at 11:20:14.180497 am'!
+
+!RPackageIncrementalTest methodsFor: 'setup' stamp: 'StephaneDucasse 6/3/2012 22:46'!
+tearDown
+	
+	| logging |
+	createdPackages  do: [:each | self removePackage: each name].
+	"just remove package from package organizer dictionary"
+	
+	createdPackages  do: [:each |
+		
+		each extendedClasses do: [ :extendedClass|
+			self packageClass organizer
+		 		unregisterExtendingPackage: each forClass: extendedClass.]].
+	"all ***extending*** classes the packages are also unregistered from PackageOrganizer"									
+	(createdClasses reject: [:c| c isObsolete]) do: [:cls| 
+		"(RPackage organizer includesPackageBackPointerForClass: cls) 
+			ifTrue: [cls package unregisterClass: cls.]. 
+		when RPackageOrganizer was not looking at system event we had to do the commented actions"
+		logging := false.
+		cls removeFromSystem: logging.  
+		"not logging so no event are raised"
+		"but this also means that the consistency cannot be ensured by internal system announcer too."
+		].					
+	createdCategories do: [:each | 
+		|mCPackage|
+		SystemOrganization removeCategory: each.
+		 ].
+	super tearDown.! !
+
+
+
+
+
+'From Pharo5.0 of 16 April 2015 [Latest update: #50697] on 19 April 2016 at 11:03:26.642592 am'!
+
+!RBParserTest methodsFor: 'accessing' stamp: 'MarcusDenker 7/30/2015 08:04'!
+exampleClasses
+	^ Array with: RBParser with: RBScanner with: RBProgramNode! !
+
+	
+'From Pharo5.0 of 16 April 2015 [Latest update: #50697] on 19 April 2016 at 10:59:59.980164 am'!
+
+!ArrayTest methodsFor: 'testing' stamp: 'CamilloBruni 8/31/2013 20:23'!
+testComplexIsSelfEvaluating
+	"self run: #testComplexIsSelfEvaluating"
+
+	| complexArray restoredArray |
+	complexArray := {1.
+	true.
+	false.
+	nil.
+	#a.
+	'a'.
+	$a.
+	(Float pi).
+	(Float halfPi).
+	(4 / 5).
+	(Float infinity negated).
+	(1 @ 2).
+	(0 @ 0 extent: 1 @ 1).
+	('hola' -> 0).
+	Object.
+	(Object class)}.
+	complexArray := complexArray copyWith: complexArray.
+	self assert: complexArray isSelfEvaluating.
+	restoredArray := self class evaluate: complexArray printString.
+	self assert: restoredArray = complexArray! !
+
+	
+'From Pharo5.0 of 16 April 2015 [Latest update: #50697] on 19 April 2016 at 10:55:37.519091 am'!
+
+!SelfEvaluatingObjectTest methodsFor: 'tests' stamp: 'StephaneDucasse 10/16/2011 18:16'!
+testObjects
+	"self debug: #testObjects"
+
+	self assert: 10 isSelfEvaluating.
+	self assert: $a isSelfEvaluating.
+	self assert: 3.14157 isSelfEvaluating.
+	self assert: #(1 2 3) isSelfEvaluating.
+	self assert: #abc isSelfEvaluating.
+	self assert: 'abc' isSelfEvaluating.
+
+	self assert: Object isSelfEvaluating.
+	self assert: Object new isSelfEvaluating not.
+	
+	self assert: {Float infinity . Float nan. Float infinity negated} isSelfEvaluating.
+
+	self assert: (Array with: 10) isSelfEvaluating.
+	self assert: (Array with: Object new) isSelfEvaluating not.
+
+	self assert: true isSelfEvaluating.
+	self assert: false isSelfEvaluating.
+
+	self assert: nil isSelfEvaluating.
+
+	self assert: (1 to: 10) isSelfEvaluating.
+	self assert: (1->2) isSelfEvaluating.! !
+
+
+
 'From Pharo5.0 of 16 April 2015 [Latest update: #50656] on 22 March 2016 at 4:58:50.276726 pm'!
 
 !Integer methodsFor: 'bit manipulation' stamp: 'eem 1/16/2008 13:57'!
@@ -181,6 +339,23 @@ testModulePrimitive
 	! !
 
 'From Pharo5.0 of 16 April 2015 [Latest update: #50656] on 22 March 2016 at 4:04:49.325342 pm'!
+'From Pharo5.0 of 16 April 2015 [Latest update: #50697] on 19 April 2016 at 1:28:34.757404 pm'!
+
+!StringTest methodsFor: 'testing' stamp: 'SheridanMahoney 3/8/2016 14:55'!
+testIndexOf
+
+self assert: ('test this string' indexOf: $k) = 0.
+self assert: ('test this string' indexOf: 't') = 0.
+self assert: ('test this string' indexOf: $t) = 1.
+self assert: ('123éàôüöß' indexOf: $ß) = 9.
+self assert: ('123éàôüöß' indexOf: $E) = 0.
+ ! !
+(
+
+
+StringTest>>#testIndexOf) sourceCode logCr.!
+
+
 
 !DictionaryTest methodsFor: 'requirements' stamp: 'monty 10/12/2015 23:58'!
 otherDictionaryClasses

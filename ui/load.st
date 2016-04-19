@@ -1,3 +1,9 @@
+'From Pharo5.0 of 16 April 2015 [Latest update: #50697] on 19 April 2016 at 8:47:59.498836 am'!
+
+!Dictionary methodsFor: 'removing'!
+removeUnreferencedKeys   "Undeclared removeUnreferencedKeys"
+
+"	^ self unreferencedKeys do: [:key | self removeKey: key]."! !
 
 
 'From Pharo3.0 of 18 March 2013 [Latest update: #30438] on 1 October 2013 at 5:18:05 pm'!

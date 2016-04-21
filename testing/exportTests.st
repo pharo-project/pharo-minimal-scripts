@@ -2,7 +2,6 @@
 
 blacklistedClasses := #(
 	ASTTransformExamplePluginActive
-	OCCompilerTest
 	MCServerRegistry
 	EventManagerTest
 	RPackageMCSynchronisationTest
@@ -14,29 +13,33 @@ blacklistedClasses := #(
 	RPackageTraitSynchronisationTest
 	OSEnvironmentTest
 ).
+
 blacklistedMethods := #(
-testPercentEncodingHiragana
-testNext
-testPeek
-testPeekFor
-testReset
-testUpToEnd
-testMultistringFont
-testInBlockArgumentInstanceVariableShadowing
-testExportAMethodWithLangTag
-testImportAMethodWithLangTag
-testSplitStringOnRegex
-testFindTokens
-testFindTokensEscapedBy
-testFindTokensIncludes
+	testInBlockArgumentInstanceVariableShadowing
+	testInBlockTempArgumentShadowing
+	testInBlockTempInstanceVariableShadowing
+	testInBlockTempShadowing
+	testInstanceVariableShadowing
+	testReservedNameAsBlockArgumentShadowing
+	testReservedNameAsMethodArgumentShadowing
+	testSiblingBlocksInstanceVariableShadowing
 
-testClassWithPluginEnabled
+	testExportAMethodWithLangTag
+	testSplitStringOnRegex
+	
+	testEUCJP
 
-testUnescapePercentsWithTextEncoding
-testMcWorkingCopy
-testMcPackage
+	testPercentEncodingHiragana
+	testMultistringFont
+
+	testOpening
+
+	testClassWithPluginEnabled
+
+	testUnescapePercentsWithTextEncoding
+	testMcWorkingCopy
+	testMcPackage
 ).
-"HTTPEncodingTest"
 
 FileStream forceNewFileNamed: 'Tests.st' do: [ :stream |
 	stream binary.

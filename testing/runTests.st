@@ -338,25 +338,6 @@ testModulePrimitive
 
 	! !
 
-'From Pharo5.0 of 16 April 2015 [Latest update: #50656] on 22 March 2016 at 4:04:49.325342 pm'!
-'From Pharo5.0 of 16 April 2015 [Latest update: #50697] on 19 April 2016 at 1:28:34.757404 pm'!
-
-!StringTest methodsFor: 'testing' stamp: 'SheridanMahoney 3/8/2016 14:55'!
-testIndexOf
-
-self assert: ('test this string' indexOf: $k) = 0.
-self assert: ('test this string' indexOf: 't') = 0.
-self assert: ('test this string' indexOf: $t) = 1.
-self assert: ('123éàôüöß' indexOf: $ß) = 9.
-self assert: ('123éàôüöß' indexOf: $E) = 0.
- ! !
-(
-
-
-StringTest>>#testIndexOf) sourceCode logCr.!
-
-
-
 !DictionaryTest methodsFor: 'requirements' stamp: 'monty 10/12/2015 23:58'!
 otherDictionaryClasses
 	"(DictionaryTest withAllSubclasses collect: [:each | each new classToBeTested]) asArray"

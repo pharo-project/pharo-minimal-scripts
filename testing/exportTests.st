@@ -12,6 +12,7 @@ blacklistedClasses := #(
 	RPackageMethodsSynchronisationTest
 	RPackageMonticelloSynchronisationTest
 	RPackageTraitSynchronisationTest
+	OSEnvironmentTest
 ).
 blacklistedMethods := #(
 testPercentEncodingHiragana
@@ -28,6 +29,12 @@ testSplitStringOnRegex
 testFindTokens
 testFindTokensEscapedBy
 testFindTokensIncludes
+
+testClassWithPluginEnabled
+
+testUnescapePercentsWithTextEncoding
+testMcWorkingCopy
+testMcPackage
 ).
 "HTTPEncodingTest"
 

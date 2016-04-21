@@ -32,6 +32,9 @@ testFindTokensIncludes
 "HTTPEncodingTest"
 
 FileStream forceNewFileNamed: 'Tests.st' do: [ :stream |
+	stream binary.
+	UTF8TextConverter writeBOMOn: stream.
+	stream text.
 	writer := MCStWriter on: stream.
 	writer writeInitializers: false.
 	#('RPackage-Tests' 'Collections-Tests' 'Kernel-Tests' 'AST-Tests-Core' 'Announcements-Tests-Core' 'Compression-Tests' 'FileSystem-Tests-Core' 

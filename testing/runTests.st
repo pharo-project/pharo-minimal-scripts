@@ -1,4 +1,4 @@
-
+﻿
 'From Pharo5.0 of 16 April 2015 [Latest update: #50697] on 19 April 2016 at 1:12:21.695763 pm'!
 
 !ReleaseTest class methodsFor: 'accessing' stamp: 'SvenVanCaekenberghe 6/23/2013 20:47'!

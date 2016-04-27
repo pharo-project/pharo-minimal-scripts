@@ -23,6 +23,8 @@ blacklistedMethods := #(
 	testReservedNameAsBlockArgumentShadowing
 	testReservedNameAsMethodArgumentShadowing
 	testSiblingBlocksInstanceVariableShadowing
+	
+	testComplexIsSelfEvaluating
 
 	testExportAMethodWithLangTag
 	testSplitStringOnRegex

@@ -31,6 +31,8 @@ packageNames := #(
  'Metacello-Base'
  'Metacello-PharoCommonPlatform'
  'Metacello-ToolBox' 
+ 
+ 'Zinc-Character-Encoding-Core' 
 ).
  
 mcPackages := #(
@@ -42,7 +44,7 @@ metacelloPackages := #(
 ).
 
 zincPackages := #(
-  'Zinc-HTTP' 'Zinc-Character-Encoding-Core'  'Zinc-FileSystem').
+  'Zinc-HTTP' 'Zinc-FileSystem').
 
 zodiacPackages := #(
   'Zodiac-Core' ).

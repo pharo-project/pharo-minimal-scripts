@@ -31,7 +31,7 @@ packageNames := #(
  'Metacello-MC'
  'Metacello-PharoCommonPlatform'
  'Metacello-Platform'
- 'Metacello-Platform.pharo30'
+ "'Metacello-Platform.pharo30'"
  'Metacello-ToolBox').
 
 zincPackages := #(

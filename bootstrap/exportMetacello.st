@@ -19,7 +19,6 @@ packageNames := #(
  'Network-MIME'
  'Network-Url'
  'Network-Protocols'
- 'Zinc-FileSystem'
  'System-FileRegistry'
  'MonticelloConfigurations'
  'Gofer-Core'
@@ -36,7 +35,8 @@ packageNames := #(
  'Metacello-ToolBox').
 
 zincPackages := #(
-  'Zinc-HTTP').
+  'Zinc-HTTP'
+  'Zinc-FileSystem').
 
 zodiacPackages := #(
   'Zodiac-Core' ).

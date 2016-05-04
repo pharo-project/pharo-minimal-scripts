@@ -67,4 +67,79 @@ packages := #('AST-Core'
     
 RPackageOrganizer default initializeFromPackagesList: packages.!
 
+
+
+
+'From Pharo5.0 of 16 April 2015 [Latest update: #50746] on 3 May 2016 at 10:12:28.734425 am'!
+
+!RPackageOrganizer class methodsFor: 'singleton' stamp: 'StephaneDucasse 6/3/2012 22:39'!
+resetDefault
+
+	"self resetDefault"
+	default  ifNotNil: [
+		"When an Organizer is not used anymore, we should always pay attention that these two actions are corretly done."
+		default unregisterInterestToSystemAnnouncement.
+		"MCWorkingCopy removeDependent: default"].
+	default := self new.
+	self packageClass initialize! !
+
+
+'From Pharo5.0 of 16 April 2015 [Latest update: #50746] on 3 May 2016 at 10:12:49.017766 am'!
+
+!RPackageOrganizer methodsFor: 'private' stamp: 'CamilleTeruel 7/29/2012 18:47'!
+stopNotification
+	"(self instVarNamed: #default) stopNotification"
+	
+	"pay attention that we can break the system using this method"
+	
+	SystemAnnouncer uniqueInstance unsubscribe: self.
+	"MCWorkingCopy removeDependent: self."! !
+	
+
+'From Pharo5.0 of 16 April 2015 [Latest update: #50746] on 3 May 2016 at 5:09:46.782939 pm'!
+
+!RPackageOrganizer methodsFor: 'system integration' stamp: 'BernardoContreras 10/24/2014 17:36'!
+registerInterestToAnnouncer: anAnnouncer	
+	"There should be only one"
+	anAnnouncer unsubscribe: self.
+	
+	anAnnouncer weak
+		when: CategoryAdded send: #systemCategoryAddedActionFrom: to: self;
+		when: CategoryRemoved send: #systemCategoryRemovedActionFrom: to: self;
+		when: CategoryRenamed send: #systemCategoryRenamedActionFrom: to: self;
+		when:  ClassAdded send: #systemClassAddedActionFrom: to: self;
+		when:  ClassRecategorized send: #systemClassRecategorizedActionFrom: to: self;
+		when:  ClassRemoved send: #systemClassRemovedActionFrom: to: self;
+		when:  ClassRenamed send: #systemClassRenamedActionFrom: to: self;
+		when:  ClassReorganized send: #systemClassReorganizedActionFrom: to: self;
+		when:  MethodAdded send: #systemMethodAddedActionFrom: to: self;
+		when:  MethodModified send: #systemMethodModifiedActionFrom: to: self;
+		when:  MethodRecategorized send: #systemMethodRecategorizedActionFrom: to: self;
+		when:  MethodRemoved send: #systemMethodRemovedActionFrom: to: self;
+		when:  ProtocolAdded send: #systemProtocolAddedActionFrom: to: self;
+		when:  ProtocolRemoved send: #systemProtocolRemovedActionFrom: to: self.
+		
+	self flag: #hack. "for decoupling MC"
+"	#MCWorkingCopy asClassIfPresent: [ 
+		anAnnouncer weak
+			when: (Smalltalk globals at: #MCWorkingCopyCreated) 
+				send: #updateAfterNewMCPackageRegistred: 
+				to: self;
+			when: (Smalltalk globals at: #MCWorkingCopyDeleted) 
+				send: #updateAfterNewMCPackageUnregistred: 
+				to: self	]."
+! !
+
+WeakArray restartFinalizationProcess.
+WeakRegistry classPool at: #Default put: nil.
+WeakRegistry default.
+
+SystemAnnouncer restoreAllNotifications.
+
+Smalltalk  specialObjectsArray at: 5 put: nil.
+
+
+
+!
+	
 Smalltalk snapshot: true andQuit: true.

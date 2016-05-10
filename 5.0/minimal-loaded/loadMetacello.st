@@ -104,12 +104,14 @@ Stdio stdout nextPutAll: (Smalltalk classNamed: #MetacelloPlatform) asString; lf
 	
 MCMethodDefinition initializersEnabled: true.
 
-.
+".
 display := (Smalltalk classNamed: #DisplayScreen) new.
 display setExtent: (Smalltalk classNamed: #DisplayScreen) actualScreenSize depth: 2.
 Smalltalk globals at: #Display put: display.
 display beDisplay.
+"
 
+"
 Stdio stdout nextPutAll: '#CurrentCursor'; lf; flush.
 
 Cursor classPool at: #CurrentCursor put: Cursor new.
@@ -119,6 +121,8 @@ Cursor initialize.
 DisplayScreen initialize.
 BitBlt initialize.
 Color initialize.
+"
+
 IdentityTransform initialize.
 InternetConfiguration initialize.
 NetNameResolver initialize.
@@ -128,7 +132,7 @@ RxMatcher initialize.
 RxParser initialize.
 RxsPredicate initialize.
 Clipboard initialize.
-EventSensorConstants initialize.
+"EventSensorConstants initialize."
 TextConstants initialize.
 Text initialize.
 TextStyle initialize.

@@ -40,7 +40,7 @@ basicRegisterPackage: aPackage
 	
 	^ aPackage! !
 
-
+| packages |
 
 packages := #('AST-Core' 
     'Announcements-Core' 'CodeExport' 
@@ -64,7 +64,9 @@ packages := #('AST-Core'
     
     "'System-Object Events'").
     
-    
+
+RPackageOrganizer instVarNamed: #default put: nil.
+RPackageOrganizer resetDefault.
 RPackageOrganizer default initializeFromPackagesList: packages.!
 
 

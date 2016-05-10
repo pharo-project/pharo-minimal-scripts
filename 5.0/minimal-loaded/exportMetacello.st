@@ -2,10 +2,10 @@ packageNames := #(
 " 'Graphics-Display Objects'
  'Graphics-Primitives' 
  'Graphics-Transformations' "
- 'System-Clipboard' 
+" 'System-Clipboard' "
  'System-FileRegistry' 
- 'System-Object Events' 
- 'Text-Core' 
+" 'System-Object Events' "
+" 'Text-Core' "
  'FileSystem-Memory'
  'Regex-Core'
  'Ring-Core-Containers'

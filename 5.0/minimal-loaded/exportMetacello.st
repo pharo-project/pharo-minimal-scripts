@@ -1,7 +1,7 @@
 packageNames := #(
- 'Graphics-Display Objects'
+" 'Graphics-Display Objects'
  'Graphics-Primitives' 
- 'Graphics-Transformations' 
+ 'Graphics-Transformations' "
  'System-Clipboard' 
  'System-FileRegistry' 
  'System-Object Events' 
@@ -12,7 +12,7 @@ packageNames := #(
  'StartupPreferences'
  'ConfigurationCommandLineHandler-Core'
  'PragmaCollector'
- 'System-VMEvents'
+" 'System-VMEvents'"
  'Reflectivity'
  'Network-Kernel'
  'Network-MIME'

@@ -133,9 +133,10 @@ RxParser initialize.
 RxsPredicate initialize.
 Clipboard initialize.
 "EventSensorConstants initialize."
-TextConstants initialize.
+
+"TextConstants initialize.
 Text initialize.
-TextStyle initialize.
+TextStyle initialize."
 
 ZnBase64Encoder initialize.
 ZnByteEncoder initialize.

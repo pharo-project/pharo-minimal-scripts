@@ -2,7 +2,7 @@ FileStream stdout nextPutAll: 'Shrinking...'; lf.!
 
 
 [
-  | keep o bootstrappedPackages
+  | kernelPackages networkPackages goferPackages metacelloPackages tests keep o 
     ordered notResolved foundDeps deps depsList resolveBlock hasResolved 
     delete cyclic notResolvedNames sortedByDeps unloadFirst |
 
@@ -27,7 +27,16 @@ FileStream stdout nextPutAll: 'Shrinking...'; lf.!
     (Smalltalk at: #GTExampleOrganizer) compile: 'methodRemoved: anAnnouncement'.
     (Smalltalk at: #GLMBrick) removeFromSystem.
     
-    unloadFirst := #('QualityAssistantRecording' 'QualityAssistant').   
+
+    kernelPackages := #('AST-Core' 'AST-FFI-Pharo50Compatibility' 'Announcements-Core' 'Announcements-Core' 'Collections-Abstract' 'Collections-Arithmetic' 'Collections-Atomic' 'Collections-Native' 'Collections-Sequenceable' 'Collections-Stack' 'Collections-Streams' 'Collections-Strings' 'Collections-Support' 'Collections-Unordered' 'Collections-Weak' 'Compression' 'Files' 'Kernel' 'Random-Core' 'Multilingual-Encodings' 'Multilingual-Languages' 'Multilingual-TextConversion' 'System-Changes' 'System-BasicCommandLineHandler' 'System-CommandLine' 'System-CommandLineHandler' 'System-Finalization' 'System-Localization' 'System-Platforms' 'System-SessionManager' 'System-Support' 'System-Model' 'System-Sources' 'Traits' 'UIManager' 'Transcript' 'FileSystem-Core' 'FileSystem-Disk' 'CodeImport' 'CodeImportCommandLineHandlers' 'System-Announcements' 'Ring-Core-Kernel' 'CodeExport' 'OpalCompiler-Core' 'Slot' 'NonInteractiveTranscript' 'System-Hashing' 'UserManager-Core' 'Jobs').
+
+    networkPackages := #('Zinc-Resource-Meta-Core' 'Zinc-Character-Encoding-Core' 'Network-Kernel' 
+      'Network-MIME' 'Network-UUID' 'Network-Url'  'Network-Protocols' 'Zinc-HTTP' 'Zinc-FileSystem' 'Zodiac-Core').
+
+    goferPackages := #('System-FileRegistry' 'RPackage-Core' 'RPackage-SystemIntegration' 
+      'Monticello' 'MonticelloConfigurations' 'Ring-Monticello' 'Gofer-Core' 
+      'MonticelloFileTree-Core' 'MonticelloFileTree-FileSystem-Utilities' 'System-FilePackage'
+      'MonticelloRemoteRepositories' 'MonticelloMocks' 'RingChunkImporter').
 
     tests := #('AST-Interpreter-Test' 'AST-Tests-Core' 'Announcements-Tests-Core' 'AsmJit-Tests' 
       'ClassOrganizer-Tests' 'ConfigurationCommandLineHandler-Tests' 'FileSystem-Tests-Core' 
@@ -43,6 +52,12 @@ FileStream stdout nextPutAll: 'Shrinking...'; lf.!
       'Zodiac-Tests' 'FuelTests' 'KernelTests' 'MorphicTests' 'NetworkTests' 'ShoutTests' 'SlotTests' 
       'Tests' 'BalloonTests' 'CollectionsTests' 'CompressionTests' #'Debugger-Tests' 'EmbeddedFreeType-Tests' 'FontInfrastructure-Tests' 'FreeTypeTests' 'Graphics-Fonts-Tests' 'Monticello-Tests' 'NECompletion-Tests' 'Nautilus-Tests' 'Reflectivity-Tests' 'ReleaseTests' #'ScriptLoader-Tests' 'Slot-Tests' 'SmartSuggestions-Tests' 'System-CachingTests' 'System-History-Tests' 'System-Localization-Tests' 'Text-Edition-Tests' 'Tool-FileList-Tests' 'ToolsTest' 'UserManager-Tests' 'Versionner-Tests-Core-Commands' 'Versionner-Tests-Core-DependenciesModel' 'Versionner-Tests-Resources').
 
+    metacelloPackages := #('Metacello-Core' 'Metacello-Base' 'Metacello-MC' 
+      'Metacello-PharoCommonPlatform'  'Metacello-Platform' 'Metacello-Platform.pharo30' 'Metacello-ToolBox').
+      
+    packagesWithConfiguration := #('Athens-Balloon' 'Athens-Cairo' 'Athens-CairoPools' 'Athens-Core' 'Athens-Examples' 'Athens-Morphic' 'Athens-Text' 'ConfigurationOfAthens' 'ConfigurationOfGlamourCore' 'ConfigurationOfGTInspectorCore' 'ConfigurationOfGToolkitCore' 'ConfigurationOfGTPlaygroundCore' 'ConfigurationOfGTSpotter' 'ConfigurationOfOSWindow' 'ConfigurationOfRubric' 'ConfigurationOfShoreLineReporter' 'ConfigurationOfTxText' 'ConfigurationOfVersionner' 'ConfigurationOfZincHTTPComponents' 'Glamour-Announcements' 'Glamour-Browsers' 'Glamour-Core' 'Glamour-Examples' 'Glamour-Helpers' 'Glamour-Morphic-Brick' 'Glamour-Morphic-Brick-Tests' 'Glamour-Morphic-Pager' 'Glamour-Morphic-Renderer' 'Glamour-Morphic-Theme' 'Glamour-Morphic-Widgets' 'Glamour-Presentations' 'Glamour-Rubric-Presentations' 'Glamour-Tests-Core' 'Glamour-Tests-Morphic' 'Glamour-Tests-Resources' 'Glamour-Tests-Rubric' 'GT-Inspector' 'GT-InspectorExtensions-Core' 'GT-Playground' 'GT-Spotter' 'GT-Spotter-EventRecorder' 'GT-SpotterExtensions-Core' 'GT-Tests-Inspector' 'GT-Tests-Playground' 'GT-Tests-Spotter' 'OSWindow-SDL2' 'OSWindow-VM' 'Rubric' 'ShoreLine-Report-Core' 'ShoreLine-Report-Settings' 'ShoreLine-Report-UI' 'TxText-AthensTests' 'TxText-Model' 'TxText-Styler' 'TxTextTests-Model' 'Versionner-Core-Commands' 'Versionner-Core-Model' 'Versionner-Spec-Browser' 'Versionner-Tests-Core-Model' 'Zinc-HTTP' 'Zinc-Character-Encoding-Core' 'Zinc-Character-Encoding-Tests' 'Zinc-Resource-Meta-Core' 'Zinc-Resource-Meta-Tests' 'Zinc-Tests' 'Zinc-Zodiac' 'Zodiac-Core' 'Zodiac-Tests').      
+
+    unloadFirst := #('QualityAssistantRecording' 'QualityAssistant').   
     
     bootstrappedPackages := #('AST-Core' 
     'Announcements-Core' 'CodeExport' 
@@ -62,8 +77,11 @@ FileStream stdout nextPutAll: 'Shrinking...'; lf.!
     
     'AST-FFI-Pharo50Compatibility'
     'System-SessionManager'
-    'PragmaCollector').
+    'PragmaCollector'
+    
+    "'System-Object Events'").
 
+    keep := kernelPackages, networkPackages, goferPackages, metacelloPackages.
     keep := bootstrappedPackages.
 
     " clean "
@@ -189,9 +207,7 @@ FileStream stdout nextPutAll: 'Shrinking...'; lf.!
     EncodedCharSet initialize.
     LanguageEnvironment resetKnownEnvironments.
     
-    RPackageOrganizer instVarNamed: #default put: nil.
-    RPackageOrganizer resetDefault.
-    RPackageOrganizer default initializeFromPackagesList: bootstrappedPackages.
+    "RPackageOrganizer resetDefault."
     
     (Smalltalk at: #Display) becomeForward: nil.
     Smalltalk removeKey: #Display.
@@ -234,4 +250,3 @@ FileStream stdout nextPutAll: 'Shrinking...'; lf.!
       rep close.
       Smalltalk exitFailure ]
 ] fork.
-

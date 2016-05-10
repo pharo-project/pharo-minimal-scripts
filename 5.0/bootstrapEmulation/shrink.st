@@ -62,7 +62,7 @@ FileStream stdout nextPutAll: 'Shrinking...'; lf.!
     
     'AST-FFI-Pharo50Compatibility'
     'System-SessionManager'
-    "'PragmaCollector'").
+    'PragmaCollector').
 
     keep := bootstrappedPackages.
 

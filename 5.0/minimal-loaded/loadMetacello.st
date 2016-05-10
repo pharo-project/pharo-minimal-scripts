@@ -1,16 +1,4 @@
-'From Pharo5.0 of 16 April 2015 [Latest update: #50650] on 18 March 2016 at 1:17:11.920831 pm'!
 
-!RPackageOrganizer methodsFor: 'private registration' stamp: 'EstebanLorenzano 2/21/2014 12:56'!
-basicRegisterPackage: aPackage
-	"A new package is now available and declared in the receiver. Note that it is a low level implementation method since it does not deal with package contained information and does not update the related mapping tables."
-	
-	packages 
-		at: aPackage name asSymbol 
-		put: aPackage.
-	"register mc package"
-	"MCWorkingCopy forPackage: (MCPackage named: aPackage name)."
-	
-	^ aPackage! !
 
 	
 | repository display loader packages |

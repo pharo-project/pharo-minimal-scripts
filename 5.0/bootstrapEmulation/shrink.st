@@ -191,7 +191,7 @@ FileStream stdout nextPutAll: 'Shrinking...'; lf.!
     
     RPackageOrganizer instVarNamed: #default put: nil.
     RPackageOrganizer resetDefault.
-    RPackageOrganizer initializeFromPackagesList: bootstrappedPackages.
+    RPackageOrganizer default initializeFromPackagesList: bootstrappedPackages.
     
     (Smalltalk at: #Display) becomeForward: nil.
     Smalltalk removeKey: #Display.

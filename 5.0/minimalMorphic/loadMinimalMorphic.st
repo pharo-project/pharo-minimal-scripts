@@ -7,6 +7,42 @@ Gofer new
 	
 !
 
+!InputEventFetcher class methodsFor: 'class initialization' stamp: 'PavelKrivanek 5/10/2016 09:40'!
+deinstall
+	"InputEventFetcher deinstall"
+
+	Default
+		ifNotNil: [
+			Default shutDown.
+			Smalltalk removeFromStartUpList: Default class.
+			Smalltalk removeFromShutDownList: Default class.
+			SessionManager default unregisterClassNamed: Default class name.
+			Default := nil].
+	SessionManager default unregisterClassNamed: self name! !
+
+'From Pharo5.0 of 16 April 2015 [Latest update: #50752] on 10 May 2016 at 10:26:48.597611 am'!
+
+!Morph methodsFor: '*Morphic-Base' stamp: 'BenjaminVanRyseghem 6/21/2013 17:53'!
+justDroppedInto: aMorph event: anEvent
+	"This message is sent to a dropped morph after it has been dropped on -- and been accepted by -- a drop-sensitive morph"
+
+	| aWindow |
+	(self formerOwner notNil and: [self formerOwner ~~ aMorph])
+		ifTrue: [self removeHalo].
+	self formerOwner: nil.
+	self formerPosition: nil.
+	(aWindow := aMorph ownerThatIsA: SystemWindow) 
+		ifNotNil: [aWindow isActive 
+			ifFalse: [aWindow activate]].
+
+	"An object launched by certain parts-launcher mechanisms should end up fully visible..."
+	(self hasProperty: #beFullyVisibleAfterDrop) 
+		ifTrue: [aMorph == ActiveWorld 
+			ifTrue: [self goHome].
+			self removeProperty: #beFullyVisibleAfterDrop].
+
+! !
+
 IdentityTransform initialize.
 
 EventSensorConstants initialize.

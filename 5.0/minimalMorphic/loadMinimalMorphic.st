@@ -60,5 +60,4 @@ ExternalDropHandler initialize.
 PasteUpMorph initialize.
 DefaultExternalDropHandler initialize.
 
-Morph new openInWorld.
      

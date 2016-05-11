@@ -10,6 +10,7 @@ flushEvents
 			
 | packages pharoRepository |
 				    
+MCCacheRepository reset.
 
 localRepository := MCDirectoryRepository new
 	directory: './mcPackages' asFileReference;

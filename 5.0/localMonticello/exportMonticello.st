@@ -4,7 +4,8 @@ FileStream forceNewFileNamed: 'Monticello.st' do: [ :stream |
 	writer := MCStWriter on: stream.
 	writer writeInitializers: false.
 
-	version := MCVersion package: (MCPackage named: #Monticello).
+
+	version := MCVersion package: (MCPackage named: 'Monticello').
 	writer writeDefinitions: version snapshot definitions.
 
 	version := MCVersion package: (MCPackage named: 'Ring-Monticello').
@@ -12,13 +13,15 @@ FileStream forceNewFileNamed: 'Monticello.st' do: [ :stream |
 
 	stream nextPutAll: '
 
-MCCacheRepository initialize.
-MCPackageManager initialize.
-MCLazyVersionInfo initialize.
-MCMethodDefinition initialize.
-MCDataStream initialize.
-MCWorkingCopy initialize.
-
-Smalltalk snapshot:true andQuit: true'.
+	MCCacheRepository initialize.
+	MCPackageManager initialize.
+	MCLazyVersionInfo initialize.
+	MCMethodDefinition initialize.
+	MCDataStream initialize.
+	MCWorkingCopy initialize.'.
 ].
 
+	
+    
+  
+  

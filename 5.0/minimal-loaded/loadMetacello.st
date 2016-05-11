@@ -1,6 +1,3 @@
-
-
-	
 | repository display loader packages |
 
 
@@ -39,6 +36,12 @@ RPackageOrganizer default initializeFromPackagesList: packages.
 packages do: [:packageName |
   (MCWorkingCopy forPackage: (MCPackage named: packageName)).
   (MCVersion package: (MCPackage named: packageName))].
+  
+  
+!
+
+
+	
 
 repository := MCDirectoryRepository new
 	directory: './miniPackages' asFileReference;

@@ -25,17 +25,20 @@ localRepository directory files sorted
 	loader addVersion: (localRepository versionFrom: mcVersion).
 	loader load.		
 ].	
-"  
-pharoRepository := MCHttpRepository
-    location: 'http://smalltalkhub.com/mc/Pharo/Pharo50/main'
-    user: ''
-    password: ''.
-      
-versions do: [:versionName |
-  | loader |
-  versionName logCr.
-  loader := MCVersionLoader new.	
-  loader addVersion: (pharoRepository versionFrom: versionName).
-  loader load.].
-  
-"
+
+!
+
+InternetConfiguration initialize.
+NetNameResolver initialize.
+Socket initialize.
+Base64MimeConverter initialize.
+
+ZnBase64Encoder initialize.
+ZnByteEncoder initialize.
+ZnUTF8Encoder initialize.
+ZnLogEvent initialize.
+ZnConstants initialize.
+ZnHeaders initialize.
+ZnNetworkingUtils initialize.
+ZnServer initialize.
+ZnSingleThreadedServer initialize.

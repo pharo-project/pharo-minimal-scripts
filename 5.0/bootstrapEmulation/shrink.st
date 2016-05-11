@@ -8,6 +8,14 @@ FileStream stdout nextPutAll: 'Shrinking...'; lf.!
 
   [ 
     World submorphs do: #delete.
+    
+    100 timesRepeat: [
+      10 milliSecond wait.
+      World doOneCycle.
+      Processor yield. ].
+    
+    3 timesRepeat: [Smalltalk garbageCollect].
+      
     UIManager default terminateUIProcess.
 
     " clean processes"

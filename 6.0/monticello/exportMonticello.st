@@ -39,7 +39,7 @@ zodiacPackages := #(
   'Zodiac-Core' ).
 
 pharoRepository := MCHttpRepository
-    location: 'http://smalltalkhub.com/mc/Pharo/Pharo50/main'
+    location: 'http://smalltalkhub.com/mc/Pharo/Pharo60/main'
     user: ''
     password: ''.
     

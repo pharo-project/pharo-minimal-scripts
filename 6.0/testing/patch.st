@@ -1,19 +1,4 @@
-﻿'From Pharo5.0 of 16 April 2015 [Latest update: #50703] on 21 April 2016 at 4:35:20.621484 pm'!
-
-!ReleaseTest methodsFor: 'testing' stamp: 'ChristopheDemarey 2/10/2016 09:36'!
-testKeyClassesArePresentInStartupList
-	| keyClasses registeredHandlers |
-	keyClasses := #(#Delay #ProcessorScheduler #InputEventFetcher #Stdio #OSPlatform #UUIDGenerator #DiskStore #SmalltalkImage #WeakArray #BasicCommandLineHandler).
-	registeredHandlers := SessionManager default startupList
-		collect: #handledId.
-	
-	keyClasses do:	[ :className |
-		self assert: (registeredHandlers includes: className).
-		self assert: (self hasStartUpOrShutDownMethod: (Smalltalk globals at: className)) ].
-	
-	self assert: (registeredHandlers includes: #UIManagerSessionHandler).! !
-
-	
+﻿
 'From Pharo5.0 of 16 April 2015 [Latest update: #50697] on 19 April 2016 at 1:12:21.695763 pm'!
 
 !ReleaseTest class methodsFor: 'accessing' stamp: 'SvenVanCaekenberghe 6/23/2013 20:47'!

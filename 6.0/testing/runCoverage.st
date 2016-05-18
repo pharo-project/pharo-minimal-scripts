@@ -104,6 +104,6 @@ executed := wrappers select: [:each | each hasRun].
 Stdio stdout nextPutAll: ('Executed: ', executed size asString, ' / ', wrappers size asString, ' (', (executed size*100/wrappers size) asFloat asString, '%)'); cr.
 
 (wrappers select: [:each | each hasRun not ]) do: [:wrapper |
-  Stdio stdout nextPutAll: wrapper asString].
+  Stdio stdout nextPutAll: wrapper name asString].
 
 

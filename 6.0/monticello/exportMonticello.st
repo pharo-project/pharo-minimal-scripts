@@ -26,7 +26,7 @@ mcPackages := #(
  'Network-Kernel'
  'Network-MIME'
  'Network-Url'
- 'Network-Protocols'
+ "'Network-Protocols'"
  'MonticelloRemoteRepositories' ).
 
 zincPackagesInPharoRepository := #(

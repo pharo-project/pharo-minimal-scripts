@@ -45,7 +45,7 @@ ZnSingleThreadedServer initialize.
 
 !
 
-#(getGif:, getJpg:, getPng: getImageOfType:usingParser:fromUrl:) do: [:sel | ZnEasy class removeSelector: sel].
+#(getGif:, getJpeg:, getPng: getImageOfType:usingParser:fromUrl:) do: [:sel | ZnEasy class removeSelector: sel].
 
 ZnImageExampleDelegate removeFromSystem.
 ZnReadEvalPrintDelegate removeFromSystem.

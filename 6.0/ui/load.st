@@ -37,11 +37,6 @@ RubScrolledTextExtra subclass: #RubScrolledTextSideRuler
 ] on:  MCMergeOrLoadWarning do: [:w | w resume: true].	
     
  
-Smalltalk tools register: Workspace as: #browser.
-Smalltalk tools register: Workspace as: #monticelloBrowser.
-
-
-
  !
  
  

@@ -7,13 +7,15 @@ Trait named: #TViewModel
 
 
 !
+| gofer |
+
    gofer:= Gofer it smalltalkhubUser: 'Pharo' project: 'Rubric'.
     gofer package: #Rubric.
     gofer load.	
    
 !   
     
-
+| gofer |
 
 [[ 
 
@@ -25,6 +27,10 @@ Trait named: #TViewModel
    
 
   ((Smalltalk at: #ConfigurationOfUI) project version: #stable) load.
+  
+   gofer:= Gofer it smalltalkhubUser: 'Pharo' project: 'Rubric'.
+    gofer package: #Rubric.
+    gofer load.	  
 	
 ] on:  ProvideAnswerNotification do: [:e | e resume: ''].
 ] on:  MCMergeOrLoadWarning do: [:w | w resume: true].	

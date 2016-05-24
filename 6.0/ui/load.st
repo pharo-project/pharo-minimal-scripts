@@ -10,6 +10,8 @@ Trait named: #TViewModel
    gofer:= Gofer it smalltalkhubUser: 'Pharo' project: 'Rubric'.
     gofer package: #Rubric.
     gofer load.	
+   
+!   
     
 
 

@@ -15,6 +15,21 @@ RubScrolledTextExtra subclass: #RubScrolledTextSideRuler
 	
    
 !   
+
+
+'From Pharo6.0 of 13 May 2016 [Latest update: #60030] on 24 May 2016 at 5:20:47.184466 pm'!
+
+!MetacelloCachingGoferResolvedReference methodsFor: 'querying' stamp: 'dkh 6/8/2012 14:04:22'!
+workingCopy
+	"Answer a working copy or throw an error if not present."
+
+	| pName |
+	cachedVersion == nil ifTrue: [ ^super workingCopy ].
+	pName := cachedVersion package name.
+	^MCWorkingCopy allManagers
+		detect: [ :each | pName asLowercase = each packageName asLowercase]
+		ifNone: [ self error: 'Working copy for ' , self name , ' not found' ]! !
+
     
 | gofer |
 

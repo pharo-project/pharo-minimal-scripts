@@ -4,14 +4,15 @@ Trait named: #TViewModel
 	
 	!
 
-
-
-!
-| gofer |
-
-   gofer:= Gofer it smalltalkhubUser: 'Pharo' project: 'Rubric'.
-    gofer package: #Rubric.
-    gofer load.	
+Morph subclass: #RubScrolledTextExtra
+	instanceVariableNames: ''
+	classVariableNames: ''
+	package: 'Rubric-Editing-Widgets'!
+RubScrolledTextExtra subclass: #RubScrolledTextSideRuler
+	instanceVariableNames: 'side'
+	classVariableNames: ''
+	package: 'Rubric-Editing-Widgets'
+	
    
 !   
     

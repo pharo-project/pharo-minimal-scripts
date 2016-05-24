@@ -6,13 +6,14 @@ Trait named: #TViewModel
 
 
 
-'From Pharo5.0 of 16 April 2015 [Latest update: #50756] on 13 May 2016 at 2:13:30.9058 pm'!
+!
+   gofer:= Gofer it smalltalkhubUser: 'Pharo' project: 'Rubric'.
+    gofer package: #Rubric.
+    gofer load.	
+    
 
 
 [[ 
-
-
-
 
   ZnConnectionTimeout value: 300 during: [
     gofer:= Gofer it smalltalkhubUser: 'Pharo' project: 'SystemConfigurations'.
@@ -21,26 +22,15 @@ Trait named: #TViewModel
   ].
    
 
-  
-
   ((Smalltalk at: #ConfigurationOfUI) project version: #stable) load.
-	
-   gofer:= Gofer it smalltalkhubUser: 'Pharo' project: 'Rubric'.
-    gofer package: #Rubric.
-    gofer load.	
-
- 
 	
 ] on:  ProvideAnswerNotification do: [:e | e resume: ''].
 ] on:  MCMergeOrLoadWarning do: [:w | w resume: true].	
     
  
-    Smalltalk tools register: Workspace as: #browser.
- 
-BalloonEngineConstants initialize.
-BalloonEngine initialize.
+Smalltalk tools register: Workspace as: #browser.
+Smalltalk tools register: Workspace as: #monticelloBrowser.
 
-GradientFillStyle initialize.
 
 
  !
@@ -52,3 +42,8 @@ GradientFillStyle initialize.
 font: aFont
 	"polymorphism with text area"
 	self textFont: aFont! !
+	
+	
+
+
+    

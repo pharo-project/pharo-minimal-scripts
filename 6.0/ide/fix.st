@@ -65,3 +65,5 @@ Morph shortcutsHandler: KMShortcutHandler new.
 MCSaveVersionDialog previousMessages add: String new.
 
 RBProgramNode formatterClass: BIConfigurableFormatter.
+
+FLPlatform reset.

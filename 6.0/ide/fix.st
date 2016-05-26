@@ -67,3 +67,4 @@ MCSaveVersionDialog previousMessages add: String new.
 RBProgramNode formatterClass: BIConfigurableFormatter.
 
 FLPlatform reset.
+Callback setup: true.

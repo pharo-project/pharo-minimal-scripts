@@ -78,7 +78,7 @@ FileStream stdout nextPutAll: 'Shrinking...'; lf.!
     'System-SessionManager'
     'PragmaCollector'
     
-    'Epicea' 'Ombu' 'STON-Core'
+    "'Epicea' 'Ombu' 'STON-Core'"
     
     "'System-Object Events'").
 
@@ -87,6 +87,8 @@ FileStream stdout nextPutAll: 'Shrinking...'; lf.!
     " clean "
     
     MetacelloProjectRegistration resetRegistry.
+    
+    SystemAnnouncer uniquiInstance unregister: EpMonitor.
     
     KMRepository reset.
     KMPragmaKeymapBuilder release.

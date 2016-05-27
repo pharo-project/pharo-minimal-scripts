@@ -54,7 +54,7 @@ FileStream stdout nextPutAll: 'Shrinking...'; lf.!
       'SmartSuggestions-Tests' 'System-CachingTests' 'System-History-Tests' 'System-Localization-Tests' 
       'Text-Edition-Tests' 'Tool-FileList-Tests' 'ToolsTest' 'UserManager-Tests' 'Versionner-Tests-Core-Commands' 
       'Versionner-Tests-Core-DependenciesModel' 'Versionner-Tests-Resources'
-      'Epicea' 'Ombu' 'STON-Core').
+      ).
 
     unloadFirst := #('QualityAssistantRecording' 'QualityAssistant').   
     
@@ -77,6 +77,8 @@ FileStream stdout nextPutAll: 'Shrinking...'; lf.!
     'AST-FFI-Pharo50Compatibility'
     'System-SessionManager'
     'PragmaCollector'
+    
+    'Epicea' 'Ombu' 'STON-Core'
     
     "'System-Object Events'").
 

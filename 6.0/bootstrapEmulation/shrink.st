@@ -88,7 +88,7 @@ FileStream stdout nextPutAll: 'Shrinking...'; lf.!
     
     MetacelloProjectRegistration resetRegistry.
     
-    SystemAnnouncer uniqueInstance unsubscribe: EpMonitor.
+    SystemAnnouncer uniqueInstance unsubscribe: EpMonitor current.
     
     KMRepository reset.
     KMPragmaKeymapBuilder release.

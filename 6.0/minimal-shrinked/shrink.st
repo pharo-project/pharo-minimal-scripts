@@ -50,7 +50,7 @@ FileStream stdout nextPutAll: 'Shrinking...'; lf.!
       'CodeImport' 'CodeImportCommandLineHandlers' 'Regex-Core' 'System-Announcements' 'Ring-Core-Kernel' 'CodeExport'
       'Ring-Core-Containers' 'OpalCompiler-Core' 
       'Slot' 'NonInteractiveTranscript' 'System-Hashing' 'UserManager-Core' 'StartupPreferences' 'ConfigurationCommandLineHandler-Core' 'PragmaCollector' 'Jobs' 'System-VMEvents' 'Reflectivity'
-      'Epicea').
+      'Epicea' 'Ombu' 'STON-Core').
 
     networkPackages := #('Zinc-Resource-Meta-Core' 'Zinc-Character-Encoding-Core' 'Network-Kernel' 
       'Network-MIME' 'Network-UUID' 'Network-Url'  'Network-Protocols' 'Zinc-HTTP' 'Zinc-FileSystem' 'Zodiac-Core').

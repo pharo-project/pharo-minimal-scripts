@@ -41,6 +41,8 @@ blacklistedMethods := #(
 	testUnescapePercentsWithTextEncoding
 	testMcWorkingCopy
 	testMcPackage
+	
+	testDeepStructure
 ).
 
 FileStream forceNewFileNamed: 'Tests.st' do: [ :stream |

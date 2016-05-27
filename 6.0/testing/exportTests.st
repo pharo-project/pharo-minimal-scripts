@@ -51,7 +51,8 @@ FileStream forceNewFileNamed: 'Tests.st' do: [ :stream |
 	writer writeInitializers: false.
 	#('RPackage-Tests' 'Collections-Tests' 'Kernel-Tests' 'AST-Tests-Core' 'Announcements-Tests-Core' 'Compression-Tests' 'FileSystem-Tests-Core' 
 	'FileSystem-Tests-Disk' 'Files-Tests' 'JobsTests'  'Multilingual-Tests' 'NodeNavigation-Test' 'OpalCompiler-Tests'  'Random-Tests' 'ReleaseTests'
-	'Ring-Tests-Kernel'  'Ring-Tests-Containers' 'Tests' 'Zinc-Character-Encoding-Tests'
+	'Ring-Tests-Kernel'  'Ring-Tests-Containers' 'Tests' 'Zinc-Character-Encoding-Tests' 
+	'STON-Tests' 'OmbuTests'
 	'FileSystem-Memory')  do: [ :packageName |
 		version := MCVersion package: (MCPackage named: packageName).
 		definitions := version snapshot definitions.

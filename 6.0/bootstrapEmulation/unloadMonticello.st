@@ -61,8 +61,9 @@ packages := #('AST-Core'
     'AST-FFI-Pharo50Compatibility'
     'System-SessionManager'
     'PragmaCollector'
-    
-    "'System-Object Events'").
+    'Epicea' 'Ombu' 'STON-Core'
+    "'System-Object Events'"
+    ).
     
 
 RPackageOrganizer instVarNamed: #default put: nil.

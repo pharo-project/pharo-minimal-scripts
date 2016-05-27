@@ -20,7 +20,8 @@ bootstrappedPackages := #('AST-Core'
     
     'AST-FFI-Pharo50Compatibility'
     'System-SessionManager'
-    'PragmaCollector').
+    'PragmaCollector'
+    'Epicea' 'Ombu' 'STON-Core').
 
 
 wrappers := OrderedCollection new.

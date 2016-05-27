@@ -78,8 +78,6 @@ FileStream stdout nextPutAll: 'Shrinking...'; lf.!
     'System-SessionManager'
     'PragmaCollector'
     
-    "'Epicea' 'Ombu' 'STON-Core'"
-    
     "'System-Object Events'").
 
     keep := bootstrappedPackages.

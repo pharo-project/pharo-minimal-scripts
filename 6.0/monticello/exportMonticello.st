@@ -19,7 +19,6 @@ bootstrappedPackages := #('AST-Core'
     'AST-FFI-Pharo50Compatibility'
     'System-SessionManager'
     'PragmaCollector'
-    'Epicea' 'Ombu' 'STON-Core'
     "'System-Object Events'").
 
 mcPackages := #(

@@ -13,7 +13,6 @@ packageNames := #(
  'Metacello-Base'
  'Metacello-Core'
  'MonticelloFileTree-Core'
- 'MonticelloMocks'
  'Metacello-MC'
  'Metacello-PharoCommonPlatform'
  'Metacello-Platform'

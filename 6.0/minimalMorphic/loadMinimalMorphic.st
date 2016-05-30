@@ -1,6 +1,7 @@
 Gofer new 
 	smalltalkhubUser: 'Pharo' project: 'Pharo60';
 	package: 'System-VMEvents';
+	package: 'System-Object Events';
 	package: 'Graphics-Canvas';
 	package: 'Morphic-Core';
 	load.

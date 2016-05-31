@@ -18,6 +18,7 @@ packageNames := #(
  'Metacello-Platform'
  'Metacello-ToolBox'
  'MonticelloFileTree-FileSystem-Utilities'
+ 'STON-Core'
 ).
 
 FileStream forceNewFileNamed: 'versions.txt' do: [:s |

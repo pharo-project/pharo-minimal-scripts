@@ -1,4 +1,5 @@
-MCPackageManager allSubInstancesDo: [:o | o  unregister].
+
+  MCPackageManager allSubInstancesDo: [:o | o  unregister].
 SystemAnnouncer uniqueInstance unsubscribe: MCWorkingCopy!
 
 | mcPackage classes |
@@ -143,5 +144,7 @@ Smalltalk  specialObjectsArray at: 5 put: nil.
 
 
 !
-	
-Smalltalk snapshot: true andQuit: true.
+
+[ 
+  Smalltalk saveImageInNewContext. 
+]  fork.

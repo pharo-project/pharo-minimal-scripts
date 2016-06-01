@@ -1,7 +1,7 @@
 	
 'From Pharo5.0 of 16 April 2015 [Latest update: #50752] on 11 May 2016 at 8:59:11.695352 am'!
 
-!Object class methodsFor: '*System-Object Events' stamp: 'rw 2/10/2002 13:09'!
+!Object class methodsFor: 'TODO' stamp: 'rw 2/10/2002 13:09'!
 flushEvents
 	"EventManager removed"
 

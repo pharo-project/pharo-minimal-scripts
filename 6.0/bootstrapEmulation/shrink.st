@@ -7,39 +7,13 @@ saveImageInNewContext
 	
 	Do not use this method for common image saving. This method is designated for saving the image during the shrinking process in headless images. "
 
-	[ self privSaveImageWithCleanupAndTerminate: (WeakValueAssociation key: #process value: Processor activeProcess) ] forkAt: 40.
-	Processor activeProcess suspend.! !
-
-	
+	[ self privSaveImageWithCleanup ] forkAt: 40.
+	Processor terminateActive! !	
 	
 	FileStream stdout nextPutAll: 'Shrinking...'; lf.!
 
-'From Pharo6.0 of 13 May 2016 [Latest update: #60053] on 1 June 2016 at 2:16:42.61372 pm'!
 
-!SmalltalkImage methodsFor: 'private' stamp: 'PavelKrivanek 6/1/2016 14:11'!
-privSaveImageWithCleanupAndTerminate: weakAssociation
 
-	"Do not use this method for common image saving. This method is designated for saving the image during the shrinking process in headless images."
-	
-	weakAssociation value terminate.
-
-	20 timesRepeat: [
-		(Delay forMilliseconds: 50) wait.
-		Processor yield.
-		Smalltalk garbageCollect. ].
- 
-	[
-		self snapshot: true andQuit: true.
-	] ifError: [:e |
-		| rep |
-		rep := FileStream forceNewFileNamed: 'PharoDebug.log'.
-		rep nextPutAll: 'Error:'; cr.
-		rep nextPutAll: e asString; cr.
-  		rep nextPutAll: thisContext stack size asString.
- 	  	thisContext stack copy withIndexDo: [:stck :i |
-			[ rep nextPutAll: i asString; space; nextPutAll: stck asString; cr] ifError: []].
-		rep close. 
-		Smalltalk exitFailure ]! !
 
 		
 [

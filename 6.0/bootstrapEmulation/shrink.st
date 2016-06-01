@@ -1,21 +1,5 @@
-'From Pharo6.0 of 13 May 2016 [Latest update: #60053] on 1 June 2016 at 2:17:40.156071 pm'!
+FileStream stdout nextPutAll: 'Shrinking...'; lf.!
 
-!SmalltalkImage methodsFor: 'saving' stamp: 'PavelKrivanek 6/1/2016 14:13'!
-saveImageInNewContext
-
-	" This method is used for saving the Smalltalk image in a new process so the current process with all stack information may be forgotten.
-	
-	Do not use this method for common image saving. This method is designated for saving the image during the shrinking process in headless images. "
-
-	[ self privSaveImageWithCleanup ] forkAt: 40.
-	Processor terminateActive! !	
-	
-	FileStream stdout nextPutAll: 'Shrinking...'; lf.!
-
-
-
-
-		
 [
   | tests keep o 
     ordered notResolved foundDeps deps depsList resolveBlock hasResolved 

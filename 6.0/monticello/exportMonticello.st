@@ -63,10 +63,10 @@ zincPackagesInPharoRepository do: [ :packageName |
   targetRepository storeVersion: (pharoRepository versionWithInfo: (MCPackage named: packageName) workingCopy ancestry ancestors first)].
 
 zincPackages do: [ :packageName |
-  targetRepository storeVersion: (zincRepository versionWithInfo: (MCPackage named: packageName) workingCopy ancestry ancestors first)].
+  targetRepository storeVersion: (pharoRepository versionWithInfo: (MCPackage named: packageName) workingCopy ancestry ancestors first)].
 
 zodiacPackages do: [ :packageName |
-  targetRepository storeVersion: (zodiacRepository versionWithInfo: (MCPackage named: packageName) workingCopy ancestry ancestors first)].
+  targetRepository storeVersion: (pharoRepository versionWithInfo: (MCPackage named: packageName) workingCopy ancestry ancestors first)].
 
 bootstrappedPackages do: [ :packageName |
   targetRepository storeVersion: (pharoRepository versionWithInfo: (MCPackage named: packageName) workingCopy ancestry ancestors first)].

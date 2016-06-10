@@ -73,7 +73,6 @@ FileStream stdout nextPutAll: 'Shrinking...'; lf.!
     'System-Sources' 'System-Support' 'Traits' 'Transcript' 'UIManager' 
     'Zinc-Character-Encoding-Core' 'Zinc-Resource-Meta-Core' 'NonInteractiveTranscript'
     
-    'AST-FFI-Pharo50Compatibility'
     'System-SessionManager'
     'PragmaCollector'
     

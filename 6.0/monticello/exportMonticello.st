@@ -21,7 +21,10 @@ bootstrappedPackages := #('AST-Core'
     "'System-Object Events'").
 
 mcPackages := #(
- 'Network-Kernel'
+ 'Monticello'
+ 'Ring-Monticello'
+
+'Network-Kernel'
  'Network-MIME'
  'Network-Url'
  'Network-Protocols'

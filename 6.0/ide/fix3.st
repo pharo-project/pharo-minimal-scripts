@@ -25,7 +25,9 @@ packages do: [ :assoc |
   w resume: true].	
 		 ]
 		 ifFalse: [
-	    (MCWorkingCopy forPackage: (MCPackage named: assoc value) modified: false.
+	    (MCWorkingCopy forPackage: (MCPackage named: assoc value)) modified: false.
+	 ].
+
 	 ].
 	 
 	 

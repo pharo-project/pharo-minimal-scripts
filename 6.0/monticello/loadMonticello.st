@@ -16,7 +16,9 @@ localRepository directory files sorted
       mcVersion logCr..
 	loader addVersion: (localRepository versionFrom: mcVersion).
 	loader load.	
-    ] on: MCMergeOrLoadWarning do: [:warning | warning resume: true].
+    ] on: MCMergeOrLoadWarning do: [:warning | 
+      warning messageText logCr.
+      warning resume: true].
 ].	
 
 !

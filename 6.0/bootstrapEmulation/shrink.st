@@ -3,7 +3,7 @@ FileStream stdout nextPutAll: 'Shrinking...'; lf.!
 [
   | tests keep o 
     ordered notResolved foundDeps deps depsList resolveBlock hasResolved 
-    delete cyclic notResolvedNames sortedByDeps unloadFirst array obsoleteBitmap bad |
+    delete cyclic notResolvedNames sortedByDeps unloadFirst array  |
 
   [ 
     World submorphs do: #delete.
@@ -224,20 +224,8 @@ FileStream stdout nextPutAll: 'Shrinking...'; lf.!
 	"remove obsolete bitmap"
 
 	array := Smalltalk specialObjectsArray copy.
-	array at: 5 put: Bitmap.
+	array at: 5 put: nil.
 	Smalltalk specialObjectsArray becomeForward: array.
-	"(SystemNavigation default obsoleteClasses detect: [ :c | c name = #AnObsoleteBitmap ]) becomeForward: nil."
-	obsoleteBitmap := SystemNavigation default obsoleteClasses detect: [ :c | c name = #AnObsoleteBitmap ].
-	(Behavior classPool at: #ClassProperties) removeKey: obsoleteBitmap.
-	((Behavior classPool at: #ObsoleteSubclasses) at: ArrayedCollection put: (WeakArray ofSize: 3)).
-	obsoleteBitmap instVarNamed: #layout put: nil.
-	3 timesRepeat: [ Smalltalk garbageCollect. ].
-	obsoleteBitmap class becomeForward: nil.
-	bad := Set allSubInstances select: [:badSet | badSet isHealthy not ].
-	bad do: #rehash.	
-	bad := Dictionary allSubInstances select: [:dict | dict isHealthy not ].
-	bad do: #rehash.	
-		
  	    
 
     " clean object memory, maybe can be simpler"

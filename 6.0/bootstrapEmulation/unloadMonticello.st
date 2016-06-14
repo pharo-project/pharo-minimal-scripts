@@ -138,9 +138,6 @@ WeakRegistry default.
 
 SystemAnnouncer restoreAllNotifications.
 
-Smalltalk  specialObjectsArray at: 5 put: nil.
-
-
 
 !
 

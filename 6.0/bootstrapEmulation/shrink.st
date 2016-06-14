@@ -226,6 +226,9 @@ FileStream stdout nextPutAll: 'Shrinking...'; lf.!
 	array := Smalltalk specialObjectsArray copy.
 	array at: 5 put: nil.
 	Smalltalk specialObjectsArray becomeForward: array.
+	
+ClassOrganization allInstancesDo: [ :org | org removeEmptyCategories ].	
+SystemOrganization removeEmptyCategories.
  	    
 
     " clean object memory, maybe can be simpler"

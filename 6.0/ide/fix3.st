@@ -24,7 +24,8 @@ packages do: [ :assoc |
   Transcript show: 'MCMergeOrLoadWarning '; show: w asString; cr.
   w resume: true].	
 		 ]
-
+		 ifFalse: [
+	    (MCWorkingCopy forPackage: (MCPackage named: assoc value) modified: false.
 	 ].
 	 
 	 

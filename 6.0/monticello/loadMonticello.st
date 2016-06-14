@@ -10,11 +10,13 @@ localRepository := MCDirectoryRepository new
 localRepository directory files sorted
 	do: [ :each | | mcVersion |
 	
+   [  
       loader := MCVersionLoader new.	
       mcVersion := each basenameWithoutExtension.
       mcVersion logCr..
 	loader addVersion: (localRepository versionFrom: mcVersion).
-	loader load.		
+	loader load.	
+    ] on: MCMergeOrLoadWarning do: [:warning | warning resume: true].
 ].	
 
 !

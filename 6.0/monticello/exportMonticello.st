@@ -21,14 +21,15 @@ bootstrappedPackages := #('AST-Core'
     "'System-Object Events'").
 
 mcPackages := #(
- 'Monticello'
- 'Ring-Monticello'
-
-'Network-Kernel'
+ 'Network-Kernel'
  'Network-MIME'
  'Network-Url'
  'Network-Protocols'
- 'MonticelloRemoteRepositories' ).
+ 'MonticelloRemoteRepositories'
+ 
+ 'Monticello'
+ 'Ring-Monticello'
+ ).
 
 zincPackagesInPharoRepository := #(
   'Zinc-Character-Encoding-Core').

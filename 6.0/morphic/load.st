@@ -29,6 +29,12 @@ isUnifiedKanji: code
   ^ false! !
 
 
+'From Pharo3.0 of 18 March 2013 [Latest update: #30711] on 21 January 2014 at 9:18:56.165666 am'!
+!Character methodsFor: 'accessing' stamp: 'CamilloBruni 8/31/2011 12:22'!
+ characterSet
+   ^ (EncodedCharSet charsetAt: self leadingChar) ifNil: [Unicode]! !  
+  
+  
 | packages newPackages gofer |
 
 MCMethodDefinition initializersEnabled: false.

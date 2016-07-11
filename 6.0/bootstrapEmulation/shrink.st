@@ -1,3 +1,13 @@
+'From Pharo6.0 of 13 May 2016 [Latest update: #60143] on 11 July 2016 at 11:28:54.661847 am'!
+
+!IRBytecodeGenerator methodsFor: 'results' stamp: 'PavelKrivanek 7/11/2016 11:28'!
+addProperties: cm
+	"set the properties of cm according to properties saved"
+	properties ifNotNil: [
+		cm penultimateLiteral: properties.
+		properties  method: cm.
+		properties  pragmas do: [:each | each setMethod: cm] ].! !
+
 'From Pharo6.0 of 13 May 2016 [Latest update: #60143] on 11 July 2016 at 10:59:22.982106 am'!
 
 !SystemAnnouncer class methodsFor: 'initialization' stamp: 'PavelKrivanek 7/11/2016 10:51'!

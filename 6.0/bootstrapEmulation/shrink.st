@@ -1,3 +1,17 @@
+'From Pharo6.0 of 13 May 2016 [Latest update: #60143] on 11 July 2016 at 10:59:22.982106 am'!
+
+!SystemAnnouncer class methodsFor: 'initialization' stamp: 'PavelKrivanek 7/11/2016 10:51'!
+restoreAllNotifications
+	"self restoreAllNotifications"
+	
+	| collector |
+	self reset.
+	collector := PragmaCollector filter: [ :pragma | pragma keyword = #systemEventRegistration ].
+	collector reset.
+	collector do: [ :pragma |
+		pragma methodClass theNonMetaClass perform: pragma methodSelector ]! !
+
+		
 FileStream stdout nextPutAll: 'Shrinking...'; lf.!
 
 [

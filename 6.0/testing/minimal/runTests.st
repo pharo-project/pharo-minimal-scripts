@@ -1,4 +1,3 @@
-﻿
 
 !TestSuite methodsFor: 'running' stamp: 'StephaneDucasse 12/28/2014 12:07'!
 run: aResult
@@ -34,4 +33,4 @@ results errors do: [:error |
   Stdio stdout lf.
 ].
 
-Smalltalk exitSuccess.
+Smalltalk exitSuccess. 

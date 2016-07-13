@@ -1,36 +1,17 @@
+'From Pharo6.0 of 13 May 2016 [Latest update: #60069] on 13 July 2016 at 9:43:54.170076 am'!
 
-!TestSuite methodsFor: 'running' stamp: 'StephaneDucasse 12/28/2014 12:07'!
-run: aResult
-	self setUp.
-	[ self tests
-		do: [ :each | 
-			each logCr.
-			each run: aResult.
-			self announceTest: each.
-			self changed: each ] ]
-		ensure: [ self tearDown ]! !
+!HDTestReport methodsFor: 'running' stamp: 'AndreiChis 10/7/2013 11:59'!
+serializeError: error of: aTestCase
+
+
+! !
 
 
 
-| results | 
+(RPackage organizer packages collect: #name) logCr.
 
-results := TestCase suite run.
-Stdio stdout nextPutAll: (results) asString; lf.
+"HDTestReport runPackages: (RPackage organizer packages collect: #name)."
 
-Stdio stdout nextPutAll: 'FAILURES:'; lf.
-results failures do: [:failure |
-  Stdio stdout nextPutAll: ' - '; nextPutAll: (failure) asString; lf. 
-  [failure debug] on: Exception do: [:exception | Stdio stdout nextPutAll: String tab; nextPutAll: (exception printStringLimitedTo: 180) withSeparatorsCompacted; lf.].
-  ].
-
-Stdio stdout nextPutAll: 'ERRORS:'; lf.
-results errors do: [:error |
-  Stdio stdout nextPutAll: ' - '; nextPutAll: (error) asString; lf. 
-  [error debug] on: Exception do: [:exception | Stdio stdout nextPutAll: String tab; nextPutAll: (exception printStringLimitedTo: 180) asString withSeparatorsCompacted; lf.
-  ((thisContext stack allButFirst: 6) first: 10)do: [:context | 
-    Stdio stdout nextPutAll: String tab; nextPutAll: String tab; nextPutAll: (context printStringLimitedTo: 180) asString withSeparatorsCompacted; lf
-    ]].
-  Stdio stdout lf.
-].
+HDTestReport runClasses: Smalltalk allClasses named: 'Tests'.
 
 Smalltalk exitSuccess. 

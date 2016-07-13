@@ -1,9 +1,8 @@
-Behavior initialize.
-ChangeSet initialize.
-InstructionStream initialize.
-ZnBase64Encoder initialize.
-InflateStream initialize.
-FileHandle initialize.
-ZipFileConstants initialize.
+
+#(#ISOLanguageDefinition #Delay #ZipFileConstants #DangerousClassNotifier #ISO885915TextConverter #EndianDetector #DigitalSignatureAlgorithm #ChangeSet #Float #OSPlatform #Behavior #OCASTTranslator #TTransformationCompatibility #ExternalSemaphoreTable #ProcessSpecificVariable #LiteralVariable #ByteTextConverter #ZipWriteStream #TApplyingOnClassSide #FileHandle #TComposingDescription #GZipConstants #WeakFinalizationList #TComparable #RPackageOrganizer #Slot #TClassDescription #DateAndTime #HashTableSizes #DiskStore #SHA1 #CP1252TextConverter #TBehaviorCategorization #ProcessorScheduler #Categorizer #CCompilationContext #SetElement #Deprecation #ZnMimeType #TraitBehavior #AsyncFile #RPackage #InflateStream #TBehavior #TTranscript #Stdio #FileStream #ASTCache #MacRomanTextConverter #MCCacheRepository #TSortable #CompiledMethod #MCMethodDefinition #TClass #ISO88592TextConverter #UUIDGenerator #FastInflateStream #Locale #Symbol #TChunkVisitor #BISimpleFormatter #ZipConstants #InstructionStream #TemporaryVariable #MD5NonPrimitive #ChronologyConstants #BasicCommandLineHandler #CompilationContext #FileLocator #LanguageEnvironment #Character #SmalltalkImage #EncodedCharSet #ByteString #SmallInteger #String #MCPackageManager #WeakArray #Object #Latin9Environment #MCLazyVersionInfo #MCDataStream #Latin2Environment #Key #ZnBase64Encoder #UIManagerSessionHandler #MultiByteFileStream #Latin1 #MCWorkingCopy #RBScanner #CP1250TextConverter #WeakAnnouncementSubscription #ZnUTF8Encoder #Context #Unicode #TRBProgramNodeVisitor #ZnSimplifiedByteEncoder)
+  do: [:cn |
+    Transcript show: 'initializing class: ', cn; cr.  
+    (Smalltalk at: cn) initialize].
 
 !
+

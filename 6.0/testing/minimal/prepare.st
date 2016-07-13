@@ -5,4 +5,3 @@
     (Smalltalk at: cn) initialize].
 
 !
-

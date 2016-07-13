@@ -16,5 +16,5 @@ classes := (packages flatCollect: [ :each | (RPackageOrganizer default packageNa
 ordered := ClassInitializationSorter sort: classes asSet.
 'initialization.st' asFileReference writeStreamDo: [ :file | 
 	file nextPutAll: ordered asString.
-	file nextPutAll: ' do: do: [:cn | Transcript show: ''initializing class: '', cn; cr. (Smalltalk at: cn) initialize].!!'.
+	file nextPutAll: ' do: [:cn | Transcript show: ''initializing class: '', cn. (Smalltalk at: cn) initialize]. !!'.
 	file cr.].

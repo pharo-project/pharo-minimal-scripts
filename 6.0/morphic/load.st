@@ -46,7 +46,7 @@ MCMethodDefinition initializersEnabled: false.
     gofer load.
   ].
 
-  ((Smalltalk at: #ConfigurationOfMorphic) project version: #stable) load.
+  ((Smalltalk at: #ConfigurationOfMorphic) project version: '6.98') load.
 	
 ] on:  ProvideAnswerNotification do: [:e | e resume: ''].
 ] on:  MCMergeOrLoadWarning do: [:w | w resume: true].	

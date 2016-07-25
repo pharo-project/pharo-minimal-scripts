@@ -1,4 +1,5 @@
 packageNames := #(
+ 'Text-Core'
  'System-FileRegistry' 
  'FileSystem-Memory'
  'Regex-Core'

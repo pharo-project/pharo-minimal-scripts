@@ -38,10 +38,3 @@ ZnNetworkingUtils initialize.
 ZnServer initialize.
 ZnSingleThreadedServer initialize.
 
-!
-
-#(getGif:, getJpeg:, getPng: getImageOfType:usingParser:fromUrl:) do: [:sel | ZnEasy class removeSelector: sel].
-
-"ZnImageExampleDelegate removeFromSystem.
-ZnReadEvalPrintDelegate removeFromSystem.
-ZnTestRunnerDelegate removeFromSystem."

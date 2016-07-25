@@ -14,8 +14,20 @@ RubScrolledTextExtra subclass: #RubScrolledTextSideRuler
 	package: 'Rubric-Editing-Widgets'
 	
    
-!   
+  !
+  
+  
+'From Pharo6.0 of 13 May 2016 [Latest update: #60098] on 21 July 2016 at 12:01:21.160349 pm'!
 
+!Pragma methodsFor: 'accessing-method' stamp: 'PavelKrivanek 7/21/2016 12:00'!
+methodSelector
+	"Answer the selector of the method containing the pragma.
+	 Do not confuse this with the selector of the pragma's message pattern."
+	
+	^method selector! !
+
+	
+	
    
 | gofer |
 
@@ -28,7 +40,7 @@ RubScrolledTextExtra subclass: #RubScrolledTextSideRuler
   ].
    
 
-  ((Smalltalk at: #ConfigurationOfUI) project version: #stable) load.
+  ((Smalltalk at: #ConfigurationOfUI) project version: '6.98') load.
   
  "  gofer:= Gofer it smalltalkhubUser: 'Pharo' project: 'Rubric'.
     gofer package: #Rubric.

@@ -12,7 +12,7 @@ FileStream forceNewFileNamed: 'Monticello.st' do: [ :stream |
 	writer writeDefinitions: version snapshot definitions.
 
 	stream nextPutAll: '
-
+	
 	MCCacheRepository initialize.
 	MCPackageManager initialize.
 	MCLazyVersionInfo initialize.

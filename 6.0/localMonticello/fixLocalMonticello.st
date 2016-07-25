@@ -74,8 +74,9 @@ registerInterestToAnnouncer: anAnnouncer
 				to: self	].! !
 
 			
-SystemAnnouncer restoreAllNotifications.
+RPackageOrganizer default registerInterestToAnnouncer: SystemAnnouncer uniqueInstance.
 
-RPackageOrganizer default packageNames do: [:packageName |
-  (MCWorkingCopy forPackage: (MCPackage named: packageName)).
-  (MCVersion package: (MCPackage named: packageName))].
+(RPackageOrganizer default packageNames) asSortedCollection do: [:packageName |
+  Transcript show: 'snapshot of: '; show: packageName; cr.
+  (MCWorkingCopy forPackage: (MCPackage named: packageName)) snapshot ].
+  

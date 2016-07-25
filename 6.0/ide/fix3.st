@@ -44,7 +44,7 @@ packages do: [ :assoc |
 	needsFix ifTrue: [ 
 		corruptedPackages add: assoc.
 		[ [ 
-		Gofer it directory: 'repo'; version: assoc key;  load.
+		Gofer it smalltalkhubUser:  'Pharo' project:  'Pharo60'; version: assoc key;  load.
 	
 ] on:  ProvideAnswerNotification do: [:e | 
   Transcript show: 'ProvideAnswerNotification '; show: e asString; cr.

@@ -40,7 +40,7 @@ methodSelector
   ].
    
 
-  ((Smalltalk at: #ConfigurationOfUI) project version: 'stable') load.
+  ((Smalltalk at: #ConfigurationOfUI) project version: #stable) load.
   
  "  gofer:= Gofer it smalltalkhubUser: 'Pharo' project: 'Rubric'.
     gofer package: #Rubric.

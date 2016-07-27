@@ -21,6 +21,8 @@ Transcript show: 'Packages with wrong versions:'; cr.
 packageNames do: [ :pn | Transcript show: pn; cr. ].
 Transcript cr.
 
+SystemAnnouncer restoreAllNotifications.
+
 [
 [
 toFix do: [ :versionName |

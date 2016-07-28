@@ -35,7 +35,7 @@ packages := 'versions.txt' asFileReference readStream contentsOfEntireFile lines
 	user: ''
 	password: ''.
 "
-repo := MCFileTreeRepository new directory: 'pharo-core' asFileRefernece.
+repo := MCFileTreeRepository new directory: 'pharo-core' asFileReference.
 	
 packages do: [ :assoc |
 	| needsFix |

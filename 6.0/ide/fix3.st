@@ -30,12 +30,12 @@ corruptedPackages := Set new.
 packages := 'versions.txt' asFileReference readStream contentsOfEntireFile lines collect: [:pn | pn -> (pn copyUpToLast: $-) ].
 
 
-"repo := MCHttpRepository
+repo := MCHttpRepository
 	location: 'http://smalltalkhub.com/mc/Pharo/Pharo60/main'
 	user: ''
 	password: ''.
-"
-repo := MCFileTreeRepository new directory: 'pharo-core' asFileReference.
+
+"repo := MCFileTreeRepository new directory: 'pharo-core' asFileReference."
 	
 packages do: [ :assoc |
 	| needsFix |

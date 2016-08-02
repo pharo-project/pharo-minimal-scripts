@@ -1,7 +1,6 @@
 set -e
 
-VERSION_NUMBER=$(./pharo "$1" printVersion | cut -d# -f2)
-printf -v IMAGE_VERSION "6%04d" $VERSION_NUMBER
+IMAGE_VERSION=$(cut -dv -f2 $1)
 CONFIGURATION_VERSION="6.$VERSION_NUMBER"
 echo -ne $IMAGE_VERSION "\t"
 echo $CONFIGURATION_VERSION

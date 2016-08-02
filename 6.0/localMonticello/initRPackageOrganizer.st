@@ -42,7 +42,7 @@ RPackageOrganizer default basicInitializeFromPackagesList: #(
     'Collections-Arithmetic' 'Collections-Atomic' 'Collections-Native' 
     'Collections-Sequenceable' 'Collections-Stack' 'Collections-Streams'
      'Collections-Support' 'Collections-Unordered' 
-     'Compression' 'FileSystem-Core' 'FileSystem-Disk'
+     'FileSystem-Core' 'FileSystem-Disk'
      'Jobs'   'Multilingual-Encodings' 'Multilingual-Languages'
     'Multilingual-TextConversion' 'Network-UUID' 'OpalCompiler-Core' 'Random-Core' 'RPackage-Core' 
     'Ring-Core-Containers' 'Ring-Core-Kernel' 'RingChunkImporter'

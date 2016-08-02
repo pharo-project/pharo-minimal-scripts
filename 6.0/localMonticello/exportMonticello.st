@@ -6,7 +6,7 @@ bootstrappedPackages := #('AST-Core'
     'Collections-Arithmetic' 'Collections-Atomic' 'Collections-Native' 
     'Collections-Sequenceable' 'Collections-Stack' 'Collections-Streams'
     'Collections-Strings' 'Collections-Support' 'Collections-Unordered' 
-    'Collections-Weak' 'Compression' 'FileSystem-Core' 'FileSystem-Disk'
+    'Collections-Weak'  'FileSystem-Core' 'FileSystem-Disk'
     'Files' 'Jobs' 'Kernel' 'Multilingual-Encodings' 'Multilingual-Languages'
     'Multilingual-TextConversion' 'Network-UUID' 'OpalCompiler-Core' 'Random-Core' 'RPackage-Core' 
     'Ring-Core-Containers' 'Ring-Core-Kernel' 'RingChunkImporter'
@@ -21,6 +21,7 @@ bootstrappedPackages := #('AST-Core'
     "'System-Object Events'").
 
 mcPackages := #(
+ 'Compression'
  'Monticello'
  'Ring-Monticello'
  ).

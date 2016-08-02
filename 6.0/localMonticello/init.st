@@ -1,11 +1,11 @@
-#(#ISOLanguageDefinition #Delay #ZipFileConstants #DangerousClassNotifier #ISO885915TextConverter #EndianDetector
+#(#ISOLanguageDefinition #Delay #DangerousClassNotifier #ISO885915TextConverter #EndianDetector
 #DigitalSignatureAlgorithm #ChangeSet #Float #OSPlatform #Behavior #OCASTTranslator #ExternalSemaphoreTable 
-#ProcessSpecificVariable #LiteralVariable #ByteTextConverter #ZipWriteStream #FileHandle #GZipConstants 
+#ProcessSpecificVariable #LiteralVariable #ByteTextConverter #FileHandle 
 #WeakFinalizationList #RPackageOrganizer #Slot #DateAndTime #HashTableSizes #DiskStore #SHA1 #CP1252TextConverter
 #ProcessorScheduler #Categorizer #CCompilationContext #SetElement #Deprecation #ZnMimeType #TraitBehavior 
-#AsyncFile #RPackage #InflateStream #Stdio #FileStream #ASTCache #MacRomanTextConverter 
-#CompiledMethod  #ISO88592TextConverter #UUIDGenerator #FastInflateStream #Locale #Symbol
-#BISimpleFormatter #ZipConstants #InstructionStream #TemporaryVariable #MD5NonPrimitive #ChronologyConstants 
+#AsyncFile #RPackage #Stdio #FileStream #ASTCache #MacRomanTextConverter 
+#CompiledMethod  #ISO88592TextConverter #UUIDGenerator #Locale #Symbol
+#BISimpleFormatter #InstructionStream #TemporaryVariable #MD5NonPrimitive #ChronologyConstants 
 #BasicCommandLineHandler #CompilationContext #FileLocator #LanguageEnvironment #Character #SmalltalkImage 
 #EncodedCharSet #ByteString #SmallInteger #String  #WeakArray #Object #Latin9Environment
  #Latin2Environment #Key #ZnBase64Encoder #UIManagerSessionHandler #MultiByteFileStream 

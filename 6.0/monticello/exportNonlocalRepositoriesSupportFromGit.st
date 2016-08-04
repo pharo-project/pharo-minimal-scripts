@@ -25,8 +25,8 @@ targetRepository := MCDirectoryRepository new
 	yourself.	
 	
 mcPackages do: [ :packageName |
-  targetRepository storeVersion: (pharoRepository versionWithInfo: (MCPackage named: packageName) workingCopy ancestry ancestors first)].
-	
+  packageName logCr.
+  targetRepository storeVersion: (pharoRepository loadVersionFromFileNamed: packageName, '.package')].	
 	
 	
     

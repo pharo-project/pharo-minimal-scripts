@@ -31,4 +31,7 @@ mv "$INPUT_IMAGE_NAME.changes" "$IMAGE_NAME.changes"
 
 zip -rj "$IMAGE_NAME.zip" $IMAGE_NAME.image $IMAGE_NAME.changes
 
+./pharo "$IMAGE_NAME.image" --no-default-preferences ./pharo-minimal-scripts/6.0/common/info.st
+
+
 

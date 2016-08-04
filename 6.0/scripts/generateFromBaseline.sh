@@ -4,8 +4,6 @@ set -e
 
 wget -O - http://get.pharo.org/vm60 | bash
 
-git clone https://github.com/pharo-project/pharo-minimal-scripts.git
-
 unzip -o "./pharo-minimal-scripts/6.0/fonts/BitmapDejaVuSans.fuel.zip"
 
 mkdir icon-packs

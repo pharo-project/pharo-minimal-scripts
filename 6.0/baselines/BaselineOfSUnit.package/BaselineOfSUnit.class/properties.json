@@ -1,0 +1,14 @@
+{
+	"category" : "BaselineOfSUnit",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "BaselineOfSUnit",
+	"pools" : [
+		 ],
+	"super" : "BaselineOf",
+	"type" : "normal" }

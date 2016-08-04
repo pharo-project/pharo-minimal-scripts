@@ -1,0 +1,14 @@
+{
+	"category" : "BaselineOfDisplay",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"initializersEnabled" ],
+	"name" : "BaselineOfDisplay",
+	"pools" : [
+		 ],
+	"super" : "BaselineOf",
+	"type" : "normal" }

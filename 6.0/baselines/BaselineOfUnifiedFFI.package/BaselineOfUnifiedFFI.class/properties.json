@@ -1,0 +1,14 @@
+{
+	"category" : "BaselineOfUnifiedFFI",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "BaselineOfUnifiedFFI",
+	"pools" : [
+		 ],
+	"super" : "BaselineOf",
+	"type" : "normal" }

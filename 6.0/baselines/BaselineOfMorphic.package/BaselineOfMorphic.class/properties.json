@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "BaselineOf",
+	"category" : "BaselineOfMorphic",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"initializersEnabled"
+	],
+	"name" : "BaselineOfMorphic",
+	"type" : "normal"
+}

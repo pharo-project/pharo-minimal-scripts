@@ -1,7 +1,7 @@
 actions
 postload: loader package: packageSpec
 
-| dict dejavu array |
+| dejavu array |
 
 'Starting postload action' logCr.
 
@@ -42,26 +42,19 @@ FileStream stdout nextPutAll: Smalltalk ui asString; lf.
 SparseLargeTable recompile.
 'recompiling finished' logCr.
 
+" Font exported with:
+FLSerializer serialize: (TextStyle named: 'Bitmap DejaVu Sans') toFileNamed: 'morphicData.fuel'."
 
-dict := FLMaterializer materializeFromFileNamed: 'morphicData.fuel'.
+dejavu := FLMaterializer materializeFromFileNamed: 'BitmapDejaVuSans.fuel'.
 
-'dict loaded...' logCr.
-
-dejavu := dict at: #DejaVu. 
-
-TextConstants TextSharedInformation at: #DefaultTextStyle put: dejavu.
+TextConstants TextSharedInformation at: #'DefaultTextStyle' put: dejavu.
 TextConstants TextSharedInformation at: #'Bitmap DejaVu Sans' put: dejavu.
-TextConstants TextSharedInformation at: #DefaultMultiStyle put: dejavu.
-TextConstants TextSharedInformation at: #DefaultFixedTextStyle put: dejavu.
+TextConstants TextSharedInformation at: #'DefaultMultiStyle' put: dejavu.
+TextConstants TextSharedInformation at: #'DefaultFixedTextStyle' put: dejavu.
 
 #(TextStyle) do: [:each | (Smalltalk globals at: each) initialize. ].
 
-'loading tables...' logCr.
-
-Unicode classPool at: #DecimalProperty put: (dict at: #DecimalProperty).
-Unicode classPool at: #GeneralCategory put: (dict at: #GeneralCategory).
-
-FileStream stdout nextPutAll: 'finished' asString; lf.
+FileStream stdout nextPutAll: 'bitmap fonts loaded' asString; lf.
 
 #(ProgressBarMorph BalloonBezierSimulation BalloonEngineConstants BalloonEngine 
 CornerRounder  DigitalSignatureAlgorithm DummySoundSystem 
@@ -76,8 +69,6 @@ SystemProgressMorph SystemWindow TestCase TextContainer TextDiffBuilder
 ThemeIcons ThumbnailMorph TransferMorph UITheme ZnByteEncoder
 ZnConstants ZnMimeType ZnNetworkingUtils ZnServer ZnSingleThreadedServer
 ) do: [:each | (Smalltalk globals at: each) initialize. ].
-
-
 
 BalloonMorph setBalloonColorTo: Color yellow.
 

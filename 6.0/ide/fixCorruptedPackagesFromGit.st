@@ -1,4 +1,4 @@
-test
+
 	| repo wcs blacklist corrupted |
 	repo := MCFileTreeRepository new
 		directory: './pharo-core/src' asFileReference;

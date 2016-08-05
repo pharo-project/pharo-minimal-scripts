@@ -34,6 +34,8 @@ baseline: spec
 		spec package: 'Reflectivity-Tools'.
 		spec package: 'Reflectivity-Examples'.
 
+		spec package: 'Rubric-Styling'.
+
 		spec package: 'FuelTools-Debugger'.
 		
 		spec package: 'Deprecated60'.

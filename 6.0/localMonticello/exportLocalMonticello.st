@@ -4,7 +4,6 @@ FileStream forceNewFileNamed: 'Monticello.st' do: [ :stream |
 	writer := MCStWriter on: stream.
 	writer writeInitializers: false.
 
-
 	version := MCVersion package: (MCPackage named: 'Compression').
 	writer writeDefinitions: version snapshot definitions.
 
@@ -14,6 +13,9 @@ FileStream forceNewFileNamed: 'Monticello.st' do: [ :stream |
 	version := MCVersion package: (MCPackage named: 'Ring-Monticello').
 	writer writeDefinitions: version snapshot definitions.
 
+ 	version := MCVersion package: (MCPackage named: 'Monticello-OldDataStreamCompatibility').
+	writer writeDefinitions: version snapshot definitions.
+    
 	stream nextPutAll: '
 	
 	ZipConstants initialize.

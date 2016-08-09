@@ -36,3 +36,5 @@ MetacelloPharoPlatform initialize.
 MetacelloPharo30Platform initialize.
 
 STONWriter initialize.
+
+SystemAnnouncer restoreAllNotifications.

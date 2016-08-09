@@ -27,14 +27,14 @@ targetRepository := MCDirectoryRepository new
 	directory: './kernelPackages' asFileReference;
 	yourself.
 	
-targetMCRepository := MCDirectoryRepository new
-	directory: './mcPackages' asFileReference;
-	yourself.	
-
 bootstrappedPackages do: [ :packageName |
   packageName logCr.
   targetRepository storeVersion: (pharoRepository loadVersionFromFileNamed: packageName, '.package')].	
 
+targetMCRepository := MCDirectoryRepository new
+	directory: './mcPackages' asFileReference;
+	yourself.	  
+  
 mcPackages do: [ :packageName |
   packageName logCr.
   targetMCRepository storeVersion: (pharoRepository loadVersionFromFileNamed: packageName, '.package')].

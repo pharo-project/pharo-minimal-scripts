@@ -54,3 +54,5 @@ RPackageOrganizer default basicInitializeFromPackagesList: #(
     'System-SessionManager'
     'PharoBootstrap-Initialization'
 ).
+
+RPackageOrganizer registerInterestToSystemAnnouncement.

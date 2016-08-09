@@ -17,7 +17,6 @@ mcPackages := #(
  'Compression'
  'Monticello'
  'Ring-Monticello'
- 'Monticello-OldDataStreamCompatibility'
  ).
 
 pharoRepository := MCFileTreeRepository new

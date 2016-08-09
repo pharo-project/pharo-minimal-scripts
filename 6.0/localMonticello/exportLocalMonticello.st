@@ -12,9 +12,6 @@ FileStream forceNewFileNamed: 'Monticello.st' do: [ :stream |
 
 	version := MCVersion package: (MCPackage named: 'Ring-Monticello').
 	writer writeDefinitions: version snapshot definitions.
-
- 	version := MCVersion package: (MCPackage named: 'Monticello-OldDataStreamCompatibility').
-	writer writeDefinitions: version snapshot definitions.
     
 	stream nextPutAll: '
 	

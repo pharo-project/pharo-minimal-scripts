@@ -11,7 +11,11 @@ cd icon-packs
 wget http://github.com/pharo-project/pharo-icon-packs/archive/idea11.zip
 cd ..
 
-git clone --branch v$(cut -f1 ../version.txt) --depth 1 https://github.com/guillep/pharo-core.git
+#git clone --branch v$(cut -f1 ../version.txt) --depth 1 https://github.com/guillep/pharo-core.git
+git clone https://github.com/guillep/pharo-core.git
+cd pharo-core
+git checkout "tags/v$(cut -f1 ../version.txt)"
+cd ..
 
 cp -R ./pharo-minimal-scripts/6.0/baselines/* ./pharo-core/src/
 

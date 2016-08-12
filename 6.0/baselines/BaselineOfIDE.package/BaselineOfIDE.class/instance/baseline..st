@@ -17,12 +17,6 @@ baseline: spec
 		spec package: 'Refactoring-Critics'.
 		spec package: 'NautilusRefactoring'.
 
-		"spec project: 'Epicea' with: [
-				spec
-					className: #ConfigurationOfEpicea;
-					versionString: #'stable';
-					repository: 'http://smalltalkhub.com/mc/MartinDias/Epicea/main/' ].
-		"
 		spec package: 'Ombu'.
 		spec package: 'OmbuTests'.
 		spec package: 'Epicea'.

@@ -1,9 +1,8 @@
 {
+	"class" : {
+		 },
 	"instance" : {
-		"postload:package:" : "PavelKrivanek 8/4/2016 13:51",
-		"preload:package:" : "PavelKrivanek 8/4/2016 13:29",
-		"baseline:" : "PavelKrivanek 8/9/2016 10:01",
-		"additionalInitialization" : "PavelKrivanek 8/4/2016 11:48"
-	},
-	"class" : { }
-}
+		"additionalInitialization" : "PavelKrivanek 8/9/2016 10:06:55",
+		"baseline:" : "PavelKrivanek 8/12/2016 17:14",
+		"postload:package:" : "PavelKrivanek 8/9/2016 10:06:55",
+		"preload:package:" : "PavelKrivanek 8/9/2016 10:06:55" } }

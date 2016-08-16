@@ -1,6 +1,7 @@
 'From Pharo 6.0 of 13 May 2016 [Latest update: #60182] on 16 August 2016 at 3:15:10.542222 pm'!
 
 !HDTestReport methodsFor: 'private' stamp: 'CamilloBruni 11/4/2013 08:27'!
+stackTraceString: err of: aTestCase
 	^ String streamContents: [ :str | 
 		| context |
 		context := err signalerContext.

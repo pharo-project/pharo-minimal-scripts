@@ -21,6 +21,13 @@ blacklistedClasses := #(
 	NNavDirectionPreviousBrother
 	NNavDirectionSibling
 	NNavNavigation
+	PluggableTextMorph
+	Workspace
+	NautilusUI
+	SmalltalkEditor
+	MorphicTextAdapter
+	TextModel
+	
 	
 ).
 
@@ -87,9 +94,9 @@ FileStream forceNewFileNamed: 'Tests.st' do: [ :stream |
 	stream text.
 	writer := MCStWriter on: stream.
 	writer writeInitializers: false.
-	#('RPackage-Tests' 'Collections-Tests' 'Kernel-Tests' 'AST-Tests-Core' 'Announcements-Tests-Core' 'Compression-Tests' 'FileSystem-Tests-Core' 
+	#('RPackage-Tests' 'Collections-Tests' 'Kernel-Tests' 'AST-Tests-Core' 'Announcements-Tests-Core'  'FileSystem-Tests-Core' 
 	'FileSystem-Tests-Disk' 'Files-Tests' 'JobsTests'  'Multilingual-Tests' 'NodeNavigation' 'OpalCompiler-Tests'  'Random-Tests' 'ReleaseTests'
-	'Ring-Tests-Kernel'  'Ring-Tests-Containers' 'Tests' 'Zinc-Character-Encoding-Tests' 
+	'Ring-Tests-Kernel'  'Ring-Tests-Containers' 'Zinc-Character-Encoding-Tests' 'Tests' 
 	
 	'FileSystem-Memory')  do: [ :packageName |
 		version := (repo loadVersionFromFileNamed: packageName, '.package').

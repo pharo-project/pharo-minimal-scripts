@@ -1,5 +1,7 @@
 | wrappers executed classes bootstrappedPackages blacklist results orig |
 
+#Here1 logCr.
+
 RBProgramNode formatterClass: BIConfigurableFormatter.
 
 bootstrappedPackages := #(#NonInteractiveTranscript #'System-SessionManager' #'Collections-Sequenceable' #Slot 
@@ -12,7 +14,7 @@ bootstrappedPackages := #(#NonInteractiveTranscript #'System-SessionManager' #'C
 #'Network-UUID' #'Multilingual-Languages' #'FileSystem-Core' #'Announcements-Core' 
 #RingChunkImporter #'Collections-Strings' #CodeImportCommandLineHandlers #'Multilingual-TextConversion' 
 #'Collections-Abstract' #'System-Changes' #'System-Finalization' #'System-Platforms' #'OpalCompiler-Core'
-#'Zinc-Character-Encoding-Core' #'Collections-Weak' #'RPackage-Core).
+#'Zinc-Character-Encoding-Core' #'Collections-Weak' #'RPackage-Core').
 
 
 wrappers := OrderedCollection new.
@@ -27,12 +29,12 @@ blacklist := {
   Association>>#value.
   Behavior>>#methodDict.
   CompiledMethod>>#penultimateLiteral.
-  CompiledMethod>>#literalAt:.
+  CompiledCode>>#literalAt:.
   CompiledMethod>>#classBinding.
   CompiledMethod>>#selector.
-  CompiledMethod>>#header.
-  CompiledMethod>>#objectAt:.
-  CompiledMethod>>#numLiterals.
+  CompiledCode>>#header.
+  CompiledCode>>#objectAt:.
+  CompiledCode>>#numLiterals.
   HashedCollection>>#findElementOrNil:.
   MethodDictionary>>#at:put:.
   MethodDictionary>>#scanFor:.
@@ -43,8 +45,8 @@ blacklist := {
   ProtoObject>>#isNil.
   ProtoObject>>#basicIdentityHash.
   Symbol>>#flushCache. 
- 
-  "called during installation"
+  
+   "called during installation"
   AdditionalMethodState>>#selector.
   AdditionalMethodState>>#isMethodProperties.
   CompiledMethod>>#flushCache.
@@ -54,7 +56,13 @@ blacklist := {
   OrderedCollection>>#do:.
   ProtoObject>>#withArgs:executeMethod:.
   TraitBehavior>>#methodDict.
-  
+ 
+  SmallInteger>>#+.
+  SmallInteger>>#'\\'.
+  SmallInteger>>#'>='.
+  ArrayedCollection>>#size.
+ 
+ 
 } asOrderedCollection.
 
 
@@ -65,9 +73,12 @@ classes asSet do: [:c |
         each isAbstract ifFalse: [
 	  wrappers add: (TestCoverage on: each) ]]]].
 
+#Here2 logCr.
 
+wrappers withIndexDo: [ :each :index | 
+  each install ].
 
-wrappers do: [ :each | each install ].
+#Here3 logCr.
    
 results := TestCase suite run.
 
@@ -83,12 +94,17 @@ results failures do: [:failure |
 
 Stdio stdout nextPutAll: 'ERRORS:'; lf.
 results errors do: [:error |
+
   Stdio stdout nextPutAll: ' - '; nextPutAll: (error) asString; lf. 
-  [error debug] on: Exception do: [:exception | Stdio stdout nextPutAll: String tab; nextPutAll: (exception printStringLimitedTo: 180) asString withSeparatorsCompacted; lf.
+  [error debug] on: Exception do: [:exception | 
+    Stdio stdout nextPutAll: String tab; nextPutAll: (exception printStringLimitedTo: 180) asString withSeparatorsCompacted; lf.
   ((thisContext stack allButFirst: 6) first: 10)do: [:context | 
+  [
     Stdio stdout nextPutAll: String tab; nextPutAll: String tab; nextPutAll: (context printStringLimitedTo: 180) asString withSeparatorsCompacted; lf
+     ] ifError: [ Stdio stdout nextPutAll: 'PRINTING ERROR'; lf]
     ]].
   Stdio stdout lf.
+ 
 ].
 
 executed := wrappers select: [:each | each hasRun].

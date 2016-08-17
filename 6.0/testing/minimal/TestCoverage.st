@@ -1,5 +1,3 @@
-
-
 'From Pharo5.0 of 16 April 2015 [Latest update: #50723] on 27 April 2016 at 4:27:14.662062 pm'!
 ProtoObject subclass: #TestCoverage
 	instanceVariableNames: 'hasRun reference method'

@@ -12,23 +12,7 @@ blacklistedClasses := #(
 	RPackageMonticelloSynchronisationTest
 	RPackageTraitSynchronisationTest
 	OSEnvironmentTest
-	
-	NNavDirection
-	NNavDirectionChild
-	NNavDirectionFirstChild
-	NNavDirectionParent
-	NNavDirectionPreviousSelection
-	NNavDirectionPreviousBrother
-	NNavDirectionSibling
-	NNavNavigation
-	PluggableTextMorph
-	Workspace
-	NautilusUI
-	SmalltalkEditor
-	MorphicTextAdapter
-	TextModel
-	
-	
+
 ).
 
 blacklistedMethods := #(
@@ -95,7 +79,7 @@ FileStream forceNewFileNamed: 'Tests.st' do: [ :stream |
 	writer := MCStWriter on: stream.
 	writer writeInitializers: false.
 	#('RPackage-Tests' 'Collections-Tests' 'Kernel-Tests' 'AST-Tests-Core' 'Announcements-Tests-Core'  'FileSystem-Tests-Core' 
-	'FileSystem-Tests-Disk' 'Files-Tests' 'JobsTests'  'Multilingual-Tests' 'NodeNavigation' 'OpalCompiler-Tests'  'Random-Tests' 'ReleaseTests'
+	'FileSystem-Tests-Disk' 'Files-Tests' 'JobsTests'  'Multilingual-Tests' 'OpalCompiler-Tests'  'Random-Tests' 'ReleaseTests'
 	'Ring-Tests-Kernel'  'Ring-Tests-Containers' 'Zinc-Character-Encoding-Tests' 'Tests' 
 	
 	'FileSystem-Memory')  do: [ :packageName |

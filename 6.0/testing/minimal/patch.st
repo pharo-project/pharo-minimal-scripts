@@ -20,4 +20,13 @@ basicUnregisterPackage: aPackage
 		ifAbsent: [ self reportExtraRemovalOf: aPackage ].
 	"unregister also mc package"
 	"aPackage mcPackage 
-		ifNotNil: [ :mcPackage | mcPackage workingCopy unregister ]."! !	
+		ifNotNil: [ :mcPackage | mcPackage workingCopy unregister ]."! !
+		
+		
+'From Pharo 6.0 of 13 May 2016 [Latest update: #60184] on 17 August 2016 at 9:44:59.384819 am'!
+
+'From Pharo 6.0 of 13 May 2016 [Latest update: #60184] on 17 August 2016 at 9:45:58.02817 am'!
+
+!ClassTestCase methodsFor: 'tests' stamp: 'CamilloBruni 5/1/2013 18:27'!
+testClassComment
+	! !

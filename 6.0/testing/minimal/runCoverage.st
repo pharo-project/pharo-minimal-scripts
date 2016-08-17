@@ -2,24 +2,17 @@
 
 RBProgramNode formatterClass: BIConfigurableFormatter.
 
-bootstrappedPackages := #('AST-Core' 
-    'Announcements-Core' 'CodeExport' 
-    'CodeImport' 'CodeImportCommandLineHandlers' 'Collections-Abstract' 
-    'Collections-Arithmetic' 'Collections-Atomic' 'Collections-Native' 
-    'Collections-Sequenceable' 'Collections-Stack' 'Collections-Streams'
-    'Collections-Strings' 'Collections-Support' 'Collections-Unordered' 
-    'Collections-Weak' 'Compression' 'FileSystem-Core' 'FileSystem-Disk'
-    'Files' 'Jobs' 'Kernel' 'Monticello' 'Multilingual-Encodings' 'Multilingual-Languages'
-    'Multilingual-TextConversion' 'Network-UUID' 'OpalCompiler-Core' 'Random-Core' 'RPackage-Core' 
-    'Ring-Core-Containers' 'Ring-Core-Kernel' 'Ring-Monticello' 'RingChunkImporter'
-    'Slot' 'System-Announcements' 'System-BasicCommandLineHandler' 'System-Changes' 
-    'System-CommandLine' 'System-CommandLineHandler' 'System-Finalization'
-    'System-Hashing' 'System-Localization' 'System-Model' 'System-Platforms' 
-    'System-Sources' 'System-Support' 'Traits' 'Transcript' 'UIManager' 
-    'Zinc-Character-Encoding-Core' 'Zinc-Resource-Meta-Core' 'NonInteractiveTranscript'
-    
-    'System-SessionManager'
-    'PragmaCollector').
+bootstrappedPackages := #(#NonInteractiveTranscript #'System-SessionManager' #'Collections-Sequenceable' #Slot 
+#'System-CommandLineHandler' #'Collections-Native' #Kernel #'Ring-Core-Containers' #'FileSystem-Disk' #'Random-Core'
+#UIManager #'Collections-Unordered' #Jobs #'System-BasicCommandLineHandler' #'Collections-Support' #'System-Hashing' 
+#'System-Model' #Traits #'PharoBootstrap-Initialization' #'Multilingual-Encodings' 
+#'System-CommandLine' #'Collections-Streams' #'System-Announcements' #'System-Support' #Files #Transcript 
+#'System-Localization' #'Zinc-Resource-Meta-Core' #'AST-Core' #CodeImport #CodeExport #'System-Sources' 
+#'Collections-Stack' #'Collections-Atomic' #'Collections-Arithmetic' #'Ring-Core-Kernel' 
+#'Network-UUID' #'Multilingual-Languages' #'FileSystem-Core' #'Announcements-Core' 
+#RingChunkImporter #'Collections-Strings' #CodeImportCommandLineHandlers #'Multilingual-TextConversion' 
+#'Collections-Abstract' #'System-Changes' #'System-Finalization' #'System-Platforms' #'OpalCompiler-Core'
+#'Zinc-Character-Encoding-Core' #'Collections-Weak' #'RPackage-Core).
 
 
 wrappers := OrderedCollection new.

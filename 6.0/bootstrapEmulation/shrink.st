@@ -104,6 +104,7 @@ FileStream stdout nextPutAll: 'Shrinking...'; lf.!
     
     KMRepository reset.
     KMPragmaKeymapBuilder release.
+    PragmaCollector allInstances do: [:pc | pc announcer subscriptions reset].
     RecentMessageList stopNotifications.
     NOCCompletionTable reset.
     SystemAnnouncer uniqueInstance unsubscribe: NOCCompletionTable.

@@ -13,6 +13,7 @@ baseline: spec
 
 		spec baseline: 'MorphicCore' with: [spec repository: repository].
 
+		spec package: 'Collections-DoubleLinkedList'.
 		spec package: 'Text-Core'.
 		spec package: 'System-Clipboard'.
 		

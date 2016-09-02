@@ -1,11 +1,3 @@
-'From Pharo 6.0 of 13 May 2016 [Latest update: #60198] on 2 September 2016 at 1:30:50.817538 pm'!
-
-!RPackage methodsFor: 'accessing' stamp: 'PavelKrivanek 9/1/2016 11:23'!
-packageManifestOrNil
-	^ self definedClasses
-		detect: [ :each | each isMeta not and: [each isManifest] ]
-		ifNone: [ nil ]! !
-
 
 'From Pharo6.0 of 13 May 2016 [Latest update: #60143] on 11 July 2016 at 10:59:22.982106 am'!
 

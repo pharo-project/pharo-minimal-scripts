@@ -3,8 +3,15 @@
 !RPackage methodsFor: 'accessing' stamp: 'PavelKrivanek 9/1/2016 11:23'!
 packageManifestOrNil
 	^ self definedClasses
-		detect: [ :each | each isMeta not and: [each isManifest] ]
+		detect: [ :each | each isManifest ]
 		ifNone: [ nil ]! !
+		
+'From Pharo 6.0 of 13 May 2016 [Latest update: #60198] on 2 September 2016 at 1:44:09.202062 pm'!
+
+!TBehavior methodsFor: 'accessing' stamp: 'NicolaiHess 5/23/2016 09:24'!
+isManifest
+	^ false! !
+		
 		
 		
 'From Pharo5.0 of 16 April 2015 [Latest update: #50613] on 26 February 2016 at 2:34:57.325766 pm'!

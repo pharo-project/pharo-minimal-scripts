@@ -3,7 +3,7 @@
 !RPackage methodsFor: 'accessing' stamp: 'PavelKrivanek 9/1/2016 11:23'!
 packageManifestOrNil
 	^ self definedClasses
-		detect: [ :each | each isManifest ]
+		detect: [ :each | each isMeta not and: [each isManifest] ]
 		ifNone: [ nil ]! !
 
 

@@ -1,4 +1,9 @@
+'From Pharo 6.0 of 13 May 2016 [Latest update: #60204] on 6 September 2016 at 12:26:30.078251 pm'!
 
+!SubscriptionRegistry methodsFor: 'accessing' stamp: 'TudorGirba 5/18/2011 13:14'!
+glmSubscriptions
+	^ subscriptions! !
+	
 'From Pharo6.0 of 13 May 2016 [Latest update: #60143] on 11 July 2016 at 10:59:22.982106 am'!
 
 !SystemAnnouncer class methodsFor: 'initialization' stamp: 'PavelKrivanek 7/11/2016 10:51'!

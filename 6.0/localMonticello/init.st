@@ -15,6 +15,35 @@
     Transcript show: 'initializing class: ', cn; cr.  
     (Smalltalk at: cn) initialize].!
     
+    
+'From Pharo6.0 of 13 May 2016 [Latest update: #60267] on 25 October 2016 at 10:12:07.2002 am'!
+
+!TClassDescription methodsFor: 'private' stamp: 'CamilleTeruel 9/5/2014 16:40'!
+notifyRepackage: selector method: compiledMethod oldProtocol: oldProtocol newProtocol: newProtocol
+	| oldPackage newPackage |
+	
+	(newProtocol = oldProtocol)
+		ifTrue: [ ^ self ].
+		
+	"This indirection is because we need to abstract RPackage from the kernel"
+	self environment at: #RPackage ifPresent: [ :rPackageClass | 
+			newPackage := rPackageClass organizer 
+				packageForProtocol: newProtocol 
+				inClass: self.
+			oldPackage := rPackageClass organizer 
+				packageForProtocol: oldProtocol 
+				inClass: self.
+			
+			"Announce recategorization"
+			newPackage = oldPackage
+				ifFalse: [ 
+					SystemAnnouncer uniqueInstance 
+						methodRepackaged: compiledMethod 
+						from: oldPackage 
+						to: newPackage ] ].	
+	
+	SystemAnnouncer uniqueInstance methodRecategorized: compiledMethod oldProtocol: oldProtocol! !    
+    
 !WorkingSession methodsFor: 'initialization' stamp: 'ChristopheDemarey 12/4/2015 11:43'!
 initialize
 	super initialize.
@@ -70,6 +99,10 @@ defaultAction
 	rep close. 
 	Smalltalk exitFailure
 ! !    
+
+
+
+
 
 SmalltalkImage classPool at: #SpecialSelectors put: #(#+ 1 #- 1 #< 1 #> 1 #'<=' 1 #'>=' 1 #= 1 #'~=' 1 
 #* 1 #/ 1 #'\\' 1 #@ 1 #bitShift: 1 #'//' 1 #bitAnd: 1 #bitOr: 1 #at: 1 #at:put: 2 #size 0 #next 0 

@@ -1,3 +1,35 @@
+'From Pharo6.0 of 13 May 2016 [Latest update: #60267] on 25 October 2016 at 10:17:46.476076 am'!
+
+!RPackageOrganizer methodsFor: 'system integration' stamp: 'BernardoContreras 10/24/2014 17:36'!
+registerInterestToAnnouncer: anAnnouncer	
+	"There should be only one"
+	anAnnouncer unsubscribe: self.
+	
+	anAnnouncer weak
+		when: CategoryAdded send: #systemCategoryAddedActionFrom: to: self;
+		when: CategoryRemoved send: #systemCategoryRemovedActionFrom: to: self;
+		when: CategoryRenamed send: #systemCategoryRenamedActionFrom: to: self;
+		when:  ClassAdded send: #systemClassAddedActionFrom: to: self;
+		when:  ClassRecategorized send: #systemClassRecategorizedActionFrom: to: self;
+		when:  ClassRemoved send: #systemClassRemovedActionFrom: to: self;
+		when:  ClassRenamed send: #systemClassRenamedActionFrom: to: self;
+		when:  ClassReorganized send: #systemClassReorganizedActionFrom: to: self;
+		when:  MethodAdded send: #systemMethodAddedActionFrom: to: self;
+		when:  MethodModified send: #systemMethodModifiedActionFrom: to: self;
+		when:  MethodRecategorized send: #systemMethodRecategorizedActionFrom: to: self;
+		when:  MethodRemoved send: #systemMethodRemovedActionFrom: to: self;
+		when:  ProtocolAdded send: #systemProtocolAddedActionFrom: to: self;
+		when:  ProtocolRemoved send: #systemProtocolRemovedActionFrom: to: self.
+		
+	self flag: #hack. "for decoupling MC"
+	self class environment at: #MCWorkingCopy ifPresent: [ 
+		anAnnouncer weak
+			when: (Smalltalk globals at: #MCWorkingCopyCreated) 
+				send: #updateAfterNewMCPackageRegistred: 
+				to: self;
+			when: (Smalltalk globals at: #MCWorkingCopyDeleted) 
+				send: #updateAfterNewMCPackageUnregistred: 
+				to: self	].! !
 !
 
 'From Pharo5.0 of 16 April 2015 [Latest update: #50656] on 22 March 2016 at 2:53:22.880903 pm'!

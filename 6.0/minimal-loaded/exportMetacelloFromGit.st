@@ -2,6 +2,7 @@
 |  mcPackages pharoRepository targetRepository |
 
 mcPackages := #(
+ 'ScriptingExtensions'
  'Text-Core'
  'System-FileRegistry' 
  'FileSystem-Memory'

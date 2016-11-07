@@ -6,11 +6,12 @@ postload: loader package: packageSpec
 	Author fullName: self class name.
 	
 	initializersEnabled := MCMethodDefinition initializersEnabled.
+
 	MCMethodDefinition initializersEnabled: false.
-	
 	Gofer it smalltalkhubUser: 'Pharo' project: 'Pharo60'; package: 'Compiler';  load.
 	Gofer it smalltalkhubUser: 'Pharo' project: 'Pharo60'; package: 'RPackage-Tests';  load.	
 	MCMethodDefinition initializersEnabled: true.
+
 	(Smalltalk at: #ParseNode) initialize.
 	(Smalltalk at: #Scanner) initialize.
 	(Smalltalk at: #Decompiler) initialize.
@@ -24,7 +25,6 @@ postload: loader package: packageSpec
 	
 	EpLostChangesDetector class compile: 'startUp: isImageStarting'.
 	
-
 	Author reset.
 
 	MCMethodDefinition initializersEnabled: initializersEnabled.

@@ -46,9 +46,6 @@ additionalInitialization
 	ASTTransformExamplePluginActive recompile.
 	PharoCommandLineHandler recompile.
 	SmalltalkImage recompile.
-	"NeoUUIDGenerator recompile."
-	
-	"Callback setup: true."
 	
 	RubCharacterScanner initialize.
 	

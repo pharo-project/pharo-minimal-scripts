@@ -1,7 +1,7 @@
 actions
 cleanUpAfterMorphicInitialization
 
-	Author fullName: 'BaselineOfMorphic'.
+	Author fullName: self class name.
 	MCDataStream initialize.
 	GradientFillStyle initPixelRampCache.
 	FreeTypeCache clearCurrent.

@@ -36,8 +36,6 @@ baseline: spec
 		spec package: 'Flashback-Decompiler'.
 		spec package: 'BlueInk-Core'.
 		
-		spec package: 'Collections-Grid'.
-
 		spec package: 'Collections-Tests'.
 		spec package: 'Text-Tests'.
 		spec package: 'Network-Tests'.

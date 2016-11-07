@@ -6,7 +6,7 @@ postload: loader package: packageSpec
 	'Starting postload action' logCr.
 
 	Smalltalk cleanOutUndeclared.
-	  Author fullName: 'ConfigurationOfUI'.
+	Author fullName: self class name.
 	ThemeIcons compile: 'iconSelectors
 	  ^ (self class allSelectors copyWithoutAll: #(systemIcon)) 
 	    select: [ :each | ''*Icon'' match: each asString ].'.
@@ -42,9 +42,6 @@ postload: loader package: packageSpec
 	SparseLargeTable recompile.
 	'recompiling finished' logCr.
 
-	" Font exported with:
-	FLSerializer serialize: (TextStyle named: 'Bitmap DejaVu Sans') toFileNamed: 'morphicData.fuel'."
-
 	dejavu := FLMaterializer materializeFromFileNamed: 'BitmapDejaVuSans.fuel'.
 
 	TextConstants TextSharedInformation at: #'DefaultTextStyle' put: dejavu.
@@ -79,7 +76,6 @@ postload: loader package: packageSpec
 	UIManager default: MorphicUIManager new.
 	World displayWorldSafely.
 	UIManager default uiProcess resume.
-	"MorphicTextEditor register: PluggableTextMorph."
 	Pharo3Theme beCurrent.
 	(World windowsSatisfying: [:w | w model canDiscardEdits]) do: [:w | w delete].
 	self cleanUpAfterMorphicInitialization.

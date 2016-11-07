@@ -1,8 +1,9 @@
 {
-	"class" : {
-		 },
 	"instance" : {
+		"preload:package:" : "PavelKrivanek 8/3/2016 15:30",
+		"installBitmap" : "PavelKrivanek 11/7/2016 12:01",
 		"baseline:" : "PavelKrivanek 8/3/2016 15:28",
-		"installBitmap" : "PavelKrivanek 8/3/2016 15:32",
-		"postload:package:" : "PavelKrivanek 8/3/2016 15:30",
-		"preload:package:" : "PavelKrivanek 8/3/2016 15:30" } }
+		"postload:package:" : "PavelKrivanek 8/3/2016 15:30"
+	},
+	"class" : { }
+}

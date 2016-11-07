@@ -1,6 +1,8 @@
 actions
 installBitmap
 
+	"install new Bitmap class to special objects array"
+
 	| array |
 	
 	array := Smalltalk specialObjectsArray copy.

@@ -18,18 +18,9 @@ baseline: spec
 			spec repository: repository.
 			spec loads: #('UI' 'Help')].
 
-"		spec project: 'FastTable' with: [
-		spec
-			className: #ConfigurationOfFastTable;
-			versionString: #'stable';
-			loads: #('default');
-			repository: 'http://smalltalkhub.com/mc/estebanlm/FastTable/main/' ].
-"	
 		spec package: 'Morphic-Widgets-FastTable'.
 		
-		spec package: 'Chroma-CubeHelix'.
 		spec package: 'MessageBrowserRefactoringAddition'.
-		"spec package: 'Tool-CriticBrowser'."
 		spec package: 'Tool-ExternalBrowser'.
 		spec package: 'HowToContributeHelp'.
 		spec package: 'ContributingToTheCatalogHelp'.
@@ -44,8 +35,6 @@ baseline: spec
 		spec package: 'Nautilus-GroupManager'.
 		spec package: 'Nautilus-GroupManagerUI'.
 		spec package: 'Komitter'.
-		"spec package: 'Reflectivity-Tools'."
-		
 		
 		spec package: 'Announcements-Help'.	
 		spec package: 'Metacello-FileTree'.
@@ -64,7 +53,6 @@ baseline: spec
 		spec package: 'Refactoring-Core'.
 		spec package: 'Refactoring-Environment'.
 		spec package: 'Regex-Help'.
-"		spec package: 'ScriptLoader60'."
 		spec package: 'UpdateStreamer-Core'.
 		spec package: 'ImportingResource-Help'.
 		spec package: 'IssueTracking'.

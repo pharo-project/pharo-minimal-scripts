@@ -5,10 +5,9 @@ baseline: spec
 
 	| repository | 
 	
-	repository := 'filetree://./pharo-core/src'.    
-    
-	spec for: #common do: [
+	repository := 'filetree://./pharo-core/src'. 
 
+	spec for: #common do: [
 		spec postLoadDoIt: #'postload:package:'.
 
 		spec baseline: 'SUnit' with: [spec repository: repository].

@@ -85,9 +85,11 @@ versions do: [ :each | | mcVersion version |
       warning resume: true]]].
       
       
-loadVersions value: (localRepository directory files sorted reject: [ :f | f basename beginsWith: 'Slot-' ]).
+loadVersions value: (localRepository directory files sorted reject: [ :f | ((f basename beginsWith: 'Slot-') or: [f basename beginsWith: 'Collections-Sequenceable']) or: [f basename beginsWith: 'Kernel-'] ]).
 	
-loadVersions value: (localRepository directory files sorted select: [ :f | f basename beginsWith: 'Slot-' ]). 
+'Reload rest:' logCr.	
+	
+loadVersions value: (localRepository directory files sorted select: [ :f | f basename beginsWith: 'Kernel-' ]). 
 
 
 localRepository := MCDirectoryRepository new
@@ -107,6 +109,9 @@ localRepository directory files sorted
       warning messageText logCr.
       warning resume: true].
 ].	
+
+loadVersions value: (localRepository directory files sorted select: [ :f | f basename beginsWith: 'Slot-' ]). 
+loadVersions value: (localRepository directory files sorted select: [ :f | f basename beginsWith: 'Collections-Sequenceable' ]). 
 
 
 !

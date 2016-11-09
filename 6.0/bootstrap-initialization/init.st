@@ -111,6 +111,5 @@ SmalltalkImage classPool at: #SpecialSelectors put: #(#+ 1 #- 1 #< 1 #> 1 #'<=' 
 Class instVarNamed: #subclasses put: (Array with: ProtoObject class).
 ProtoObject class classLayout slotScope parentScope: Class classLayout slotScope.
 
-
-"Smalltalk saveAs: 'bootstrap_after_reloading'."
+RBProgramNode classPool at: #FormatterClass put: BISimpleFormatter.
 

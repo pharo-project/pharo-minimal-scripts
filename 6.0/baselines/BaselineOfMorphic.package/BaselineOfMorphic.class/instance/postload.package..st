@@ -39,7 +39,7 @@ postload: loader package: packageSpec
 	FileStream stdout nextPutAll: Smalltalk ui asString; lf.
 
 	'recompiling all image because of fuel traits?' logCr.
-	SparseLargeTable recompile.
+	"SparseLargeTable recompile."
 	'recompiling finished' logCr.
 
 	dejavu := FLMaterializer materializeFromFileNamed: 'BitmapDejaVuSans.fuel'.

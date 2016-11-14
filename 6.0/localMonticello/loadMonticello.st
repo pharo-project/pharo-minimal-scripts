@@ -65,9 +65,6 @@ MCPackage logCr.
 
 MCCacheRepository reset.
 
-(RPackage named: 'Compression-Archives') unregister.
-(RPackage named: 'Compression-Streams') unregister.
-
 localRepository := MCDirectoryRepository new
 	directory: './kernelPackages' asFileReference;
 	yourself.	

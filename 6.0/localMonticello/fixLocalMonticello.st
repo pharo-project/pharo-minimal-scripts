@@ -1,3 +1,21 @@
+RPackageOrganizer default unregisterPackageNamed: 'Compression-Archives'.
+RPackageOrganizer default unregisterPackageNamed: 'Compression-Streams'.
+
+
+!RPackageOrganizer methodsFor: 'private registration' stamp: 'MarcusDenker 7/16/2014 17:25'!
+basicUnregisterPackage: aPackage
+	"Unregister the specified package from the list of registered packages. Raise the announcement RPackageUnregistered. This is a low level action. It does not unregister the back pointer from classes to packages or any other information managed by the organizer"
+	
+	packages
+		removeKey: aPackage name asSymbol
+		ifAbsent: [ self reportExtraRemovalOf: aPackage ].
+	"unregister also mc package"
+	aPackage mcPackage 
+		ifNotNil: [ :mcPackage | mcPackage workingCopy unregister ].! !
+
+
+
+
 'From Pharo5.0 of 16 April 2015 [Latest update: #50752] on 10 May 2016 at 1:36:00.128099 pm'!
 
 !RPackageOrganizer methodsFor: 'private registration' stamp: 'EstebanLorenzano 2/21/2014 12:56'!
@@ -16,17 +34,6 @@ basicRegisterPackage: aPackage
 
 
 'From Pharo6.0 of 13 May 2016 [Latest update: #60290] on 14 November 2016 at 5:38:22.432521 pm'!
-
-!RPackageOrganizer methodsFor: 'private registration' stamp: 'MarcusDenker 7/16/2014 17:25'!
-basicUnregisterPackage: aPackage
-	"Unregister the specified package from the list of registered packages. Raise the announcement RPackageUnregistered. This is a low level action. It does not unregister the back pointer from classes to packages or any other information managed by the organizer"
-	
-	packages
-		removeKey: aPackage name asSymbol
-		ifAbsent: [ self reportExtraRemovalOf: aPackage ].
-	"unregister also mc package"
-	"aPackage mcPackage 
-		ifNotNil: [ :mcPackage | mcPackage workingCopy unregister ]."! !
 
 
 'From Pharo5.0 of 16 April 2015 [Latest update: #50752] on 10 May 2016 at 3:35:27.377099 pm'!
@@ -90,9 +97,6 @@ registerInterestToAnnouncer: anAnnouncer
 
 			
 RPackageOrganizer default registerInterestToAnnouncer: SystemAnnouncer uniqueInstance.
-
-RPackageOrganizer default unregisterPackageNamed: 'Compression-Archives'.
-RPackageOrganizer default unregisterPackageNamed: 'Compression-Streams'.
 
 (RPackageOrganizer default packageNames) asSortedCollection do: [:packageName |
   Transcript show: 'snapshot of: '; show: packageName; cr.

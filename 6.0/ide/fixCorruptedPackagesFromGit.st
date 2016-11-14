@@ -6,7 +6,7 @@
 	wcs := MCWorkingCopy allManagers asOrderedCollection.
 	blacklist := #('Metacello-TestsCommonMC' 'Rubric-Editing-Core-Support' '_UnpackagedPackage' 'Renraku-Rules' 'Metacello-TestsPlatform' 'Kernel'
 	BaselineOfSUnit BaselineOfDisplay BaselineOfUnifiedFFI BaselineOfMorphicCore BaselineOfMorphic BaselineOfUI BaselineOfBasicTools BaselineOfIDE
-	).
+	'Compression-Streams' 'Compression-Archives' ).
 	wcs removeAllSuchThat: [ :wc | blacklist includes: wc packageName ].
 	corrupted := wcs
 		select: [ :wc | 

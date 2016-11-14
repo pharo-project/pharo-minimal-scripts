@@ -1,5 +1,5 @@
 RPackageOrganizer default unregisterPackageNamed: 'Compression-Archives'.
-RPackageOrganizer default unregisterPackageNamed: 'Compression-Streams'.
+RPackageOrganizer default unregisterPackageNamed: 'Compression-Streams'.!
 
 
 !RPackageOrganizer methodsFor: 'private registration' stamp: 'MarcusDenker 7/16/2014 17:25'!

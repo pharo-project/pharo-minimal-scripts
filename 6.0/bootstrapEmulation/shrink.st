@@ -1,4 +1,24 @@
+'From Pharo6.0 of 13 May 2016 [Latest update: #60291] on 15 November 2016 at 2:17:35.413476 pm'!
 
+!SubscriptionRegistry methodsFor: 'accessing' stamp: 'PavelKrivanek 11/15/2016 14:16'!
+subscriptions
+	^ subscriptions! !
+
+'From Pharo6.0 of 13 May 2016 [Latest update: #60291] on 15 November 2016 at 2:17:18.181841 pm'!
+
+!SystemAnnouncer class methodsFor: 'initialization' stamp: 'PavelKrivanek 11/15/2016 14:17'!
+reset
+
+	"unregister all current weak subscriptions because it can cause a memory leak"
+	announcer subscriptions subscriptions
+ 		select: [:each | each isKindOf: LegacyWeakSubscription] 
+		thenDo: [:each | each weakRegistry remove: each subscriber ifAbsent: []]. 
+	Smalltalk garbageCollect.
+		
+	announcer := nil.! !
+	
+
+	
 'From Pharo6.0 of 13 May 2016 [Latest update: #60143] on 11 July 2016 at 10:59:22.982106 am'!
 
 !SystemAnnouncer class methodsFor: 'initialization' stamp: 'PavelKrivanek 7/11/2016 10:51'!
@@ -70,8 +90,8 @@ FileStream stdout nextPutAll: 'Shrinking...'; lf.!
       'Versionner-Tests-Core-DependenciesModel' 'Versionner-Tests-Resources'
       ).
 
-    unloadFirst := #('QualityAssistantRecording' 'QualityAssistant').   
-    
+    unloadFirst := #('QualityAssistantRecording' 'QualityAssistant' 'GT-Debugger').      
+   
     bootstrappedPackages := #('AST-Core' 
     'Announcements-Core' 'CodeExport' 
     'CodeImport' 'CodeImportCommandLineHandlers' 'Collections-Abstract' 
@@ -91,7 +111,7 @@ FileStream stdout nextPutAll: 'Shrinking...'; lf.!
     'System-SessionManager'
     'PragmaCollector'
     
-    "'System-Object Events'").
+    "'System-Object Events'" Colors).
 
     keep := bootstrappedPackages.
 

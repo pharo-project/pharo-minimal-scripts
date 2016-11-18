@@ -1,11 +1,3 @@
-
-'From Pharo 6.0 of 13 May 2016 [Latest update: #60204] on 6 September 2016 at 12:26:30.078251 pm'!
-
-!SubscriptionRegistry methodsFor: 'accessing' stamp: 'TudorGirba 5/18/2011 13:14'!
-glmSubscriptions
-	^ subscriptions! !
-
-	
 | versions |
 
 localRepository := MCDirectoryRepository new

@@ -9,8 +9,4 @@ preload: loader package: packageSpec
 	uses: {}
 	category: 'Rubric-Editing-Core-Support'.
 
-	Pragma compile: 'methodSelector
-	^method selector'.
-
-
 	

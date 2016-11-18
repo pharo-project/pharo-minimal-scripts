@@ -64,7 +64,7 @@ postload: loader package: packageSpec
 	SHA1 ShortIntegerArray SimpleEditor
 	SystemProgressMorph SystemWindow TestCase TextContainer TextDiffBuilder
 	ThemeIcons ThumbnailMorph TransferMorph UITheme ZnByteEncoder
-	ZnConstants ZnMimeType ZnNetworkingUtils ZnServer ZnSingleThreadedServer
+	ZnConstants ZnMimeType ZnNetworkingUtils ZnServer ZnSingleThreadedServer TabMorph
 	) do: [:each | (Smalltalk globals at: each) initialize. ].
 
 	BalloonMorph setBalloonColorTo: Color yellow.

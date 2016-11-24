@@ -1,16 +1,21 @@
 actions
 postload: loader package: packageSpec
 
-	| gofer |
+	| gofer repo |
 	
 	Nautilus registerToolsOn: Smalltalk tools.
 	Smalltalk tools register: TestRunner as: #testRunner.
 	Smalltalk tools register: MCWorkingCopyBrowser as: #monticelloBrowser.
 	
 	"reload icons because of new tools" 
- 	gofer := Gofer it smalltalkhubUser: 'Pharo' project: 'Pharo60'.
-   gofer package: #'Polymorph-TaskbarIcons'.
-   gofer load.	
+	
+	repo := MCFileTreeRepository new
+	directory: './pharo-core/src' asFileReference;
+	yourself.
+		
+	gofer := Gofer it repository: repo.
+	gofer package: #'Polymorph-TaskbarIcons'.
+	gofer load.	
 
 	BIConfigurableFormatter initialize.
 	

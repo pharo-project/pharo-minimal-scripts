@@ -159,7 +159,7 @@ baseline: spec
 
 		"configurations - will be removed later"
 		
-		spec package: 'ConfigurationOfGTSpotter'.
+		"spec package: 'ConfigurationOfGTSpotter'.
 		spec package: 'ConfigurationOfMooseAlgos'.
 		spec package: 'ConfigurationOfPharoMetacello'.
 		spec package: 'ConfigurationOfAthens'.
@@ -183,7 +183,7 @@ baseline: spec
 		spec package: 'ConfigurationOfShoreLineReporter'.
 		spec package: 'ConfigurationOfTxText'.
 		spec package: 'ConfigurationOfGTPlaygroundCore'.
-		spec package: 'ConfigurationOfGTInspectorCore'.
+		spec package: 'ConfigurationOfGTInspectorCore'."
 		
 		"standalone"
 		

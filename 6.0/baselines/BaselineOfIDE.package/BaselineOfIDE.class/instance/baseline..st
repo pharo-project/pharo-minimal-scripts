@@ -244,7 +244,7 @@ baseline: spec
 		spec package: 'STON-Text support'.
 		spec package: 'Hiedra'.
 		
-		spec package: 'ConfigurationOfGTSpotter'.
+		"spec package: 'ConfigurationOfGTSpotter'.
 		spec package: 'ConfigurationOfMooseAlgos'.
 		spec package: 'ConfigurationOfPharoMetacello'.
 		spec package: 'ConfigurationOfAthens'.
@@ -268,5 +268,5 @@ baseline: spec
 		spec package: 'ConfigurationOfShoreLineReporter'.
 		spec package: 'ConfigurationOfTxText'.
 		spec package: 'ConfigurationOfGTPlaygroundCore'.
-		spec package: 'ConfigurationOfGTInspectorCore'.		
+		spec package: 'ConfigurationOfGTInspectorCore'.	"	
 	].

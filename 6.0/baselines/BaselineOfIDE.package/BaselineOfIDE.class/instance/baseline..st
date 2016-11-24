@@ -189,6 +189,7 @@ baseline: spec
 		spec package: 'Tool-DependencyAnalyser'.
 		spec package: 'Tool-DependencyAnalyser-Test'.
 		spec package: 'Tool-DependencyAnalyser-UI'.
+		spec package: 'Tool-DependencyAnalyser-Test-Data'.
 
 		spec package: 'ShoreLine-Report-Core'.
 		spec package: 'ShoreLine-Report-UI'.
@@ -243,6 +244,17 @@ baseline: spec
 		spec package: 'Versionner-Nautilus'.
 		spec package: 'STON-Text support'.
 		spec package: 'Hiedra'.
+		spec package: 'STON-Tests'.
+		spec package: 'Rubric-Tests'.
+		spec package: 'Kernel-Tests-Rules'.
+		spec package: 'System-Support-Rules'.
+		spec package: 'ReflectionMirrors-Primitives-Tests'.
+		spec package: 'Collections-DoubleLinkedListTests'.
+		spec package: 'FuzzyMatcher-Tests'.
+		spec package: 'Refactoring-Help'.
+		spec package: 'System-Settings-Rules'.
+		spec package: 'Polymorph-Widgets-Rules'.
+		spec package: 'HiedraTests'.
 		
 		"spec package: 'ConfigurationOfGTSpotter'.
 		spec package: 'ConfigurationOfMooseAlgos'.

@@ -86,6 +86,7 @@ baseline: spec
 		spec package: 'Ring-Tests-Kernel'.
 		spec package: 'Ring-Tests-Monticello'.
 		spec package: 'SUnit-Tests'.
+		spec package: 'ScriptLoader60'.
 		spec package: 'ScriptLoader-Tests'.
 		spec package: 'Shout-Tests'.
 		spec package: 'Slot-Tests'.

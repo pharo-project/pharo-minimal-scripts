@@ -232,7 +232,6 @@ baseline: spec
 		spec package: 'Rubric-Rules'.
 		spec package: 'Rubric-Tests'.
 		spec package: 'STON-Tests'.
-		spec package: 'SUnit-Help'.
 		spec package: 'SUnit-Rules'.	
 		spec package: 'SUnit-Tests'.
 		spec package: 'ScriptLoader-Tests'.

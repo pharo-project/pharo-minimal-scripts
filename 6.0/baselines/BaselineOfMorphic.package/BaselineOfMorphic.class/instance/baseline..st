@@ -57,6 +57,7 @@ baseline: spec
 
 		spec package: 'Settings-Graphics'.
 		spec package: 'Settings-Polymorph'.
+		spec package: 'Settings-System'.
 
 		spec package: 'System-Caching'.
 		spec package: 'System-History'.
@@ -69,6 +70,8 @@ baseline: spec
 
 		spec package: 'Unicode-Initialization'.
 
+		spec package: 'Morphic-Widgets-TickList'.
+		
 		spec package: 'System-Changes-FileServices'.
 		spec package: 'System-OSEnvironments'.
 

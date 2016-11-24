@@ -7,7 +7,6 @@ baseline: spec
 			package: 'SUnit-Core';
 			package: 'SUnit-Tests';
 			package: 'SUnit-UI';
-			package: 'SUnit-Help';
 			package: 'SUnit-UITesting';
 			package: 'HudsonBuildTools20'.
 		spec 

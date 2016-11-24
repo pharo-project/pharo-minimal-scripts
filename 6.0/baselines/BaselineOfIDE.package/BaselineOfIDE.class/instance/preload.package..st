@@ -9,8 +9,8 @@ preload: loader package: packageSpec
 	Object compile: 'name
 	^ self printString'.
 	
-	"Object subclass: #ReAbstractRule
+	Object subclass: #ReAbstractRule
 	instanceVariableNames: ''
 	classVariableNames: ''
-	package: 'Renraku-Rules'."
+	package: 'Renraku-Rules'.
 	

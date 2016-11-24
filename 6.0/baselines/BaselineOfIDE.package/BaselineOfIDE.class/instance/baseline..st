@@ -13,6 +13,7 @@ baseline: spec
 		
 		spec baseline: 'BasicTools' with: [spec repository: repository].
 
+		spec package: 'ReleaseTests'.
 		spec package: 'Refactoring-Critics'.
 		spec package: 'NautilusRefactoring'.
 
@@ -48,7 +49,6 @@ baseline: spec
 		spec package: 'OpalCompiler-Tests'.
 		spec package: 'Refactoring-Tests-Core'.
 		spec package: 'Reflectivity-Tests'.
-		spec package: 'ReleaseTests'.
 		spec package: 'Ring-Tests-Containers'.
 		spec package: 'Ring-Tests-Kernel'.
 		spec package: 'ScriptLoader60'.

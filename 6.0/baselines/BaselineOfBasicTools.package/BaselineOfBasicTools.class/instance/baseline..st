@@ -20,15 +20,11 @@ baseline: spec
 
 		spec package: 'Morphic-Widgets-FastTable'.
 		
-		spec package: 'MessageBrowserRefactoringAddition'.
 		spec package: 'Tool-ExternalBrowser'.
-		spec package: 'HowToContributeHelp'.
-		spec package: 'ContributingToTheCatalogHelp'.
 		spec package: 'BlueInk-Core'. 
-		spec package: 'BlueInk-Extras'.
 		spec package: 'Tool-ProcessBrowser'.
 		spec package: 'Tool-Profilers'.
-		spec package: 'Tool-SystemReporter'.
+		spec package: 'Tool-SystemReporter'.	"standalone"
 		spec package: 'NECompletion'.
 		spec package: 'Nautilus'.
 		spec package: 'NautilusCommon'.
@@ -36,34 +32,29 @@ baseline: spec
 		spec package: 'Nautilus-GroupManagerUI'.
 		spec package: 'Komitter'.
 		
-		spec package: 'Announcements-Help'.	
-		spec package: 'Metacello-FileTree'.
+		spec package: 'Metacello-FileTree'. "standalone"
 		spec package: 'Metacello-GitBasedRepository'.
 		spec package: 'Metacello-GitHub'.
-		spec package: 'Metacello-ProfStef'.
+		spec package: 'Metacello-ProfStef'. "standalone"
 		spec package: 'Metacello-Reference'.
-		spec package: 'Metacello-Tutorial'.
+		spec package: 'Metacello-Tutorial'.	"standalone"
 		spec package: 'MonticelloGUI'.
 		spec package: 'Network-Mail'.
-		spec package: 'Pharo-Help'.
 		spec package: 'ProfStef-Core'.
 		spec package: 'ProfStef-Help'.
 		spec package: 'RecentSubmissions'.
 		spec package: 'Refactoring-Changes'.
 		spec package: 'Refactoring-Core'.
 		spec package: 'Refactoring-Environment'.
-		spec package: 'Regex-Help'.
 		spec package: 'UpdateStreamer-Core'.
-		spec package: 'ImportingResource-Help'.
 		spec package: 'IssueTracking'.
-		spec package: 'Monticello-OldDataStreamCompatibility'. 
-		spec package: 'MonticelloFileServices'.			
+		spec package: 'Monticello-OldDataStreamCompatibility'. "standalone"
+		spec package: 'MonticelloFileServices'.	"standalone"		
 		spec package: 'Spec-Examples'.
-		spec package: 'Spec-Help'.	
 		spec package: 'Tool-Diff'.
 		spec package: 'Tool-FileList'.
 		spec package: 'Tool-Finder'.
-		spec package: 'Tool-ImageCleaner'.		
+		spec package: 'Tool-ImageCleaner'.	"standalone"		
 		spec package: 'Tools'.
 					
 		spec package: 'Athens-Core'.

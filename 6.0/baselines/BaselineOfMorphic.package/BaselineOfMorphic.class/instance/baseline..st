@@ -26,8 +26,8 @@ baseline: spec
 		spec package: 'FuelPlatform-Core'.
 		spec package: 'FuelPlatform-Pharo-Core'.
 		spec package: 'FuelPlatform-Pharo-06'.
-		spec package: 'FuelCommandLineHandler'.
-		spec package: 'FuelSystem-FileRegistry'.
+		spec package: 'FuelCommandLineHandler'. "standalone"
+		spec package: 'FuelSystem-FileRegistry'. "standalone"
 
 		spec package: 'Graphics-Files'.
 		spec package: 'Graphics-Fonts'.
@@ -72,7 +72,7 @@ baseline: spec
 
 		spec package: 'Unicode-Initialization'.
 
-		spec package: 'Morphic-Widgets-TickList'.
+		spec package: 'Morphic-Widgets-TickList'. "standalone"
 		
 		spec package: 'System-Changes-FileServices'.
 		spec package: 'System-OSEnvironments'.

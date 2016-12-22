@@ -5,9 +5,8 @@ spec group: 'Mandatory-Group' with: #(
 	'FuelTools-Debugger'	"required by GT-Debugger HudsonBuildTools20"
 	'Network-Tests'		"required by Multilingual-Tests"
 	'Gofer-Tests'		"required by EpiceaTests Metacello-TestsMC, depends on 'Metacello-Tests-Group', cleanup needed?"
-
 ). 
-		
+
 spec group: 'Optional-Group' with: #(
 	'Athens-Group' "dependency"
 
@@ -18,15 +17,24 @@ spec group: 'Optional-Group' with: #(
 	'Gofer-UI'	"standalone"
 	'MessageBrowserRefactoringAddition' 	"standalone"
 	'Tool-TxWorkspace'  "dependent on 'Athens-Group'"
-
 ).		
 
 spec group: 'Epicea-Core-Group' with: #(
-  'Athens-Group' "dependency of Hiedra"
-
-  'Ombu' 'Epicea' 'Hiedra' 'EpiceaBrowsers').
-spec group: 'Epicea-Tests-Group' with: #('OmbuTests' 'EpiceaTests' 'HiedraTests' 'EpiceaBrowsersTests' ).	
-spec group: 'Epicea-Group' with: #('Epicea-Core-Group' 'Epicea-Tests-Group').	
+	'Athens-Group' "dependency of Hiedra"
+	'Ombu'
+	'Epicea'
+	'Hiedra'
+	'EpiceaBrowsers').
+spec group: 'Epicea-Tests-Group' with: #(
+	'OmbuTests'
+	'EpiceaTests'
+	'HiedraTests'
+	'EpiceaBrowsersTests'
+).	
+spec group: 'Epicea-Group' with: #(
+	'Epicea-Core-Group' 
+	'Epicea-Tests-Group'
+).	
 
 spec group: 'General-Help-Group' with: #(
 	'Announcements-Help'
@@ -89,7 +97,6 @@ spec group: 'General-Tests-Group' with: #(
 	'Zinc-Tests'	"requires Zinc-Resource-Meta-Tests"
 ).	
 
-
 spec group: 'FuzzyMatcher-Core-Group' with: #(
 	'FuzzyMatcher'
 ).
@@ -97,10 +104,9 @@ spec group: 'FuzzyMatcher-Tests-Group' with: #(
 	'FuzzyMatcher-Tests'
 ).
 spec group: 'FuzzyMatcher-Group' with: #(
-      'FuzzyMatcher-Core-Group'
-      'FuzzyMatcher-Tests-Group'
+	'FuzzyMatcher-Core-Group'
+	'FuzzyMatcher-Tests-Group'
 ).
-
 
 spec group: 'Zodiac-Extras-Group' with: #(
 	'Zodiac-Extra'
@@ -110,8 +116,8 @@ spec group: 'Zodiac-Tests-Group' with: #(
 	'Zodiac-Tests'
 ).
 spec group: 'Zodiac-Group' with: #(
-      'Zodiac-Extras-Group'
-      'Zodiac-Tests-Group'
+	'Zodiac-Extras-Group'
+	'Zodiac-Tests-Group'
 ).
 
 spec group: 'ReflectionMirrors-Core-Group' with: #(
@@ -121,8 +127,8 @@ spec group: 'ReflectionMirrors-Tests-Group' with: #(
 	'ReflectionMirrors-Primitives-Tests'
 ).
 spec group: 'ReflectionMirrors-Group' with: #(
-      'ReflectionMirrors-Core-Group'
-      'ReflectionMirrors-Tests-Group'
+	'ReflectionMirrors-Core-Group'
+	'ReflectionMirrors-Tests-Group'
 ).
 
 spec group: 'ScriptLoader-Core-Group' with: #(
@@ -132,43 +138,33 @@ spec group: 'ScriptLoader-Tests-Group' with: #(
 	'ScriptLoader-Tests'
 ).
 spec group: 'ScriptLoader-Group' with: #(
-      'ScriptLoader-Core-Group'
-      'ScriptLoader-Tests-Group'
+	'ScriptLoader-Core-Group'
+	'ScriptLoader-Tests-Group'
 ).
-	
-
 
 spec group: 'Reflectivity-Group' with: #(
 	'Reflectivity-Tests'	"required by Reflectivity-Examples"
 	'Reflectivity-Examples'
 ).
 
-
-
-
 spec group: 'SmartSuggestions-Core-Group' with: #(
 	"depends on 'Glamour-Core-Group', circular dependency, needs fix"
 	'SmartSuggestions'
-
 ).
 spec group: 'SmartSuggestions-Tests-Group' with: #(
 	'SmartSuggestions-Tests'
-
 ).
 spec group: 'SmartSuggestions-Group' with: #(
-      'SmartSuggestions-Core-Group'
-      'SmartSuggestions-Tests-Group'
+	'SmartSuggestions-Core-Group'
+	'SmartSuggestions-Tests-Group'
 ).
-
 
 spec group: 'Deprecated-Group' with: #(
 	'Deprecated60'
 ).
 
-
 spec group: 'Manifest-Core-Group' with: #(
 	'Manifest-Core'
-
 ).
 spec group: 'Manifest-Tests-Group' with: #(
 	'Kernel-Tests-Group' "dependency"
@@ -176,8 +172,8 @@ spec group: 'Manifest-Tests-Group' with: #(
 	'Manifest-Tests'	"depends on QA, needs cleanup"
 ).
 spec group: 'Manifest-Group' with: #(
-      'Manifest-Core-Group'
-      'Manifest-Tests-Group'
+	'Manifest-Core-Group'
+	'Manifest-Tests-Group'
 ).
 
 spec group: 'Flashback-Core-Group' with: #(
@@ -187,41 +183,34 @@ spec group: 'Flashback-Tests-Group' with: #(
 	'Flashback-Decompiler-Tests'
 ).
 spec group: 'Flashback-Group' with: #(
-      'Flashback-Core-Group'
-      'Flashback-Tests-Group'
+	'Flashback-Core-Group'
+	'Flashback-Tests-Group'
 ).
-
-
-
 
 spec group: 'BlueInk-Core-Group' with: #(
 	'BlueInk-Core'
- 	'BlueInk-Extras'
+	'BlueInk-Extras'
 ).
 spec group: 'BlueInk-Tests-Group' with: #(
 	'Kernel-Tests-Group' "dependency"
 	'BlueInk-Tests'	
 ).
 spec group: 'BlueInk-Group' with: #(
-      'BlueInk-Core-Group'
-      'BlueInk-Tests-Group'
+	'BlueInk-Core-Group'
+	'BlueInk-Tests-Group'
 ).
 
-
 spec group: 'Shout-Core-Group' with: #(
-      'Shout'		"'Polymorph-Widgets' and 'NECompletion' depend on it, fix needed?"
-      'Rubric-Styling'	"requires 'Shout'"      
+	'Shout'		"'Polymorph-Widgets' and 'NECompletion' depend on it, fix needed?"
+	'Rubric-Styling'	"requires 'Shout'"      
 ).
 spec group: 'Shout-Tests-Group' with: #(
 	'Shout-Tests'
-	
 ).
 spec group: 'Shout-Group' with: #(
-      'Shout-Core-Group'
-      'Shout-Tests-Group'
+	'Shout-Core-Group'
+	'Shout-Tests-Group'
 ).
-
-
 
 spec group: 'MetacelloExtras-Core' with: #(
 	'BaselineOfMetacello'
@@ -254,25 +243,20 @@ spec group: 'Refactoring-Tests' with: #(
 	'Refactoring-Tests-Changes'
 	'Refactoring-Tests-Critics'
 	'Refactoring-Tests-Environment'
-	
 ).
 spec group: 'Refactoring-Help-Group' with: #(
 	'Refactoring-Help'
-	
+
 ).
 spec group: 'Refactoring-Group' with: #(
-      'Refactoring-Rules-Group'
-      'Refactoring-Tests-Core'
-      'Refactoring-Help-Group' 
+	'Refactoring-Rules-Group'
+	'Refactoring-Tests-Core'
+	'Refactoring-Help-Group' 
 ).
-
-
-
-
 
 spec group: 'Catalog-Core-Group' with: #(
 	'Glamour-Core-Group'	"dependency"
-  	'GT-Core-Group'	"dependency"
+	'GT-Core-Group'	"dependency"
 	'Tool-Catalog'
 ).
 spec group: 'Catalog-Help-Group' with: #(
@@ -283,13 +267,12 @@ spec group: 'Catalog-Group' with: #(
 	'Catalog-Help-Group'
 ).
 
-
 spec group: 'QualityAssistant-Core-Group' with: #(
 	"'Manifest-Tests' 'Polymorph-Widgets-Rules' depend on it, needs cleanup"
 	'Manifest-Core-Group' "dependency"
 	'Glamour-Core-Group'	"dependency"
 	'DependencyAnalyser-Core-Group' "dependency"
-    	'GT-Core-Group'	"dependency"
+	'GT-Core-Group'	"dependency"
 	'Renraku'		
 	'QualityAssistant'
 	'QualityAssistantRecording'
@@ -386,7 +369,7 @@ spec group: 'ShoreLine-Group' with: #(
 	'ShoreLine-Report-UI'	
 	'ShoreLine-Report-Settings' 
 ).		
-		
+
 spec group: 'Athens-Group' with: #(
 	"dependent on Rubric, cleanup?"
 	'Athens-Core'
@@ -403,7 +386,6 @@ spec group: 'TxText-Core-Group' with: #(
 	'TxText-Athens'
 	'TxText-Styler'
 	'Tool-TxWorkspace'	"standalone"
-	
 ).		
 spec group: 'TxText-Tests-Group' with: #(
 	'TxText-AthensTests'
@@ -413,10 +395,10 @@ spec group: 'TxText-Group' with: #(
 	'TxText-Core-Group'
 	'TxText-Tests-Group'
 ).
-		
+
 spec group: 'OSWindow-Core-Group' with: #(
-    	'Glamour-Core-Group'	"dependency, cleanup needed"
-    	'GT-Core-Group'	"dependency, cleanup needed"
+	'Glamour-Core-Group'	"dependency, cleanup needed"
+	'GT-Core-Group'	"dependency, cleanup needed"
 	'Athens-Group' "dependency"
 	'OSWindow-Core'
 	'OSWindow-SDL2'
@@ -431,7 +413,7 @@ spec group: 'OSWindow-Group' with: #(
 	'OSWindow-Tests-Group'
 ).
 
-		
+
 spec group: 'Versionner-Core-Group' with: #(
 	'Glamour-Core-Group'	"dependency, cleanup needed"
 	'Versionner-Core-Model'
@@ -456,89 +438,83 @@ spec group: 'Versionner-Group' with: #(
 ).
 
 spec group: 'Kernel-Tests-Group' with: #(
-'BlueInk-Core-Group' "dependency"
-'RPackage-Tests' 
-'Collections-Tests'
-'Kernel-Tests' 
-'AST-Tests-Core' "requires BlueInk-Core"
-'Announcements-Tests-Core'
-'Compression-Tests' 
-'FileSystem-Tests-Core' 
-'FileSystem-Tests-Disk'
-'Files-Tests' 
-'JobsTests' 
-'Multilingual-Tests'
-'OpalCompiler-Tests' 
-'Random-Tests'
-"'ReleaseTests'"
-'Ring-Tests-Kernel'
-'Ring-Tests-Containers' 
-'Tests' 
-'Zinc-Character-Encoding-Tests' 
-'FileSystem-Tests-Memory'
+	'BlueInk-Core-Group' "dependency"
+	'RPackage-Tests' 
+	'Collections-Tests'
+	'Kernel-Tests' 
+	'AST-Tests-Core' "requires BlueInk-Core"
+	'Announcements-Tests-Core'
+	'Compression-Tests' 
+	'FileSystem-Tests-Core' 
+	'FileSystem-Tests-Disk'
+	'Files-Tests' 
+	'JobsTests' 
+	'Multilingual-Tests'
+	'OpalCompiler-Tests' 
+	'Random-Tests'
+	"'ReleaseTests'"
+	'Ring-Tests-Kernel'
+	'Ring-Tests-Containers' 
+	'Tests' 
+	'Zinc-Character-Encoding-Tests' 
+	'FileSystem-Tests-Memory'
 
-'Text-Tests'		"required by Multilingual-Tests"
+	'Text-Tests'		"required by Multilingual-Tests"
 ).
 
 
-spec group: 'QA-Group' with: #(
-
+spec group: 'GT&QA-Group' with: #(
 	'GeneralRules'		"depends on QA, needs cleanup"
 	'Kernel-Rules'		"depends on QA, DependencyAnalyzer, needs cleanup"
-	
+
 	'ReleaseTests' 		"required by Manifest-Core Refactoring-Critics"
 	'Reflectivity-Tools'	"required by Manifest-Core Refactoring-Critics"
-	
+
 	'NautilusRefactoring'	"required by Epicea, SmartSuggestions"
 	'Refactoring-Critics'	"depends on QA, needs cleanup"
 
-
 	'Glamour-Group'
 	'GT-Group'
-	
-	
+
 	'Manifest-Group'
 	'DependencyAnalyser-Group'
 	'QualityAssistant-Group'
 	'Reflectivity-Group'	
-	
 ).		
-	
-		
-spec group: #default with: #(
-		'BasicTools'	"dependency"
-		
-		'Mandatory-Group'
-		
-		'Athens-Group'
-		'Kernel-Tests-Group'
-		'BlueInk-Group'
 
-		'Shout-Group'
-		
-		
-		"standalone:" 
-		'MetacelloExtras-Core'
-		'Metacello-Tests-Group'		 
-		'General-Help-Group'
-		'ReflectionMirrors-Group'
-		'ScriptLoader-Group'
-		'Deprecated-Group'
-		'Zodiac-Group'
-		'ShoreLine-Group'
-		'FuzzyMatcher-Group'
-		'Flashback-Group'
-		'TxText-Group'
-		
-		
-		"standalone but dependent:"
-		"'OSWindow-Group'
-		'Refactoring-Group'
-		'Catalog-Group'
-		'Epicea-Group'
-		'Optional-Group'
-		'Versionner-Group'
-		'General-Tests-Group'"
-	
-		
-		).
+
+spec group: #default with: #(
+	'BasicTools'	"dependency"
+
+	'Mandatory-Group'
+
+	'Athens-Group'
+	'Kernel-Tests-Group'
+	'BlueInk-Group'
+
+	'Shout-Group'
+
+	"standalone:" 
+	'MetacelloExtras-Core'
+	'Metacello-Tests-Group'		 
+	'General-Help-Group'
+	'ReflectionMirrors-Group'
+	'ScriptLoader-Group'
+	'Deprecated-Group'
+	'Zodiac-Group'
+	'ShoreLine-Group'
+	'FuzzyMatcher-Group'
+	'Flashback-Group'
+	'TxText-Group'
+
+	'GT&QA-Group'
+
+	"standalone but dependent:"
+	'OSWindow-Group'
+	'Refactoring-Group'
+	'Catalog-Group'
+	'Epicea-Group'
+	'Optional-Group'
+	'Versionner-Group'
+	'General-Tests-Group'
+).

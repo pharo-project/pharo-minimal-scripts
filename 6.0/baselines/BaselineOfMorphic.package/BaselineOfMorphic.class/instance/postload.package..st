@@ -28,6 +28,8 @@ postload: loader package: packageSpec
 		[self default updateSettingNodes] ifError: [  ]'.
 
 	TextConstants initialize.
+	
+	CombinedChar parseCompositionMappingFrom: './pharo-minimal-scripts/6.0/unicode/UnicodeData.txt' asFileReference readStream.
 		
 	"Initialize Fuel"
 
@@ -65,7 +67,8 @@ postload: loader package: packageSpec
 	SystemProgressMorph SystemWindow TestCase TextContainer TextDiffBuilder
 	ThemeIcons ThumbnailMorph TransferMorph UITheme ZnByteEncoder
 	ZnConstants ZnMimeType ZnNetworkingUtils ZnServer ZnSingleThreadedServer TabMorph
-	) do: [:each | (Smalltalk globals at: each) initialize. ].
+	) do: [:each | 
+	  (Smalltalk globals at: each) initialize. ].
 
 	BalloonMorph setBalloonColorTo: Color yellow.
 
@@ -79,6 +82,7 @@ postload: loader package: packageSpec
 	Pharo3Theme beCurrent.
 	(World windowsSatisfying: [:w | w model canDiscardEdits]) do: [:w | w delete].
 	self cleanUpAfterMorphicInitialization.
+	UIManager default: UIManager forCurrentSystemConfiguration.
 
 	GraphicFontSettings setFontsToStyleNamed: #small.
 

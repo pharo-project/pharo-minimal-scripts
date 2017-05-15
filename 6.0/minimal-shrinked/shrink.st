@@ -229,6 +229,19 @@ FileStream stdout nextPutAll: 'Shrinking...'; lf.!
     Job jobAnnouncer initialize.
     EncodedCharSet initialize.
     LanguageEnvironment resetKnownEnvironments.
+    
+    "Iceberg"
+    
+    MetacelloPharo30Platform select.
+
+    MCRepositoryGroup allInstancesDo: [:group | 
+        | toDelete repos| 
+        repos :=  group instVarNamed: #repositories.
+        toDelete := repos select: [:repo | repo class isObsolete ].
+        repos removeAll: toDelete].
+  
+    TextConstants classPool at: #DefaultMask put: nil.  
+		
 
     " clean object memory, maybe can be simpler"
     3 timesRepeat: [ Smalltalk garbageCollect ].

@@ -1,6 +1,9 @@
 Pharo-minimal build scripts
 ===========================
 
+**NOTE: This prohect is OBSOLETE! We do not shrink pharo images anymore, instead we bootstrap them. For more information refer to [pharo-project/pharo](https://github.com/pharo-project/pharo)**
+
+
 This repository keeps the files needed to prepare the Pharo-minimal images, a shrink process that is executed by the CI service, you can find it [here](https://ci.inria.fr/pharo/job/Pharo-4.0-Update-Step-3-Minimal).
 
 How to produce a minimal image
